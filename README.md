@@ -1,5 +1,7 @@
 # Darkness — Astro Portfolio & Blog Theme
 
+> **Personal Website project:** This repository is the technical starting point for a personal website based on the Darkness theme. See the [beginner-friendly project guide](docs/PROJECT_GUIDE.md) for where content lives, how Codex handles changes, how reviews work, and how the site will eventually be published.
+
 **The only Astro theme with a live 5,000-particle Three.js background.** A production-ready dark portfolio + blog template with modern typography, smooth animations, and a fully responsive design — built on Astro 6.
 
 [![GitHub stars](https://img.shields.io/github/stars/kpab/astro-darkness?style=social)](https://github.com/kpab/astro-darkness/stargazers)
