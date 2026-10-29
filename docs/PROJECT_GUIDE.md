@@ -25,7 +25,7 @@ The exact dependency versions are recorded in `package-lock.json`. Codex uses th
 | `src/layouts/` | Shared page structures for normal pages and blog articles. |
 | `src/styles/global.css` | The site's colors, typography, spacing, and shared visual rules. |
 | `public/` | Files copied directly to the published site, such as the favicon. |
-| `astro.config.mjs` | The main Astro settings, including the future public website address. |
+| `astro.config.mjs` | The main Astro settings, including the public website address. |
 | `dist/` | Generated production files. Codex creates this folder during a test build; it should not be edited by hand or saved to GitHub. |
 
 ## How Codex makes and saves changes
@@ -36,28 +36,65 @@ You can describe a change in ordinary language. For example:
 
 Codex will locate the relevant files, make the change in the cloud workspace, and run the appropriate checks. Changes should normally be made on a separate Git branch so the approved website remains untouched.
 
-A change is not part of the final website merely because it exists in the cloud workspace. Codex saves completed work as Git commits and, when GitHub access permits, prepares a pull request for review. A pull request is simply a review page that shows what changed before it is added to the main branch.
+A change is not part of the final website merely because it exists in the cloud workspace. Codex saves completed work as Git commits and prepares a pull request for review. A pull request is simply a review page that shows what changed before it is added to the main branch.
 
-## How changes are reviewed
+## How changes are reviewed before publishing
 
 The normal review process is:
 
 1. You describe the desired content or design change in Codex.
 2. Codex makes the change on a separate branch.
 3. Codex runs the Astro and TypeScript check and creates a production build.
-4. You review the real website in a browser preview, including desktop and mobile sizes.
-5. Codex explains the result in plain English and prepares a pull request when appropriate.
-6. The change is added to the main website only after you approve it. Codex will not merge or publish it without approval.
+4. Codex opens a pull request on GitHub.
+5. Cloudflare Pages builds that pull request and provides a separate preview address. The preview lets you inspect the real website without changing the public site.
+6. You review the preview and the pull request. You can request changes in plain language.
+7. The change is added to the public website only after you approve and merge the pull request.
 
-## How the website will be published
+Codex will not merge a pull request or publish a change without your approval.
 
-Hosting has not been connected yet, so no public deployment was created during the technical-foundation phase.
+## How GitHub and Cloudflare Pages work together
 
-The recommended host is **Cloudflare Pages**. It can connect to the GitHub repository, create a private-to-share preview URL for each pull request, and automatically update the production website after an approved change reaches the production branch. A custom domain can be connected later.
+**Cloudflare Pages is the selected hosting provider.** GitHub stores the website source and its change history. After you connect this repository to Cloudflare Pages, Cloudflare will watch GitHub and build the website for you.
 
-Before the first deployment, Codex will update `astro.config.mjs`. It still contains the original theme author's GitHub Pages address and `/astro-darkness` path. Those values are intentionally preserved until the host and final domain are chosen; they are correct for the original demo but not for the future personal website.
+Use these Cloudflare Pages build settings when the project is connected:
 
-The repository also contains the original theme's GitHub Pages workflow. It is not the planned publishing method and does not publish changes from the current Codex branch.
+| Setting | Value |
+| --- | --- |
+| Production branch | `main` |
+| Build command | `npm run build` |
+| Build output directory | `dist` |
+| Node.js version | `22` or newer |
+
+The site is a static Astro build, so it does not need a Cloudflare server adapter or server-side runtime.
+
+The first Cloudflare Pages project should use the name `personal-website`. Cloudflare normally gives that project the free address `https://personal-website.pages.dev`. The Astro configuration uses that address by default and serves the website at the root, with no `/astro-darkness` path.
+
+No Cloudflare project or deployment was created during this preparation phase.
+
+## How future changes are deployed
+
+Once GitHub and Cloudflare Pages are connected:
+
+- A new pull request creates a Cloudflare preview deployment. It does not replace the public website.
+- Updating the pull request automatically updates its preview.
+- Merging an approved pull request into `main` starts a production deployment.
+- Cloudflare publishes the new `dist` build when that production build succeeds.
+- If a build fails, Cloudflare keeps the previous successful production version online.
+
+This means GitHub's `main` branch is the approved source for the public website, while pull-request branches are safe review areas.
+
+## How to connect a custom domain later
+
+The free `pages.dev` address can be used for as long as you want. A custom domain can be added later without redesigning the website:
+
+1. Open the project in the Cloudflare dashboard.
+2. Choose **Custom domains**, then **Set up a custom domain**.
+3. Enter the domain or subdomain you want to use.
+4. Follow Cloudflare's DNS instructions. Cloudflare manages this automatically when the domain already uses Cloudflare DNS.
+5. Set a Cloudflare Pages environment variable named `SITE_URL` to the full preferred address, such as `https://www.example.com`, for both production and preview builds.
+6. Trigger a new deployment so the sitemap uses the custom address.
+
+The `SITE_URL` setting changes generated absolute URLs, such as the sitemap. Navigation and assets remain rooted correctly without code changes.
 
 ## How to request future changes
 
@@ -73,7 +110,10 @@ For visual work, ask Codex to show a browser preview before the change is finali
 
 ## Technical baseline verified on October 29, 2026
 
-- The repository matches the current upstream Darkness 1.1.0 source commit.
+- Phase 1 is present on the GitHub `main` branch.
+- The repository matches the current upstream Darkness 1.1.0 source plus the project documentation.
+- The site is configured for a root-level Cloudflare Pages deployment.
+- The default public address is `https://personal-website.pages.dev`; a later `SITE_URL` environment variable can replace it.
 - Dependencies install successfully from the npm lockfile in Codex Cloud.
 - Astro and TypeScript report zero errors, warnings, or hints.
 - The production build generates the Home, About, Blog, Projects, and three sample article pages successfully.

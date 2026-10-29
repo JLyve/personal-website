@@ -4,8 +4,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://kpab.github.io',
-  base: '/astro-darkness',
+  site: process.env.SITE_URL ?? 'https://personal-website.pages.dev',
   trailingSlash: 'always',
   integrations: [mdx(), sitemap()],
 });
