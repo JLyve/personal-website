@@ -67,9 +67,9 @@ Use these Cloudflare Pages build settings when the project is connected:
 
 The site is a static Astro build, so it does not need a Cloudflare server adapter or server-side runtime.
 
-The first Cloudflare Pages project should use the name `personal-website`. Cloudflare normally gives that project the free address `https://personal-website.pages.dev`. The Astro configuration uses that address by default and serves the website at the root, with no `/astro-darkness` path.
+The website is deployed at `https://personal-website-alg.pages.dev`. The Astro configuration uses that production address for canonical links and the sitemap, and serves the website at the root with no `/astro-darkness` path.
 
-No Cloudflare project or deployment was created during this preparation phase.
+Cloudflare Pages is connected to the GitHub repository and the first production deployment is live.
 
 ## How future changes are deployed
 
@@ -113,7 +113,8 @@ For visual work, ask Codex to show a browser preview before the change is finali
 - Phase 1 is present on the GitHub `main` branch.
 - The repository matches the current upstream Darkness 1.1.0 source plus the project documentation.
 - The site is configured for a root-level Cloudflare Pages deployment.
-- The default public address is `https://personal-website.pages.dev`; a later `SITE_URL` environment variable can replace it.
+- The production address is `https://personal-website-alg.pages.dev`; a later `SITE_URL` environment variable can replace it when a custom domain is connected.
+- Every generated page includes a canonical URL on that production address, and the sitemap uses the same address.
 - Dependencies install successfully from the npm lockfile in Codex Cloud.
 - Astro and TypeScript report zero errors, warnings, or hints.
 - The production build generates the Home, About, Blog, Projects, and three sample article pages successfully.

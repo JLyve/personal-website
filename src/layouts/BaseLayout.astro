@@ -13,6 +13,7 @@ const {
   title = 'Darkness - Dark Theme',
   description = 'An intense motion-filled dark theme Astro site'
 } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
@@ -21,6 +22,7 @@ const {
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
+    <link rel="canonical" href={canonicalURL} />
     <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
     <meta name="generator" content={Astro.generator} />
     <!-- Google Fonts: Space Grotesk + DM Sans -->
