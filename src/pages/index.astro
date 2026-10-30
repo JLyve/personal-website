@@ -10,23 +10,16 @@ const previewCards = [
   {
     kind: 'Preview placement · Note',
     title: 'An approved Note will live here',
-    description: 'A future handpicked Note can use this space once its title, summary, and publication status are approved.',
+    description: 'A future handpicked Note can use this space after approval. The linked index still contains original Darkness demo articles.',
     href: `${base}blog/`,
-    action: 'Preview the Notes route',
+    action: 'Audit the current Notes route',
   },
   {
     kind: 'Preview placement · Project',
     title: 'A real project will take this place',
-    description: 'This layout reserves room for truthful project context without inventing outcomes, clients, or accomplishments.',
+    description: 'This layout reserves room for truthful project context. The linked index still contains original Darkness demo projects.',
     href: `${base}projects/`,
-    action: 'View the Projects route',
-  },
-  {
-    kind: 'Preview placement · Introduction',
-    title: 'The personal context comes later',
-    description: 'Approved introductory copy can connect the collection to its owner. No biography or personal claims are assumed here.',
-    href: `${base}about/`,
-    action: 'View the About route',
+    action: 'Audit the current Projects route',
   },
 ];
 ---
@@ -48,7 +41,7 @@ const previewCards = [
           <h2 id="selected-title">Selected Curiosities</h2>
         </div>
         <p class="section-intro">
-          <strong>Preview only:</strong> no owner-authored Notes, projects, or private ideas are included here. These explicit placeholders test the editorial rhythm.
+          <strong>Preview only:</strong> these two featured placements test the editorial rhythm. No owner-authored Notes, projects, or private ideas are included.
         </p>
       </div>
 
@@ -57,7 +50,7 @@ const previewCards = [
       </div>
     </section>
 
-    <section class="paths section-shell" id="reading" aria-labelledby="paths-title">
+    <section class="paths section-shell" id="paths" aria-labelledby="paths-title">
       <div class="paths-copy">
         <p class="section-kicker">Provisional wayfinding</p>
         <h2 id="paths-title">Paths through the collection</h2>
@@ -81,10 +74,10 @@ const previewCards = [
             <path d="M4 4h8v8M12 4 4.5 11.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
         </a>
-        <div class="path-placeholder" aria-label="Reading path is reserved for a future approved destination">
+        <div class="path-placeholder" id="reading" aria-label="Reading path is reserved for future approved entries">
           <span class="path-number" aria-hidden="true">03</span>
           <span>Reading &amp; Books</span>
-          <span class="path-status">route to be decided</span>
+          <span class="path-status">approved entries pending</span>
         </div>
       </div>
     </section>
@@ -100,8 +93,8 @@ const previewCards = [
           This area is reserved for an approved introduction and a grounded bridge to meaningful work. The preview deliberately makes no biographical or professional claims.
         </p>
         <div class="context-links">
-          <a href={`${base}about/`}>View the current About route <span aria-hidden="true">→</span></a>
-          <a href={`${base}projects/`}>View the current Projects route <span aria-hidden="true">→</span></a>
+          <a href={`${base}about/`}>Audit the legacy About route <span aria-hidden="true">→</span></a>
+          <a href={`${base}projects/`}>Audit the legacy Projects route <span aria-hidden="true">→</span></a>
         </div>
       </div>
     </section>
@@ -178,8 +171,8 @@ const previewCards = [
 
   .card-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0.9rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
   }
 
   .paths {
@@ -187,7 +180,10 @@ const previewCards = [
     display: grid;
     grid-template-columns: minmax(260px, 0.75fr) minmax(360px, 1.25fr);
     gap: clamp(3rem, 10vw, 8rem);
-    scroll-margin-top: 6rem;
+  }
+
+  #reading {
+    scroll-margin-top: 7rem;
   }
 
   .paths-copy h2 {
@@ -255,7 +251,7 @@ const previewCards = [
   .context {
     padding: clamp(4.5rem, 10vw, 8rem) clamp(1.3rem, 5vw, 4.5rem);
     display: grid;
-    grid-template-columns: minmax(180px, 0.55fr) minmax(0, 1fr);
+    grid-template-columns: minmax(110px, 150px) minmax(0, 1fr);
     align-items: center;
     gap: clamp(2.5rem, 8vw, 7rem);
     border: 1px solid rgba(205, 170, 112, 0.15);
@@ -263,11 +259,12 @@ const previewCards = [
   }
 
   .context-mark {
+    width: min(100%, 140px);
     aspect-ratio: 1;
     display: grid;
     place-items: center;
     position: relative;
-    border: 1px solid rgba(205, 170, 112, 0.14);
+    border: 1px solid rgba(205, 170, 112, 0.08);
     border-radius: 50%;
   }
 
@@ -276,7 +273,7 @@ const previewCards = [
   .context-mark span {
     content: '';
     position: absolute;
-    border: 1px solid rgba(205, 170, 112, 0.12);
+    border: 1px solid rgba(205, 170, 112, 0.07);
   }
 
   .context-mark::before {
@@ -293,7 +290,7 @@ const previewCards = [
   .context-mark span {
     width: 5px;
     height: 5px;
-    border-color: rgba(221, 185, 126, 0.65);
+    border-color: rgba(221, 185, 126, 0.38);
     border-radius: 50%;
     box-shadow: 0 0 18px rgba(221, 185, 126, 0.24);
   }
@@ -373,10 +370,6 @@ const previewCards = [
       margin-left: 0;
     }
 
-    .card-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
     .paths {
       gap: 2.75rem;
     }
@@ -431,7 +424,7 @@ const previewCards = [
     }
 
     .context-mark {
-      width: 110px;
+      width: 78px;
     }
 
     .site-footer {

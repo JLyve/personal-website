@@ -33,8 +33,8 @@ const { kind, title, description, href, action } = Astro.props;
   }
 
   .editorial-card a {
-    min-height: 310px;
-    padding: clamp(1.4rem, 3vw, 2rem);
+    min-height: 330px;
+    padding: clamp(1.5rem, 3.4vw, 2.5rem);
     display: flex;
     flex-direction: column;
     position: relative;
@@ -59,7 +59,7 @@ const { kind, title, description, href, action } = Astro.props;
   }
 
   .kind {
-    margin-bottom: 2.6rem;
+    margin-bottom: 3rem;
     color: #bc9b6b;
     font-size: 0.65rem;
     font-weight: 600;
@@ -68,11 +68,11 @@ const { kind, title, description, href, action } = Astro.props;
   }
 
   h3 {
-    max-width: 13ch;
+    max-width: 16ch;
     margin: 0;
     color: var(--color-text);
     font-family: 'Newsreader', Georgia, serif;
-    font-size: clamp(1.75rem, 3.2vw, 2.25rem);
+    font-size: clamp(1.9rem, 3.5vw, 2.75rem);
     font-weight: 400;
     letter-spacing: -0.025em;
     line-height: 1.08;
@@ -110,12 +110,12 @@ const { kind, title, description, href, action } = Astro.props;
   }
 
   .geometry {
-    width: 120px;
-    height: 120px;
+    width: 82px;
+    height: 82px;
     position: absolute;
-    right: -48px;
-    bottom: -45px;
-    border: 1px solid rgba(205, 170, 112, 0.06);
+    right: -34px;
+    bottom: -31px;
+    border: 1px solid rgba(205, 170, 112, 0.035);
     border-radius: 50%;
     transition: border-color 220ms ease, transform 500ms ease;
   }
@@ -124,13 +124,13 @@ const { kind, title, description, href, action } = Astro.props;
   .geometry::after {
     content: '';
     position: absolute;
-    inset: 28px;
-    border: 1px solid rgba(205, 170, 112, 0.045);
+    inset: 20px;
+    border: 1px solid rgba(205, 170, 112, 0.028);
     transform: rotate(45deg);
   }
 
   .geometry::after {
-    inset: 45px;
+    inset: 32px;
     border-radius: 50%;
   }
 
@@ -149,13 +149,13 @@ const { kind, title, description, href, action } = Astro.props;
 
   .editorial-card a:hover .geometry,
   .editorial-card a:focus-visible .geometry {
-    border-color: rgba(205, 170, 112, 0.2);
+    border-color: rgba(205, 170, 112, 0.11);
     transform: rotate(12deg) scale(1.04);
   }
 
   @media (max-width: 720px) {
     .editorial-card a {
-      min-height: 280px;
+      min-height: 290px;
     }
 
     .kind {
