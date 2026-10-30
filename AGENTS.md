@@ -3,7 +3,7 @@
 Read `docs/CREATIVE_BRIEF.md`, `docs/EDITORIAL_GUIDE.md`, and `docs/PROJECT_GUIDE.md` before substantial changes. These are the project’s durable specifications. Treat design examples and sample copy as proposals, not approved published content.
 
 ## Roles and scope
-- Codex implements and tests website changes in this Astro repository. ChatGPT is the thinking, creative-direction, and editorial partner. Notion is the planned private source of truth for idea capture and drafts; it is not yet configured as an integrated publishing system.
+- Codex implements and tests website changes in this Astro repository. ChatGPT is the thinking, creative-direction, and editorial partner. The private Notion Idea Inbox has been created and connected to ChatGPT (confirmed by the owner on 2026-10-30). It is the private source of truth for idea capture and drafts, but there is no automatic publishing or synchronization pipeline to Codex, GitHub, or Cloudflare. Never fetch or commit private Inbox material without explicit authorization.
 - The owner is a nondeveloper working through Codex Cloud on a Mac. Do not require Terminal, local Node.js, VS Code, or manual coding.
 - Preserve Darkness's MIT license/attribution and its working Astro foundations. Prefer simple, maintainable, accessible, fast static output over a complex app.
 - Start from the latest `main`. Make scoped changes in a separate branch and pull request. Never merge, publish an editorial Note, connect a new service, spend money, or introduce large design changes without explicit approval. Explain the proposed effect in plain English.
