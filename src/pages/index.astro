@@ -10,16 +10,16 @@ const previewCards = [
   {
     kind: 'Preview placement · Note',
     title: 'An approved Note will live here',
-    description: 'A future handpicked Note can use this space after approval. The linked index still contains original Darkness demo articles.',
+    description: 'A future handpicked Note can use this space after its title, summary, and publication details are approved.',
     href: `${base}blog/`,
-    action: 'Audit the current Notes route',
+    action: 'Preview the Notes structure',
   },
   {
     kind: 'Preview placement · Project',
     title: 'A real project will take this place',
-    description: 'This layout reserves room for truthful project context. The linked index still contains original Darkness demo projects.',
+    description: 'This layout reserves room for truthful project context without inventing outcomes, clients, or accomplishments.',
     href: `${base}projects/`,
-    action: 'Audit the current Projects route',
+    action: 'Preview the Projects structure',
   },
 ];
 ---
@@ -93,8 +93,8 @@ const previewCards = [
           This area is reserved for an approved introduction and a grounded bridge to meaningful work. The preview deliberately makes no biographical or professional claims.
         </p>
         <div class="context-links">
-          <a href={`${base}about/`}>Audit the legacy About route <span aria-hidden="true">→</span></a>
-          <a href={`${base}projects/`}>Audit the legacy Projects route <span aria-hidden="true">→</span></a>
+          <a href={`${base}about/`}>Preview the About structure <span aria-hidden="true">→</span></a>
+          <a href={`${base}projects/`}>Preview the Projects structure <span aria-hidden="true">→</span></a>
         </div>
       </div>
     </section>
@@ -125,7 +125,7 @@ const previewCards = [
   .section-kicker {
     margin: 0 0 0.8rem;
     color: #bd9966;
-    font-size: 0.66rem;
+    font-size: 0.72rem;
     font-weight: 600;
     letter-spacing: 0.17em;
     text-transform: uppercase;
@@ -143,13 +143,13 @@ const previewCards = [
   }
 
   .selected {
-    padding: clamp(4.5rem, 9vw, 7.5rem) 0;
+    padding: clamp(4rem, 7vw, 6rem) 0;
     border-top: 1px solid rgba(205, 170, 112, 0.15);
     scroll-margin-top: 6rem;
   }
 
   .section-heading {
-    margin-bottom: clamp(2.25rem, 5vw, 4rem);
+    margin-bottom: clamp(2.25rem, 4vw, 3.5rem);
     display: grid;
     grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
     align-items: end;
@@ -160,7 +160,7 @@ const previewCards = [
     max-width: 45ch;
     margin: 0 0 0.25rem auto;
     color: var(--color-text-dim);
-    font-size: 0.88rem;
+    font-size: 0.94rem;
     line-height: 1.72;
   }
 
@@ -176,7 +176,7 @@ const previewCards = [
   }
 
   .paths {
-    padding: clamp(5.5rem, 12vw, 10rem) 0;
+    padding: clamp(4.75rem, 8vw, 7rem) 0;
     display: grid;
     grid-template-columns: minmax(260px, 0.75fr) minmax(360px, 1.25fr);
     gap: clamp(3rem, 10vw, 8rem);
@@ -194,7 +194,7 @@ const previewCards = [
     max-width: 43ch;
     margin: 1.5rem 0 0;
     color: var(--color-text-dim);
-    font-size: 0.91rem;
+    font-size: 0.97rem;
     line-height: 1.75;
   }
 
@@ -232,7 +232,7 @@ const previewCards = [
   .path-status {
     color: #9e8768;
     font-family: 'Manrope', system-ui, sans-serif;
-    font-size: 0.6rem;
+    font-size: 0.65rem;
     font-weight: 600;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -249,7 +249,7 @@ const previewCards = [
   }
 
   .context {
-    padding: clamp(4.5rem, 10vw, 8rem) clamp(1.3rem, 5vw, 4.5rem);
+    padding: clamp(4rem, 7vw, 6.5rem) clamp(1.3rem, 5vw, 4.5rem);
     display: grid;
     grid-template-columns: minmax(110px, 150px) minmax(0, 1fr);
     align-items: center;
@@ -304,7 +304,7 @@ const previewCards = [
     max-width: 56ch;
     margin: 1.4rem 0 0;
     color: var(--color-text-dim);
-    font-size: 0.92rem;
+    font-size: 0.97rem;
     line-height: 1.75;
   }
 
@@ -321,7 +321,7 @@ const previewCards = [
     align-items: center;
     gap: 0.55rem;
     color: #d7b77f;
-    font-size: 0.79rem;
+    font-size: 0.84rem;
     font-weight: 600;
     text-decoration-color: rgba(215, 183, 127, 0.45);
     text-underline-offset: 0.28rem;
@@ -333,7 +333,7 @@ const previewCards = [
   }
 
   .site-footer {
-    margin-top: clamp(5rem, 11vw, 9rem);
+    margin-top: clamp(4.5rem, 8vw, 6.5rem);
     padding: 2rem 0 2.5rem;
     display: flex;
     align-items: flex-end;
@@ -341,7 +341,7 @@ const previewCards = [
     gap: 2rem;
     border-top: 1px solid rgba(205, 170, 112, 0.15);
     color: #9f9588;
-    font-size: 0.7rem;
+    font-size: 0.76rem;
     line-height: 1.65;
   }
 

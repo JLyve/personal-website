@@ -1,6 +1,6 @@
 # Personal Website Project Guide
 
-This repository is the starting point for a personal website built from the free **Darkness** Astro theme by [kpab](https://github.com/kpab/astro-darkness). The original design and sample content are still in place so they can be used as a safe visual baseline while the site is customized.
+This repository is the starting point for a personal website built from the free **Darkness** Astro theme by [kpab](https://github.com/kpab/astro-darkness). The Astro foundations remain in place while the public-facing design is adapted to The Curiosity Engine direction. The original demo articles, projects, and biography have been removed from generated pages rather than presented as owner content.
 
 The theme's MIT license and original attribution are preserved in [`LICENSE`](../LICENSE) and the main [`README.md`](../README.md).
 
@@ -8,7 +8,7 @@ The theme's MIT license and original attribution are preserved in [`LICENSE`](..
 
 - **Astro 6** builds the pages into a fast, static website.
 - **TypeScript** helps catch technical mistakes before publishing.
-- **Three.js** creates the animated particle background.
+- **Three.js** remains available for the preserved Darkness particle background, while the new editorial pages use lighter CSS-only atmosphere.
 - **Markdown and MDX** make it possible to write articles and project entries as simple text files.
 - **Node.js 22 or newer** and **npm** install and run the development tools inside Codex Cloud. Nothing needs to be installed on your Mac.
 
@@ -18,9 +18,9 @@ The exact dependency versions are recorded in `package-lock.json`. Codex uses th
 
 | Location | What it contains |
 | --- | --- |
-| `src/pages/` | The main Home, About, Blog, and Projects pages. |
-| `src/content/blog/` | Blog articles written in Markdown. |
-| `src/content/projects/` | Project entries written in Markdown. |
+| `src/pages/` | The main Home, About, Notes (technical `/blog/` route), and Projects pages. |
+| `src/content/blog/` | Approved future Notes written in Markdown; currently empty. |
+| `src/content/projects/` | Approved future project entries written in Markdown; currently empty. |
 | `src/components/` | Reusable pieces such as navigation, cards, the hero area, and the animated background. |
 | `src/layouts/` | Shared page structures for normal pages and blog articles. |
 | `src/styles/global.css` | The site's colors, typography, spacing, and shared visual rules. |
@@ -114,14 +114,14 @@ You never need to write code or use Terminal. Tell Codex:
 
 For visual work, ask Codex to show a browser preview before the change is finalized. You can give feedback in plain language, such as "make this warmer," "reduce the motion," or "show me how this looks on a phone."
 
-## Technical baseline verified on October 29, 2026
+## Technical baseline verified on October 30, 2026
 
-- Phase 1 is present on the GitHub `main` branch.
-- The repository matches the current upstream Darkness 1.1.0 source plus the project documentation.
+- Phase 2 is being reviewed in a pull request and has not been merged to `main`.
+- The repository retains the Darkness 1.1.0 Astro foundations, MIT license, attribution, and original animation components.
 - The site is configured for a root-level Cloudflare Pages deployment.
 - The production address is `https://personal-website-alg.pages.dev`; a later `SITE_URL` environment variable can replace it when a custom domain is connected.
 - Every generated page includes a canonical URL on that production address, and the sitemap uses the same address.
 - Dependencies install successfully from the npm lockfile in Codex Cloud.
 - Astro and TypeScript report zero errors, warnings, or hints.
-- The production build generates the Home, About, Blog, Projects, and three sample article pages successfully.
-- The original design, sample content, animations, license, and attribution remain unchanged.
+- The production build generates the Home, About, Notes index, and Projects pages successfully.
+- Notes, Projects, and About use clearly provisional empty states. The original Darkness sample articles, projects, and biography are not generated or included in the sitemap.
