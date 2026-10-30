@@ -1,5 +1,5 @@
 # Notes — Editorial Guide & Voice-First Workflow
-Status: agreed workflow design; Notion Idea Inbox is **not yet created or connected**. Updated 2026-10-29.
+Status: agreed voice-first workflow; the private Notion Idea Inbox is **created and connected to ChatGPT** (owner-confirmed 2026-10-30). Exact database properties and automated integrations have not been verified. Updated 2026-10-30.
 
 ## Editorial promise
 **Think freely. Question thoughtfully. Publish intentionally.**
@@ -27,10 +27,10 @@ All can be conversational and well edited. Content length and metadata should ma
 6. **Handoff:** only approved copy moves to Codex as Markdown/MDX or otherwise explicitly approved content. Codex prepares Astro frontmatter, truthful SEO metadata/schema, optional imagery, internal links and a Cloudflare preview PR.
 7. **Publish:** user reviews live preview and explicitly approves merging to `main`. Cloudflare deploys approved merges. No auto-publication.
 
-## Idea Inbox — conceptual Notion model
-Private source of truth for ideas, unedited voice transcript/source links, summaries, open questions, drafts and editorial progress. ChatGPT is the conversation layer, Notion the storage layer, Codex the website implementation layer, and GitHub source control. They do **not** automatically sync yet.
+## Idea Inbox — connected private workspace
+The private Notion Idea Inbox is created and connected to ChatGPT. It is the source of truth for ideas, unedited voice transcript/source links, summaries, open questions, drafts and editorial progress. ChatGPT is the conversation layer, Notion the storage layer, Codex the website implementation layer, and GitHub source control. **Connection does not imply automatic synchronization or publication:** transfer to Codex/GitHub remains an intentional, approved handoff.
 
-One Notion database, minimal fields:
+Proposed minimal fields (confirm against the actual connected database before assuming its properties match):
 - **Idea** (title)
 - **Status** (Captured, Exploring, Drafting, Review, Published, optional Parked)
 - **Topics** (multi-select)
@@ -55,4 +55,4 @@ For every publicly approved Note: accurate title/summary, legible slug, author a
 The current Astro theme may use `src/content/blog/` and existing routes. Public label “Notes” should not force an unreviewed URL/collection migration. Decide URL scheme and redirects separately. Draft material must not appear in generated production pages, sitemap, site search, or feeds. Repository files and deployment are public; privacy belongs in Notion/appropriate private tools until editorial approval.
 
 ## Deferred choices
-Notion database implementation and integration, potential Wispr Flow retrieval automation, storage location for raw audio, CMS, publishing automation, versioned draft collaboration, future topical taxonomy, first real Notes, final site copy. Do not build these without approval.
+Verification or refinement of the existing Notion database fields/permissions, potential Wispr Flow retrieval automation, storage location for raw audio, CMS, publishing automation, versioned draft collaboration, future topical taxonomy, first real Notes, final site copy. Do not build these without approval.
