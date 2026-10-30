@@ -52,6 +52,12 @@ The normal review process is:
 
 Codex will not merge a pull request or publish a change without your approval.
 
+## How the private Notion Idea Inbox fits in
+
+The private Notion Idea Inbox is created and connected to ChatGPT. It can support private idea capture, discussion, and drafting, but that connection does **not** automatically synchronize or publish anything to Codex, GitHub, Astro, Cloudflare Pages, or the public website.
+
+Website content still moves through an intentional handoff: the owner approves specific copy for Codex, Codex prepares it on a review branch, and the owner reviews the pull request and Cloudflare preview before any merge. Private Inbox material must not be fetched or committed to this public repository without explicit authorization.
+
 ## How GitHub and Cloudflare Pages work together
 
 **Cloudflare Pages is the selected hosting provider.** GitHub stores the website source and its change history. After you connect this repository to Cloudflare Pages, Cloudflare will watch GitHub and build the website for you.

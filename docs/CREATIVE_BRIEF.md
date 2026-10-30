@@ -1,5 +1,5 @@
 # Personal Website — Creative & Strategy Brief
-Status: approved direction for exploration, not a pixel-perfect design specification. Updated 2026-10-29.
+Status: approved creative direction and homepage approach for a **preview implementation**, not a final pixel-perfect specification or approval of public copy. Updated 2026-10-30.
 
 ## Purpose and positioning
 A personal collection of ideas, experiments, and things worth thinking about. A curious person's home for marketing/strategy, books/reading, philosophy, creativity, personal reflection, and future interests. Not a conventional résumé site, corporate marketing funnel, or narrowly limited subject blog. Working concept: “The Curiosity Engine”; working hero thought: “Curiosity is a way of life.” Neither is approved final branding or final published copy.
@@ -37,6 +37,42 @@ Content priority: reader clarity first, editorial curation second, magical rewar
 - Do not imitate copyrighted fictional franchises or introduce literal fantasy-world branding. Avoid excessive particles, giant orbs, floating books, elaborate collages, and decorative imagery.
 - Preserve motion preferences: reduced motion, keyboard activation, touch behavior and reasonable load/performance budget. Darkness particle system may be adapted selectively, not blindly retained at full intensity.
 
+## Homepage design direction for the first Codex preview (agreed 2026-10-30)
+These are approved **design directions for a reviewable preview**, not permission to merge, deploy, publish sample content, or lock the final words. The visual mockups were exploratory. The actual responsive Astro implementation must be reviewed before design sign-off.
+
+### Positioning and personality
+- A free thinker's commonplace book: intellectually curious, welcoming, conversational, a little mischievous. Thoughtful ideas, good books, creative strategy, unusual connections, people, places, and things.
+- Rough tonal balance: **70% literary/storybook whimsy, 30% subtle alchemical influence**. Alchemy is a hidden vocabulary of little geometric marks, not occult branding or literal fantasy imagery.
+- A visitor should first notice the ideas and editorial quality; tiny moments of magic reward further attention.
+
+### Visual hierarchy and layout
+- **Mobile-first:** design/test at 360px, 390px, and 430px, then adapt gracefully to tablet and desktop. Avoid overflowing headlines, cramped touch targets, and unexpected horizontal scrolling.
+- Desktop: understated identity plus a conventional top navigation for **Notes · Projects · Reading · About**. Do not duplicate these routes with a competing vertical topic navigation in the hero.
+- Mobile: a clearly labeled, keyboard-operable **Menu** with the same routes; generous, readable tap targets (aim for at least 44×44 CSS px). Keep navigation discoverable without creating a mobile navigation maze.
+- Hero: ample breathing room, a legible introductory promise, and one clear route into content. The CTA **must not collide with** the handwritten marginal note. Keep the note below the CTA in normal document flow on mobile, with meaningful vertical spacing. Minimize wasted hero height so Selected Curiosities appears soon.
+- Below hero: deliberately curated typography-led **Selected Curiosities** cards, a few useful topics/interest routes, credible projects/experiments, and an understated About introduction. Cards should look complete without photos.
+- Maintain strong scannability and legible article summaries; use editorial structure rather than filler decorations. Every section must serve the professional evaluator, curious reader, or fellow explorer JTBD.
+
+### Typography direction
+- **Newsreader**: thin, literary serif for prominent headings and card titles.
+- **Manrope**: clear, modern body text and UI/navigation.
+- **Fraunces Italic**: occasional expressive italic emphasis (for example, in a hero phrase). Use sparingly; it should remain special.
+- **Caveat**: small, rare handwritten marginalia. Keep major headings, navigational links, labels, and CTAs straight and aligned; do not angle key elements.
+- Font weights, exact sizes, loading strategy, fallbacks, and contrast must be validated in the real responsive build, not copied blindly from mockups.
+
+### Imagery, color and enchantment
+- Rich espresso/charcoal surfaces, warm cream text, restrained antique gold/copper accents. Exact color values are still subject to implementation review.
+- Typography-first content **Option A** was chosen. Avoid filling the site with decorative AI-generated coffee-table photos. Real photography, book covers, project screenshots, original charts, or other relevant images are optional when they convey actual meaning and are approved.
+- Quiet ambient stars, dots, imperfect hand-drawn marks, and near-transparent geometric/celestial linework may drift **very slowly in whitespace**, never across readable text. Keep alchemical iconography sparse, not forced or dominant.
+- Tiny sparkle/glint reactions can reward hover, focus, and tap; optional hidden discoveries can appear occasionally. Do not gate links or important information behind surprises. Avoid visual noise, janky animations, or excessive particle effects.
+- Respect reduced-motion preferences, touch and keyboard input, contrast, page speed, and accessible semantics. Keep a static/fallback state that is attractive without animation.
+
+### Copy and publication boundary
+- The homepage headline **“Good questions have a way of wandering.”**, highlighted word *wandering*, CTA **“Explore the collection”**, title **“Selected Curiosities”**, all illustrative article titles, and section/body text remain **provisional**. They are useful layout examples, not approved final publication copy.
+- The owner will refine messaging, personal introduction, and content inventory in a separate editorial review. Do not invent lived experiences, published Notes, client outcomes, or personal claims to fill gaps.
+- Codex may use **clearly flagged mockup/provisional text only in a non-production review branch or preview**; keep unfinished sample Notes and private drafts out of production, search, feeds, and `main` until specifically approved.
+- Preserve existing Darkness functionality and MIT attribution where applicable. Codex works on its own branch, runs checks/build, provides desktop/mobile review evidence, and opens a PR **without merging**. An approved merge to `main` may publish immediately through Cloudflare.
+
 ## Editorial presentation
 Notes index is text-first, approachable, filterable by useful topics, with curated features and clear format labels if helpful. Distinct adaptive reading experiences:
 - **Field Note:** short, book-like, minimal layout.
@@ -52,7 +88,7 @@ Potential indicators: qualified professional interest, engaging related-content 
 Astro's static pages should be crawlable and fast. Verify unique titles/descriptions, canonical URLs, sitemap, robots instructions, social preview metadata, accessible images, internal links, truthful author and article fields. Implement Person/WebSite on appropriate pages, ProfilePage for About when eligible, BlogPosting for published Notes as appropriate; BreadcrumbList only when real hierarchy supports it. Structured data is descriptive, not guaranteed search ranking/rich results. Schema and public copy must reflect visible/true facts. Avoid ranking-driven content padding.
 
 ## Open decisions (do not guess)
-Final site name, personal logo/identity treatment, fonts and exact palette, actual About copy, content inventory, final hero copy, visual magic interaction prototypes, final page-level layouts and taxonomy, email/contact mechanism, future custom domain. Explore with visual prototypes before implementation.
+Final site name and logo treatment; exact palette and font-loading/performance decisions; approved About copy, content inventory, hero and card wording; final layouts beyond the homepage, taxonomy, and contact mechanism; custom domain. The homepage typography, mobile-first structure, typography-led cards, and restrained magical interactions are chosen for **preview implementation**, but remain subject to real-site review and revision.
 
 ## Links
 GitHub: https://github.com/JLyve/personal-website
