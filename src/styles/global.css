@@ -47,6 +47,40 @@ body {
   overflow-x: hidden;
 }
 
+body.editorial-page {
+  --color-bg-dark: #17130f;
+  --color-bg-darker: #100d0a;
+  --color-bg-card: #211a14;
+  --color-primary: #c8a36a;
+  --color-accent-purple: #b48654;
+  --color-accent-pink: #d1ad78;
+  --color-accent-blue: #b98a54;
+  --color-accent-cyan: #d2b88e;
+  --color-text: #f4ebdc;
+  --color-text-dim: #c5b9a8;
+  --color-border: rgba(205, 170, 112, 0.28);
+  --color-shadow: rgba(181, 134, 78, 0.16);
+  --font-heading: 'Newsreader', Georgia, serif;
+  --font-body: 'Manrope', system-ui, sans-serif;
+  background: var(--color-bg-dark);
+}
+
+body.editorial-page::before {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(circle at 13% 18%, rgba(166, 113, 63, 0.09), transparent 29rem),
+    radial-gradient(circle at 88% 62%, rgba(205, 170, 112, 0.055), transparent 32rem),
+    linear-gradient(145deg, #1b1611 0%, #14110e 55%, #1a140f 100%);
+  animation: none;
+}
+
+body.editorial-page .cursor-follower {
+  display: none;
+}
+
 /* Animated background gradient */
 body::before {
   content: '';
@@ -137,4 +171,23 @@ body::before {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: text-shimmer 3s linear infinite;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
 }
