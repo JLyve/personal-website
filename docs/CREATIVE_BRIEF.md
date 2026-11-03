@@ -48,7 +48,7 @@ Content priority: reader clarity first, editorial curation second, magical rewar
 
 ## Homepage design direction for the first Codex preview (agreed 2026-10-30)
 
-These are approved **design directions for a reviewable preview**, not permission to merge, deploy, publish sample content, or lock the final words. The visual mockups were exploratory. The actual responsive Astro implementation must be reviewed before design sign-off.
+These are approved **design directions for a reviewable preview**, not permission to merge to `main`, publish to production, publish sample content, or lock the final words. Preview deployments from pull requests are permitted for review. The visual mockups were exploratory. The actual responsive Astro implementation must be reviewed before design sign-off.
 
 ### Positioning and personality
 
