@@ -1,58 +1,183 @@
-# Notes — Editorial Guide & Voice-First Workflow
-Status: agreed voice-first workflow; the private Notion Idea Inbox is **created and connected to ChatGPT** (owner-confirmed 2026-10-30). Exact database properties and automated integrations have not been verified. Updated 2026-10-30.
+# Notes -- Editorial Guide & Voice-First Workflow
+
+Status: agreed voice-first workflow. The private Notion project workspace, Idea Inbox, Living Creative Direction, and Session Synopses are created and accessible to ChatGPT. The Idea Inbox fields were verified on 2026-11-03. There is no automatic synchronization or publication.
+
+Updated 2026-11-03.
 
 ## Editorial promise
+
 **Think freely. Question thoughtfully. Publish intentionally.**
-The site publishes *Notes*, not public sections titled Blogs or Writings. A Note may be a short observation, researched idea, experiment, philosophical reflection, or conversation-shaped exploration. The author is not required to identify as a professional writer.
+
+The site publishes *Notes*, not public sections titled Blogs or Writings.
+
+A Note may be a short observation, researched idea, experiment, philosophical reflection, or conversation-shaped exploration. The author is not required to identify as a professional writer.
 
 ### Voice and quality
-- Preserve the author's conversational style, dry humor, personal cadence, authentic vocabulary, uncertainty, and unusual connections. Improve clarity without flattening personality into generic “thought leadership.”
-- ChatGPT is a **collaborative editor and thinking partner first**: explore, question, challenge assumptions, find strong ideas, then draft when asked. Seek approval before adding major ideas.
-- Never invent lived experience, quotations, evidence, credentials, results, conviction or confidence. Separate source claims, personal interpretation and proposed framing. Distinguish philosophical/metaphysical belief from established research.
-- No padded intros, keyword stuffing, mandatory word counts, formulaic conclusions or forced CTAs. The reader's job and subject dictate form.
-- Editorial quality includes **voice fidelity** and **reader value**; either may require revision.
 
-## Notes formats (flexible, not quotas)
-**Field Note:** short, nearly book-like, sometimes a single sharp thought. Minimal subheads/media.
-**Deep Note:** substantive exploration with structure, researched context, alternative perspectives and citations where warranted.
-**Experiment:** real test or creation, question, what was tried, observed results and lessons, with evidence and visuals when helpful.
-All can be conversational and well edited. Content length and metadata should match the material, not arbitrary SEO thresholds.
+- Preserve the author's conversational style, dry humor, personal cadence, authentic vocabulary, uncertainty, and unusual connections.
+- Improve clarity without flattening personality into generic “thought leadership.”
+- ChatGPT is a collaborative editor and thinking partner first. Explore, question, challenge assumptions, find strong ideas, and then draft when asked.
+- Seek approval before adding major ideas or changing the author's intended meaning.
+- Never invent lived experience, quotations, evidence, credentials, results, conviction, or confidence.
+- Separate source claims, personal interpretation, and proposed framing.
+- Distinguish philosophical or metaphysical belief from established research.
+- Avoid padded introductions, keyword stuffing, mandatory word counts, formulaic conclusions, and forced calls to action.
+- Let the reader's job and subject determine the form.
+- Editorial quality includes voice fidelity and reader value. Either may require revision.
+
+## Notes formats
+
+These formats are flexible, not quotas.
+
+**Field Note:** Short, nearly book-like, and sometimes built around one sharp thought. Use minimal subheadings and media.
+
+**Deep Note:** A substantive exploration with structure, researched context, alternative perspectives, and citations when warranted.
+
+**Experiment:** A real test or creation that explains the question, what was tried, observed results, and lessons. Include evidence and visuals when helpful.
+
+All formats may be conversational and carefully edited. Content length and metadata should match the material rather than an arbitrary SEO target.
 
 ## Voice-first process
-1. **Speak/capture:** author dictates in ChatGPT or Wispr Flow. Raw recordings/transcripts may contain private material. Preserve accessible original text/link separately.
-2. **Thinking session:** ChatGPT identifies promising insights, assumptions, interesting tangents and useful questions; have a genuine discussion before defaulting to an article draft.
-3. **Save intentionally:** only when author requests (“Capture this idea”), create or propose a private Notion Idea Inbox entry. Never imply saving succeeded without connector confirmation.
-4. **Develop:** agree on a provisional central insight, reader JTBD, original contribution, weak points, evidence needs and likely form. Source interpretations and editorial additions should be labeled.
-5. **Draft and review:** organize prose, keep voice, fact-check material claims, assess reader value and search intent if warranted; author approves the precise final copy.
-6. **Handoff:** only approved copy moves to Codex as Markdown/MDX or otherwise explicitly approved content. Codex prepares Astro frontmatter, truthful SEO metadata/schema, optional imagery, internal links and a Cloudflare preview PR.
-7. **Publish:** user reviews live preview and explicitly approves merging to `main`. Cloudflare deploys approved merges. No auto-publication.
 
-## Idea Inbox — connected private workspace
-The private Notion Idea Inbox is created and connected to ChatGPT. It is the source of truth for ideas, unedited voice transcript/source links, summaries, open questions, drafts and editorial progress. ChatGPT is the conversation layer, Notion the storage layer, Codex the website implementation layer, and GitHub source control. **Connection does not imply automatic synchronization or publication:** transfer to Codex/GitHub remains an intentional, approved handoff.
+1. **Speak and capture:** The author dictates in ChatGPT or Wispr Flow. Raw recordings and transcripts may contain private material. Preserve an accessible original text or source link separately.
+2. **Thinking session:** ChatGPT identifies promising insights, assumptions, useful questions, and interesting tangents. Have a genuine discussion before defaulting to an article draft.
+3. **Save intentionally:** Create or propose an Idea Inbox entry only when the author explicitly asks to preserve an idea. Never imply that saving succeeded without connector confirmation.
+4. **Develop:** Agree on a provisional central insight, reader job, original contribution, weak points, evidence needs, and likely format. Label source interpretations and editorial additions.
+5. **Draft and review:** Organize the prose, protect the author's voice, check material facts, and assess reader value and search intent when warranted. The author approves the precise final copy.
+6. **Handoff:** Only approved copy moves to Codex as Markdown, MDX, or another explicitly approved format. Codex prepares Astro frontmatter, truthful SEO metadata and schema, optional imagery, internal links, and a Cloudflare preview pull request.
+7. **Publish:** The owner reviews the live preview and explicitly approves merging into `main`. Cloudflare deploys approved merges. There is no automatic publication.
 
-Proposed minimal fields (confirm against the actual connected database before assuming its properties match):
-- **Idea** (title)
-- **Status** (Captured, Exploring, Drafting, Review, Published, optional Parked)
-- **Topics** (multi-select)
-- **Format** (Field Note, Deep Note, Experiment, or undecided)
-- **Captured** (date)
+## Private Notion project workspace
 
-Inside each entry: source transcript or link, succinct summary, potentially valuable connections, JTBD hypothesis, editorial questions, drafts and approved copy when applicable. Original source should not be overwritten by edits. Do not store sensitive/private material in the **public GitHub repository**. Confirm whether Notion may store specific personal content before saving it.
+The private Notion workspace separates different kinds of information so they are not mistaken for one another.
+
+### Idea Inbox
+
+The Idea Inbox is the source of truth for:
+
+- captured ideas;
+- unedited source transcripts or links;
+- summaries;
+- open editorial questions;
+- drafts; and
+- editorial progress.
+
+It is not the source of truth for approved website design, behavior, public copy, or implementation requirements.
+
+### Living Creative Direction
+
+The Living Creative Direction document records the current private understanding of the website.
+
+It separates information into:
+
+- **Approved Decision:** Jason explicitly accepted the direction, making it eligible for promotion into the relevant GitHub project document.
+- **Working Direction:** The direction is promising and may guide further exploration, but it is not approved for implementation.
+- **Exploratory Idea:** The idea is worth discussing or testing, but it has not been accepted as a direction.
+
+An Approved Decision in Notion does not automatically update GitHub or authorize Codex to implement it. The relevant GitHub project document must be updated, or Jason must explicitly authorize the specific implementation.
+
+### Session Synopses
+
+Session Synopses preserve:
+
+- the conversation's arc;
+- who contributed each idea;
+- decisions and reframes;
+- meaningful quotes;
+- open threads; and
+- possible next steps.
+
+Synopses are historical records. They do not override the Living Creative Direction or the GitHub project documents.
+
+Create a synopsis only when the conversation contains a decision, reframe, resolved question, meaningful insight, or other information that would be costly to lose. Do not create one for routine questions or minor revisions.
+
+### Source hierarchy
+
+`docs/PROJECT_GUIDE.md` defines the full decision hierarchy.
+
+For editorial work:
+
+1. GitHub project documents govern approved implementation and publication.
+2. The Living Creative Direction governs the current private discussion.
+3. The Idea Inbox governs idea and draft status.
+4. Session Synopses explain how the thinking developed.
+
+If these sources conflict, surface the mismatch to Jason. Do not infer which source should win from its edit date.
+
+ChatGPT is the conversation layer, Notion is the private thinking and storage layer, Codex is the implementation layer, GitHub is the approved source and change history, and Cloudflare Pages is the publishing layer.
+
+Connection does not imply synchronization or publication. Every transfer remains intentional and approved.
+
+## Verified Idea Inbox fields
+
+The connected Idea Inbox currently uses:
+
+- **Idea:** Title
+- **Status:** Captured, Exploring, Drafting, Review, Published, or Parked
+- **Topics:** Marketing, Books, Philosophy, Creativity, Life, or Experiments
+- **Format:** Field Note, Deep Note, Experiment, or Undecided
+- **Captured:** Date
+
+Verify the live database again before depending on a property that may have changed.
+
+Inside each entry, preserve the source transcript or link separately from edited text. Add a concise summary, useful connections, a reader-job hypothesis, editorial questions, drafts, and approved copy when applicable.
+
+Do not overwrite original source material with later edits.
+
+Do not store sensitive or private material in the public GitHub repository. Confirm whether Notion is an appropriate location before saving highly sensitive personal content.
 
 ## Five-question editorial brief
-1. What is the **reader's job** (solve, understand, reflect, discover)?
-2. What is the **central promise** or useful idea?
-3. What is **distinctly the author's** (experience, perspective, original analysis)?
-4. What requires **evidence, correction or nuance**? Is the Note search-led or perspective-led?
-5. What **natural next step** or related thread might be helpful?
 
-Do this proportionally: a 200-word Field Note should not require a huge strategy document. It's fine for an idea to stay Parked indefinitely.
+1. What is the reader's job: solve, understand, reflect, or discover?
+2. What is the central promise or useful idea?
+3. What is distinctly the author's: experience, perspective, or original analysis?
+4. What requires evidence, correction, or nuance? Is the Note search-led or perspective-led?
+5. What natural next step or related thread might help the reader?
+
+Apply this proportionally. A 200-word Field Note should not require a large strategy document. An idea may remain Parked indefinitely.
 
 ## Publishing checklist
-For every publicly approved Note: accurate title/summary, legible slug, author attribution, initial publication date, updated date only for meaningful changes, approved text, appropriate topics and format, unique SEO title/meta description, correct canonical, sensible semantic headings, accessible links/optional images, relevant truthful BlogPosting structured data, and nonmisleading social metadata. Use no placeholder claims or fictional author quotes. Cite external sources in content where they add necessary support. Link related content when useful, not automatically.
+
+For every publicly approved Note, confirm:
+
+- accurate title and summary;
+- legible slug;
+- author attribution;
+- initial publication date;
+- updated date only for meaningful changes;
+- approved text;
+- appropriate topics and format;
+- unique SEO title and meta description;
+- correct canonical URL;
+- sensible semantic headings;
+- accessible links and optional images;
+- relevant, truthful `BlogPosting` structured data; and
+- nonmisleading social metadata.
+
+Do not use placeholder claims or fictional author quotations.
+
+Cite external sources when they provide necessary support. Link related content when useful, not automatically.
 
 ## Website implementation boundary
-The current Astro theme may use `src/content/blog/` and existing routes. Public label “Notes” should not force an unreviewed URL/collection migration. Decide URL scheme and redirects separately. Draft material must not appear in generated production pages, sitemap, site search, or feeds. Repository files and deployment are public; privacy belongs in Notion/appropriate private tools until editorial approval.
+
+The current Astro theme may use `src/content/blog/` and existing routes. The public label “Notes” should not force an unreviewed URL or collection migration. Decide the URL scheme and redirects separately.
+
+Draft material must not appear in generated production pages, the sitemap, site search, or feeds.
+
+Repository files and deployments are public. Private material belongs in Notion or another appropriate private tool until editorial approval.
 
 ## Deferred choices
-Verification or refinement of the existing Notion database fields/permissions, potential Wispr Flow retrieval automation, storage location for raw audio, CMS, publishing automation, versioned draft collaboration, future topical taxonomy, first real Notes, final site copy. Do not build these without approval.
+
+Deferred choices include:
+
+- a future review of Notion sharing and permission settings;
+- possible Wispr Flow retrieval automation;
+- storage for raw audio;
+- a possible content management system;
+- publishing automation;
+- versioned draft collaboration;
+- future topical taxonomy;
+- the first real Notes; and
+- final site copy.
+
+Do not build these without approval.
