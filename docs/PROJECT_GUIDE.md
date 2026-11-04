@@ -180,7 +180,20 @@ Use these Cloudflare Pages build settings:
 
 The site is a static Astro build, so it does not need a Cloudflare server adapter or server-side runtime.
 
-The website is deployed at `https://personal-website-alg.pages.dev`. The Astro configuration uses that production address for canonical links and the sitemap and serves the website at the root with no `/astro-darkness` path.
+The website is deployed at `https://personal-website-alg.pages.dev`. The Astro configuration uses that production address for canonical links and, once indexing is enabled, the sitemap. It serves the website at the root with no `/astro-darkness` path.
+
+### Pre-launch search lock
+
+The public Cloudflare address remains intentionally hidden from search results while the site name, copy, metadata, and content are unfinished. `SITE_INDEXING_ENABLED` in `site.config.mjs` is the single launch switch and must remain `false` until the owner explicitly approves search indexing.
+
+While the switch is off:
+
+- every page outputs `noindex, nofollow, noarchive, nosnippet` metadata;
+- Cloudflare sends the same instruction through `X-Robots-Tag`;
+- `robots.txt` blocks all crawlers; and
+- the production build does not publish a sitemap.
+
+Turning the switch on is a launch action, not ordinary development. It requires an explicit owner-approved pull request, a successful `npm run check:search`, and a production verification after merging.
 
 Cloudflare Pages is connected to the GitHub repository, and the first production deployment is live.
 
@@ -240,7 +253,7 @@ An intuitive reaction is valid creative feedback. Codex should translate it into
 - The production address is `https://personal-website-alg.pages.dev`.
 - A later `SITE_URL` environment variable can replace the production address when a custom domain is connected.
 - Every generated page includes a canonical URL on that production address.
-- The sitemap uses the same address.
+- Search indexing is locked before launch, so every page is marked `noindex`, crawlers are blocked, and no sitemap is generated. Once the owner approves launch, the sitemap will use the same production address as the canonical links.
 - Dependencies install successfully from the npm lockfile in Codex Cloud.
 - Astro and TypeScript report zero errors, warnings, or hints.
 - The production build generates the Home, About, Notes index, and Projects pages successfully.
