@@ -14,6 +14,7 @@ Read `docs/PROJECT_GUIDE.md`, `docs/CREATIVE_BRIEF.md`, and `docs/EDITORIAL_GUID
 - Review rendered layouts and actual interactions at desktop and mobile sizes whenever feasible.
 - Run `npm run astro -- check` and `npm run build`, or the repository's current equivalents. Report results honestly and do not claim untested features work.
 - The current production host is Cloudflare Pages at `https://personal-website-alg.pages.dev`. Approved merges to `main` can automatically deploy. Do not treat a merged pull request as a private change.
+- Keep the pre-launch search lock in `site.config.mjs` disabled (`SITE_INDEXING_ENABLED = false`) until the owner explicitly approves making the site crawlable and indexable. Enabling it is a launch action requiring its own reviewed pull request.
 - Maintain appropriate canonical URLs, sitemap, accurate page metadata, accessible navigation, image handling, and relevant truthful structured data. SEO is a foundation, not an excuse to inflate text.
 - Use semantic HTML. Provide keyboard and touch equivalents for hover effects, adequate contrast, reduced-motion support, and performance fallbacks for elaborate particle effects.
 - If a request contradicts the project documents or requires a new product decision, surface the conflict rather than silently changing the concept.

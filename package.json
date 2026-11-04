@@ -23,6 +23,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
+    "check:search": "node scripts/check-search-visibility.mjs",
     "preview": "astro preview",
     "astro": "astro"
   },
