@@ -39,7 +39,7 @@ const sortedPosts = allBlogPosts.sort((a, b) =>
       <div class="published-grid">
         {sortedPosts.map((post) => (
           <EditorialCard
-            kind={post.data.format}
+            kind={post.data.format ?? 'Note'}
             title={post.data.title}
             description={post.data.description}
             href={`${base}blog/${post.id}/`}
