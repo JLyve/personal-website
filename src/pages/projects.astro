@@ -2,21 +2,89 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Navigation from '../components/Navigation.astro';
 import ProvisionalEmptyState from '../components/ProvisionalEmptyState.astro';
+import EditorialCard from '../components/EditorialCard.astro';
+import { getPublishedProjects } from '../utils/content';
+
+const allProjects = await getPublishedProjects();
+const featuredProjects = allProjects.filter(p => p.data.featured);
+const otherProjects = allProjects.filter(p => !p.data.featured);
 ---
 
 <BaseLayout
   editorial
-  title="Projects — Structure preview"
-  description="A provisional Projects index. No personal projects or accomplishments are published here."
+  title={allProjects.length === 0 ? 'Projects — Structure preview' : 'Projects'}
+  description={allProjects.length === 0
+    ? 'A provisional Projects index. No personal projects or accomplishments are published here.'
+    : 'Published Projects from the Curiosity Engine.'}
 >
   <Navigation />
-  <ProvisionalEmptyState
-    eyebrow="Projects · Structure preview"
-    title="Projects will arrive with context."
-    description="This provisional index is ready for approved work. Nothing is listed until its scope, role, evidence, and wording have been reviewed."
-    statusTitle="No projects are published."
-    statusDescription="The original Darkness demonstration projects have been removed. This page makes no claims about work, clients, results, or accomplishments."
-    structureLabel="Provisional project structure"
-    structureItems={['Question or context', 'What was tried', 'Evidence and lessons']}
-  />
+  {allProjects.length === 0 ? (
+    <ProvisionalEmptyState
+      eyebrow="Projects · Structure preview"
+      title="Projects will arrive with context."
+      description="This provisional index is ready for approved work. Nothing is listed until its scope, role, evidence, and wording have been reviewed."
+      statusTitle="No projects are published."
+      statusDescription="The original Darkness demonstration projects have been removed. This page makes no claims about work, clients, results, or accomplishments."
+      structureLabel="Provisional project structure"
+      structureItems={['Question or context', 'What was tried', 'Evidence and lessons']}
+    />
+  ) : (
+    <main class="published-index">
+      <header>
+        <p>Projects</p>
+        <h1>Experiments with evidence.</h1>
+      </header>
+      <div class="published-grid">
+        {[...featuredProjects, ...otherProjects].map((project) => {
+          const href = project.data.link ?? project.data.github;
+          return (
+            <EditorialCard
+              kind={project.data.featured ? 'Featured Project' : 'Project'}
+              title={project.data.title}
+              description={project.data.description}
+              href={href}
+              action={href ? 'View Project' : 'Details coming soon'}
+            />
+          );
+        })}
+      </div>
+    </main>
+  )}
 </BaseLayout>
+
+<style>
+  .published-index {
+    width: min(100% - 2rem, 1180px);
+    min-height: calc(100svh - 108px);
+    margin-inline: auto;
+    padding: clamp(8rem, 15vh, 9.5rem) 0 clamp(3.5rem, 7vw, 5.5rem);
+  }
+
+  header > p {
+    margin: 0 0 1.2rem;
+    color: #c4a16d;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    max-width: 13ch;
+    margin: 0;
+    color: var(--color-text);
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: clamp(3.5rem, 8vw, 6.5rem);
+    font-weight: 300;
+    letter-spacing: -0.045em;
+    line-height: 0.94;
+    text-wrap: balance;
+  }
+
+  .published-grid {
+    margin-top: clamp(3rem, 6vw, 5rem);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+    gap: 1rem;
+  }
+</style>

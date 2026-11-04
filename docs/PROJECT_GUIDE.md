@@ -6,11 +6,11 @@ The theme's MIT license and original attribution are preserved in [`LICENSE`](..
 
 ## What technology the site uses
 
-- **Astro 6** builds the pages into a fast, static website.
+- **Astro 7** builds the pages into a fast, static website.
 - **TypeScript** helps catch technical mistakes before publishing.
 - **Three.js** remains available for the preserved Darkness particle background, while the new editorial pages use lighter CSS-only atmosphere.
 - **Markdown and MDX** make it possible to write articles and project entries as simple text files.
-- **Node.js 22 or newer** and **npm** install and run the development tools inside Codex Cloud. Nothing needs to be installed on the owner's Mac.
+- **Node.js 22.12 or newer** and **npm** install and run the development tools inside Codex Cloud. Nothing needs to be installed on the owner's Mac.
 
 The exact dependency versions are recorded in `package-lock.json`. Codex uses that file so the cloud environment installs the same tested versions each time.
 
@@ -176,7 +176,7 @@ Use these Cloudflare Pages build settings:
 | Production branch | `main` |
 | Build command | `npm run build` |
 | Build output directory | `dist` |
-| Node.js version | `22` or newer |
+| Node.js version | `22.12` or newer |
 
 The site is a static Astro build, so it does not need a Cloudflare server adapter or server-side runtime.
 

@@ -3,15 +3,16 @@ interface Props {
   kind: string;
   title: string;
   description: string;
-  href: string;
+  href?: string;
   action: string;
 }
 
 const { kind, title, description, href, action } = Astro.props;
+const CardContent = href ? 'a' : 'div';
 ---
 
 <article class="editorial-card">
-  <a href={href} aria-label={`${title}: ${action}`}>
+  <CardContent class="card-content" href={href} aria-label={href ? `${title}: ${action}` : undefined}>
     <span class="card-glint" aria-hidden="true">✦</span>
     <span class="kind">{kind}</span>
     <h3>{title}</h3>
@@ -23,16 +24,16 @@ const { kind, title, description, href, action } = Astro.props;
       </svg>
     </span>
     <span class="geometry" aria-hidden="true"></span>
-  </a>
+  </CardContent>
 </article>
 
 <style>
   .editorial-card,
-  .editorial-card a {
+  .card-content {
     height: 100%;
   }
 
-  .editorial-card a {
+  .card-content {
     min-height: 330px;
     padding: clamp(1.5rem, 3.4vw, 2.5rem);
     display: flex;
@@ -47,7 +48,7 @@ const { kind, title, description, href, action } = Astro.props;
     transition: border-color 220ms ease, background 220ms ease, transform 220ms ease;
   }
 
-  .editorial-card a::before {
+  .card-content::before {
     content: '';
     width: 35%;
     height: 1px;
@@ -134,27 +135,27 @@ const { kind, title, description, href, action } = Astro.props;
     border-radius: 50%;
   }
 
-  .editorial-card a:hover,
-  .editorial-card a:focus-visible {
+  a.card-content:hover,
+  a.card-content:focus-visible {
     border-color: rgba(205, 170, 112, 0.48);
     background: linear-gradient(145deg, rgba(46, 36, 27, 0.9), rgba(28, 23, 18, 0.82));
     transform: translateY(-3px);
   }
 
-  .editorial-card a:hover .card-glint,
-  .editorial-card a:focus-visible .card-glint {
+  a.card-content:hover .card-glint,
+  a.card-content:focus-visible .card-glint {
     opacity: 0.9;
     transform: scale(1.15) rotate(24deg);
   }
 
-  .editorial-card a:hover .geometry,
-  .editorial-card a:focus-visible .geometry {
+  a.card-content:hover .geometry,
+  a.card-content:focus-visible .geometry {
     border-color: rgba(205, 170, 112, 0.11);
     transform: rotate(12deg) scale(1.04);
   }
 
   @media (max-width: 720px) {
-    .editorial-card a {
+    .card-content {
       min-height: 290px;
     }
 
@@ -164,10 +165,10 @@ const { kind, title, description, href, action } = Astro.props;
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .editorial-card a:hover,
-    .editorial-card a:focus-visible,
-    .editorial-card a:hover .geometry,
-    .editorial-card a:focus-visible .geometry {
+    a.card-content:hover,
+    a.card-content:focus-visible,
+    a.card-content:hover .geometry,
+    a.card-content:focus-visible .geometry {
       transform: none;
     }
   }

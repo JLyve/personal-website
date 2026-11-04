@@ -2,21 +2,88 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Navigation from '../../components/Navigation.astro';
 import ProvisionalEmptyState from '../../components/ProvisionalEmptyState.astro';
+import EditorialCard from '../../components/EditorialCard.astro';
+import { getPublishedNotes } from '../../utils/content';
+
+const base = import.meta.env.BASE_URL;
+const allBlogPosts = await getPublishedNotes();
+const sortedPosts = allBlogPosts.sort((a, b) =>
+  b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
 ---
 
 <BaseLayout
   editorial
-  title="Notes — Structure preview"
-  description="A provisional Notes index. No articles or private drafts are published here."
+  title={sortedPosts.length === 0 ? 'Notes — Structure preview' : 'Notes'}
+  description={sortedPosts.length === 0
+    ? 'A provisional Notes index. No articles or private drafts are published here.'
+    : 'Published Notes from the Curiosity Engine.'}
 >
   <Navigation />
-  <ProvisionalEmptyState
-    eyebrow="Notes · Structure preview"
-    title="Notes will begin here."
-    description="This provisional index is ready for approved Notes. No articles, private drafts, or Idea Inbox material are published here."
-    statusTitle="No Notes are published."
-    statusDescription="The original Darkness demo articles have been removed. Future entries will appear only after their content and publication details are approved."
-    structureLabel="Planned editorial formats"
-    structureItems={['Field Note', 'Deep Note', 'Experiment']}
-  />
+  {sortedPosts.length === 0 ? (
+    <ProvisionalEmptyState
+      eyebrow="Notes · Structure preview"
+      title="Notes will begin here."
+      description="This provisional index is ready for approved Notes. No articles, private drafts, or Idea Inbox material are published here."
+      statusTitle="No Notes are published."
+      statusDescription="The original Darkness demo articles have been removed. Future entries will appear only after their content and publication details are approved."
+      structureLabel="Planned editorial formats"
+      structureItems={['Field Note', 'Deep Note', 'Experiment']}
+    />
+  ) : (
+    <main class="published-index">
+      <header>
+        <p>Notes</p>
+        <h1>Ideas worth returning to.</h1>
+      </header>
+      <div class="published-grid">
+        {sortedPosts.map((post) => (
+          <EditorialCard
+            kind={post.data.format}
+            title={post.data.title}
+            description={post.data.description}
+            href={`${base}blog/${post.id}/`}
+            action="Read Note"
+          />
+        ))}
+      </div>
+    </main>
+  )}
 </BaseLayout>
+
+<style>
+  .published-index {
+    width: min(100% - 2rem, 1180px);
+    min-height: calc(100svh - 108px);
+    margin-inline: auto;
+    padding: clamp(8rem, 15vh, 9.5rem) 0 clamp(3.5rem, 7vw, 5.5rem);
+  }
+
+  header > p {
+    margin: 0 0 1.2rem;
+    color: #c4a16d;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    max-width: 13ch;
+    margin: 0;
+    color: var(--color-text);
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: clamp(3.5rem, 8vw, 6.5rem);
+    font-weight: 300;
+    letter-spacing: -0.045em;
+    line-height: 0.94;
+    text-wrap: balance;
+  }
+
+  .published-grid {
+    margin-top: clamp(3rem, 6vw, 5rem);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+    gap: 1rem;
+  }
+</style>

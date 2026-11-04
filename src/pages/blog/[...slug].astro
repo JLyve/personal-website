@@ -1,17 +1,10 @@
 ---
-import { existsSync, readdirSync } from 'node:fs';
-import { getCollection, render } from 'astro:content';
+import { render } from 'astro:content';
 import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { getPublishedNotes } from '../../utils/content';
 
 export async function getStaticPaths() {
-  const blogDirectory = new URL('../../content/blog', import.meta.url);
-  const hasApprovedEntries =
-    existsSync(blogDirectory) &&
-    readdirSync(blogDirectory, { recursive: true }).some((file) => /\.mdx?$/.test(String(file)));
-
-  if (!hasApprovedEntries) return [];
-
-  const blogEntries = await getCollection('blog');
+  const blogEntries = await getPublishedNotes();
   return blogEntries.map((entry) => ({
     params: { slug: entry.id },
     props: { entry },
