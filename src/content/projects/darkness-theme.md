@@ -1,4 +1,5 @@
 ---
+status: 'draft'
 title: 'Darkness - Astro Theme'
 description: 'A heavily modified dark theme with Three.js particles and intense animations'
 image: '/favicon.svg'

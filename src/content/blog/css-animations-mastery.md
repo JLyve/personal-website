@@ -1,4 +1,5 @@
 ---
+status: 'draft'
 title: 'Mastering CSS Animations in Dark Themes'
 description: 'Advanced CSS animation techniques for creating motion-rich dark interfaces'
 pubDate: 2025-12-25

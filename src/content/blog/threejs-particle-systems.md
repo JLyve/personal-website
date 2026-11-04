@@ -1,4 +1,5 @@
 ---
+status: 'draft'
 title: 'Building Particle Systems with Three.js'
 description: 'A deep dive into creating beautiful particle effects for web backgrounds'
 pubDate: 2025-12-20

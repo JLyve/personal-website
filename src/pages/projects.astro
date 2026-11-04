@@ -1,10 +1,10 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Navigation from '../components/Navigation.astro';
 import ProjectCard from '../components/ProjectCard.astro';
+import { getPublishedProjects } from '../utils/content';
 
-const allProjects = await getCollection('projects');
+const allProjects = await getPublishedProjects();
 const featuredProjects = allProjects.filter(p => p.data.featured);
 const otherProjects = allProjects.filter(p => !p.data.featured);
 ---

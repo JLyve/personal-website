@@ -1,4 +1,5 @@
 ---
+status: 'draft'
 title: 'Welcome to the Darkness'
 description: 'Exploring the depths of dark-themed web design with Three.js and modern animations'
 pubDate: 2025-12-15

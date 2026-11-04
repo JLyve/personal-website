@@ -1,10 +1,10 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Navigation from '../../components/Navigation.astro';
 import BlogCard from '../../components/BlogCard.astro';
+import { getPublishedNotes } from '../../utils/content';
 
-const allBlogPosts = await getCollection('blog');
+const allBlogPosts = await getPublishedNotes();
 const sortedPosts = allBlogPosts.sort((a, b) =>
   b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );

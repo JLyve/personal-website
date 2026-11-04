@@ -1,13 +1,13 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Navigation from '../components/Navigation.astro';
 import Hero from '../components/Hero.astro';
 import Skills from '../components/Skills.astro';
 import BlogCard from '../components/BlogCard.astro';
+import { getPublishedNotes } from '../utils/content';
 
 const base = import.meta.env.BASE_URL;
-const allBlogPosts = await getCollection('blog');
+const allBlogPosts = await getPublishedNotes();
 const recentPosts = allBlogPosts
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 3);

@@ -1,4 +1,5 @@
 ---
+status: 'draft'
 title: 'Particle Playground'
 description: 'Interactive Three.js particle system with customizable parameters'
 tags: ['three.js', 'webgl', 'interactive']
