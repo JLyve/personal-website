@@ -6,7 +6,7 @@
 
 [![GitHub stars](https://img.shields.io/github/stars/kpab/astro-darkness?style=social)](https://github.com/kpab/astro-darkness/stargazers)
 [![Version](https://img.shields.io/github/v/release/kpab/astro-darkness?color=blue)](https://github.com/kpab/astro-darkness/releases)
-[![Astro](https://img.shields.io/badge/Astro-6.x-purple)](https://astro.build/)
+[![Astro](https://img.shields.io/badge/Astro-7.x-purple)](https://astro.build/)
 [![Three.js](https://img.shields.io/badge/Three.js-0.184-blue)](https://threejs.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
@@ -32,7 +32,7 @@ Most dark themes are just a flipped color palette. **Darkness ships a real WebGL
 - **Portfolio** — project showcase with featured highlighting
 - **Responsive** — mobile-first design with a floating navbar
 - **Easy theming** — change the whole look from a handful of CSS variables
-- **Astro 6** — ships zero JS by default, sitemap + SEO ready
+- **Astro 7** — ships zero JS by default, sitemap + SEO ready
 - **TypeScript** — type-safe content and components
 
 ## Screenshots
@@ -45,7 +45,7 @@ Most dark themes are just a flipped color palette. **Darkness ships a real WebGL
 
 ## Quick Start
 
-> Requires **Node.js 22+** (Astro 6).
+> Requires **Node.js 22.12+** (Astro 7).
 
 ```bash
 # Clone this template
@@ -70,6 +70,7 @@ Create markdown files in `src/content/blog/`:
 
 ```markdown
 ---
+status: 'draft'
 title: 'Your Post Title'
 description: 'Brief description'
 pubDate: 2025-12-15
@@ -85,6 +86,7 @@ Create markdown files in `src/content/projects/`:
 
 ```markdown
 ---
+status: 'draft'
 title: 'Your Project'
 description: 'Project description'
 github: 'https://github.com/...'
@@ -92,6 +94,8 @@ tags: ['react', 'typescript']
 featured: true
 ---
 ```
+
+New content must explicitly declare a status and should remain `draft` until it has been approved for publication. Only content marked `published` is included in generated public pages. Published Notes also require an author, one of the approved Note formats, and at least one tag.
 
 ## Customization
 

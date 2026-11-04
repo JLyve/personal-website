@@ -1,89 +1,89 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Navigation from '../../components/Navigation.astro';
-import BlogCard from '../../components/BlogCard.astro';
+import ProvisionalEmptyState from '../../components/ProvisionalEmptyState.astro';
+import EditorialCard from '../../components/EditorialCard.astro';
+import { getPublishedNotes } from '../../utils/content';
 
-const allBlogPosts = await getCollection('blog');
+const base = import.meta.env.BASE_URL;
+const allBlogPosts = await getPublishedNotes();
 const sortedPosts = allBlogPosts.sort((a, b) =>
   b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
 
 <BaseLayout
-  title="Blog - Darkness"
-  description="Articles about web development, Three.js, and dark design"
+  editorial
+  title={sortedPosts.length === 0 ? 'Notes — Structure preview' : 'Notes'}
+  description={sortedPosts.length === 0
+    ? 'A provisional Notes index. No articles or private drafts are published here.'
+    : 'Published Notes from the Curiosity Engine.'}
 >
   <Navigation />
-
-  <main class="blog-page">
-    <div class="container">
-      <header class="blog-header">
-        <h1 class="page-title">Blog</h1>
-        <p class="page-subtitle">
-          Exploring the depths of web development, animations, and dark design
-        </p>
+  {sortedPosts.length === 0 ? (
+    <ProvisionalEmptyState
+      eyebrow="Notes · Structure preview"
+      title="Notes will begin here."
+      description="This provisional index is ready for approved Notes. No articles, private drafts, or Idea Inbox material are published here."
+      statusTitle="No Notes are published."
+      statusDescription="The original Darkness demo articles have been removed. Future entries will appear only after their content and publication details are approved."
+      structureLabel="Planned editorial formats"
+      structureItems={['Field Note', 'Deep Note', 'Experiment']}
+    />
+  ) : (
+    <main class="published-index">
+      <header>
+        <p>Notes</p>
+        <h1>Ideas worth returning to.</h1>
       </header>
-
-      <div class="blog-grid">
+      <div class="published-grid">
         {sortedPosts.map((post) => (
-          <BlogCard
+          <EditorialCard
+            kind={post.data.format ?? 'Note'}
             title={post.data.title}
             description={post.data.description}
-            pubDate={post.data.pubDate}
-            slug={post.id}
-            tags={post.data.tags}
+            href={`${base}blog/${post.id}/`}
+            action="Read Note"
           />
         ))}
       </div>
-    </div>
-  </main>
+    </main>
+  )}
 </BaseLayout>
 
 <style>
-  .blog-page {
-    min-height: 100vh;
-    padding: calc(var(--nav-height) + 2rem) 2rem 5rem;
+  .published-index {
+    width: min(100% - 2rem, 1180px);
+    min-height: calc(100svh - 108px);
+    margin-inline: auto;
+    padding: clamp(8rem, 15vh, 9.5rem) 0 clamp(3.5rem, 7vw, 5.5rem);
   }
 
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
+  header > p {
+    margin: 0 0 1.2rem;
+    color: #c4a16d;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
   }
 
-  .blog-header {
-    text-align: center;
-    margin-bottom: 3rem;
-  }
-
-  .page-title {
-    font-family: var(--font-heading);
-    font-size: clamp(2.5rem, 8vw, 4rem);
-    font-weight: 700;
-    margin-bottom: 0.75rem;
+  h1 {
+    max-width: 13ch;
+    margin: 0;
     color: var(--color-text);
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: clamp(3.5rem, 8vw, 6.5rem);
+    font-weight: 300;
+    letter-spacing: -0.045em;
+    line-height: 0.94;
+    text-wrap: balance;
   }
 
-  .page-subtitle {
-    font-size: 1.1rem;
-    color: var(--color-text-dim);
-    max-width: 500px;
-    margin: 0 auto;
-  }
-
-  .blog-grid {
+  .published-grid {
+    margin-top: clamp(3rem, 6vw, 5rem);
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 1.5rem;
-  }
-
-  @media (max-width: 768px) {
-    .blog-page {
-      padding-top: calc(var(--nav-height) + 1rem);
-    }
-
-    .blog-grid {
-      grid-template-columns: 1fr;
-    }
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+    gap: 1rem;
   }
 </style>
