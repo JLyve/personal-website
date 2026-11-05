@@ -115,8 +115,9 @@ Before substantial website work:
 1. Read this Project Guide for process and source authority.
 2. Read the Creative Brief for approved creative direction and open decisions.
 3. Read the Editorial Guide when the task involves Notes, voice, ideas, drafts, or publication.
-4. Consult the Living Creative Direction when the task involves evolving identity, atmosphere, naming, homepage messaging, or another unresolved creative direction.
-5. Consult Session Synopses only when the reasoning, attribution, or history behind a decision matters.
+4. Read the [Technical Audit and Launch-Readiness Roadmap](TECHNICAL_AUDIT_ROADMAP.md) before launch-readiness work, publishing the first Note, or changing search visibility.
+5. Consult the Living Creative Direction when the task involves evolving identity, atmosphere, naming, homepage messaging, or another unresolved creative direction.
+6. Consult Session Synopses only when the reasoning, attribution, or history behind a decision matters.
 
 Do not load every synopsis by default. Use the smallest amount of history needed for the current task.
 
@@ -195,6 +196,8 @@ While the switch is off:
 
 Turning the switch on is a launch action, not ordinary development. It requires an explicit owner-approved pull request, a successful `npm run check:search`, and a production verification after merging.
 
+The [Technical Audit and Launch-Readiness Roadmap](TECHNICAL_AUDIT_ROADMAP.md) records the audit's origin, completed work, deferred findings, resume trigger, and mandatory launch gates. The comprehensive review should resume when the site is roughly 80–90% complete. Article-specific review must happen earlier if the first real Note is ready to publish. Search indexing cannot be enabled until the roadmap's mandatory gates are complete.
+
 Cloudflare Pages is connected to the GitHub repository, and the first production deployment is live.
 
 ## How future changes are deployed
@@ -245,9 +248,10 @@ Feedback may use plain language such as:
 
 An intuitive reaction is valid creative feedback. Codex should translate it into concrete design or content changes without inventing a new creative decision.
 
-## Technical baseline verified on October 30, 2026
+## Technical baseline verified on November 5, 2026
 
-- Phase 2 is being reviewed in a pull request and has not been merged to `main`.
+- The Curiosity Engine preview and Phase 1 security/publication safeguards were integrated through PR #9 and merged into `main`.
+- The pre-launch search lock was added through PR #10 and is active in production.
 - The repository retains the Darkness 1.1.0 Astro foundations, MIT license, attribution, and original animation components.
 - The site is configured for a root-level Cloudflare Pages deployment.
 - The production address is `https://personal-website-alg.pages.dev`.
@@ -257,4 +261,5 @@ An intuitive reaction is valid creative feedback. Codex should translate it into
 - Dependencies install successfully from the npm lockfile in Codex Cloud.
 - Astro and TypeScript report zero errors, warnings, or hints.
 - The production build generates the Home, About, Notes index, and Projects pages successfully.
-- Notes, Projects, and About use clearly provisional empty states. The original Darkness sample articles, projects, and biography are not generated or included in the sitemap.
+- Notes, Projects, and About use clearly provisional empty states. The original Darkness sample articles, projects, and biography are not generated, and the pre-launch build does not publish a sitemap.
+- Deferred launch-readiness work is tracked in `docs/TECHNICAL_AUDIT_ROADMAP.md` and must resume when the website is roughly 80–90% complete.

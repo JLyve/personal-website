@@ -1,6 +1,6 @@
 # Codex operating instructions -- Personal Website
 
-Read `docs/PROJECT_GUIDE.md`, `docs/CREATIVE_BRIEF.md`, and `docs/EDITORIAL_GUIDE.md` before substantial changes. These are the project's durable specifications. Treat design examples, private working directions, and sample copy as proposals unless the relevant GitHub document identifies them as approved.
+Read `docs/PROJECT_GUIDE.md`, `docs/CREATIVE_BRIEF.md`, and `docs/EDITORIAL_GUIDE.md` before substantial changes. Read `docs/TECHNICAL_AUDIT_ROADMAP.md` before launch-readiness work, publishing the first Note, or changing search visibility. These are the project's durable specifications. Treat design examples, private working directions, and sample copy as proposals unless the relevant GitHub document identifies them as approved.
 
 ## Roles and scope
 
@@ -15,6 +15,7 @@ Read `docs/PROJECT_GUIDE.md`, `docs/CREATIVE_BRIEF.md`, and `docs/EDITORIAL_GUID
 - Run `npm run astro -- check` and `npm run build`, or the repository's current equivalents. Report results honestly and do not claim untested features work.
 - The current production host is Cloudflare Pages at `https://personal-website-alg.pages.dev`. Approved merges to `main` can automatically deploy. Do not treat a merged pull request as a private change.
 - Keep the pre-launch search lock in `site.config.mjs` disabled (`SITE_INDEXING_ENABLED = false`) until the owner explicitly approves making the site crawlable and indexable. Enabling it is a launch action requiring its own reviewed pull request.
+- Treat the mandatory launch gates in `docs/TECHNICAL_AUDIT_ROADMAP.md` as blocking requirements. Do not enable indexing, submit a sitemap, or describe the site as launch-ready until those gates are complete and verified.
 - Maintain appropriate canonical URLs, sitemap, accurate page metadata, accessible navigation, image handling, and relevant truthful structured data. SEO is a foundation, not an excuse to inflate text.
 - Use semantic HTML. Provide keyboard and touch equivalents for hover effects, adequate contrast, reduced-motion support, and performance fallbacks for elaborate particle effects.
 - If a request contradicts the project documents or requires a new product decision, surface the conflict rather than silently changing the concept.
