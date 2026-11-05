@@ -164,6 +164,26 @@ The normal review process is:
 
 Codex will not merge a pull request or publish a change without approval.
 
+## How the Personal Website project stays aligned
+
+GitHub is the authoritative source for the website and its durable documentation. The separate Personal Website project may contain convenience copies of Markdown files plus a Custom Instructions field, but those copies do not synchronize automatically.
+
+The canonical Custom Instructions are stored in [`docs/PROJECT_CUSTOM_INSTRUCTIONS.md`](PROJECT_CUSTOM_INSTRUCTIONS.md). When that file changes, the owner must manually replace the Personal Website project's Custom Instructions with the complete merged version.
+
+Every pull request must use the repository pull-request template to identify whether it changes a file mirrored in the Personal Website project. The mirrored set currently includes:
+
+- `AGENTS.md`;
+- `docs/PROJECT_GUIDE.md`;
+- `docs/CREATIVE_BRIEF.md`;
+- `docs/EDITORIAL_GUIDE.md`;
+- `docs/TECHNICAL_AUDIT_ROADMAP.md`;
+- `docs/PROJECT_CUSTOM_INSTRUCTIONS.md`; and
+- any additional file the owner later chooses to upload as Project knowledge.
+
+After every merge, Codex must compare the merged files against this set without waiting for a reminder. If synchronization is required, Codex provides the complete merged files and clear add, replace, or remove instructions. If synchronization is not required, Codex explicitly says so. The owner performs the manual upload or Custom Instructions replacement and confirms completion.
+
+If a new task begins before that confirmation, GitHub still governs. Codex should fetch the latest GitHub documentation, identify any mismatch with the Project copies, and continue only from the authoritative GitHub version.
+
 ## How GitHub and Cloudflare Pages work together
 
 **Cloudflare Pages is the selected hosting provider.**

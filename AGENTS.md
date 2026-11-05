@@ -69,6 +69,22 @@ Apply these rules:
 
 Update the relevant project documents in the same pull request when an approved decision changes.
 
+### Personal Website project synchronization
+
+GitHub is authoritative, but the owner's separate Personal Website project may contain convenience copies of the durable Markdown files and a separate Custom Instructions field. Those copies do not update automatically.
+
+At the beginning of substantial work, verify the latest GitHub versions of the required project documents. For every pull request, use the repository pull-request template to declare whether Personal Website project synchronization will be required after merge.
+
+After every merge:
+
+1. Compare the merged changes against `AGENTS.md`, `docs/PROJECT_GUIDE.md`, `docs/CREATIVE_BRIEF.md`, `docs/EDITORIAL_GUIDE.md`, `docs/TECHNICAL_AUDIT_ROADMAP.md`, `docs/PROJECT_CUSTOM_INSTRUCTIONS.md`, and any other file known to be mirrored in the Personal Website project.
+2. If any mirrored file changed, proactively provide its complete merged Markdown version and state whether the owner must add, replace, or remove it. If `docs/PROJECT_CUSTOM_INSTRUCTIONS.md` changed, provide the complete replacement Custom Instructions.
+3. If no mirrored file changed, explicitly state: “No Personal Website project file synchronization is required.”
+4. Do not wait for the owner to ask about synchronization.
+5. Do not describe synchronization as complete until the owner confirms the manual Project upload or Custom Instructions replacement.
+
+The assistant cannot directly replace uploaded Project files or edit Project Custom Instructions. Never imply that this manual action happened automatically.
+
 Clearly distinguish:
 
 - approved requirements;
