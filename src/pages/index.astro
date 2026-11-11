@@ -16,7 +16,10 @@ type HomepageEntry = {
 };
 
 const base = import.meta.env.BASE_URL;
-const reviewExamplesEnabled = import.meta.env.HOMEPAGE_REVIEW_STATE === 'examples';
+const examplesReviewBranch = 'preview/not-entirely-unrelated-homepage-examples';
+const reviewExamplesEnabled =
+  import.meta.env.HOMEPAGE_REVIEW_STATE === 'examples' ||
+  import.meta.env.CF_PAGES_BRANCH === examplesReviewBranch;
 
 const notes = (await getPublishedNotes())
   .filter((note) => note.data.homepage)
@@ -120,6 +123,7 @@ const supportingEntries = collectionEntries.filter((entry) => entry !== featured
   .section-shell, .site-footer { width: min(100% - 2rem, 1120px); margin-inline: auto; }
 
   .opening {
+    --opening-gap: clamp(3.5rem, 8vw, 7rem);
     padding: clamp(8.5rem, 14vh, 10rem) 0 clamp(4.5rem, 7vw, 6rem);
     display: grid;
     grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1.28fr);
@@ -127,7 +131,7 @@ const supportingEntries = collectionEntries.filter((entry) => entry !== featured
       'welcome feature'
       'portrait feature';
     align-items: start;
-    column-gap: clamp(3.5rem, 8vw, 7rem);
+    column-gap: var(--opening-gap);
     row-gap: 2rem;
     position: relative;
   }
@@ -222,7 +226,7 @@ const supportingEntries = collectionEntries.filter((entry) => entry !== featured
   .site-footer a { color: #ccb184; text-underline-offset: 0.2rem; }
 
   @media (max-width: 860px) {
-    .opening { column-gap: 2.75rem; }
+    .opening { --opening-gap: 2.75rem; }
     .featured-heading { grid-template-columns: 1fr; }
     .review-note { margin-left: 0; }
   }

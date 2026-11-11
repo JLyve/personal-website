@@ -81,16 +81,16 @@
   }
 
   .alchemy-atmosphere {
-    width: min(22vw, 235px);
+    width: min(104px, calc(var(--opening-gap, 5rem) - 16px));
     aspect-ratio: 1;
     position: absolute;
-    right: -4.75rem;
-    top: 47%;
+    right: calc(var(--opening-gap, 5rem) / -2);
+    top: 54%;
     z-index: -1;
     color: #c39a61;
     opacity: 0.28;
     pointer-events: none;
-    transform: translateY(-50%);
+    transform: translate(50%, -50%);
   }
 
   .alchemy-atmosphere svg {
@@ -131,6 +131,10 @@
     to { transform: rotate(360deg); }
   }
 
+  @media (max-width: 860px) {
+    .alchemy-atmosphere { display: none; }
+  }
+
   @media (max-width: 720px) {
     .welcome {
       padding-top: 0;
@@ -141,13 +145,6 @@
       max-width: 24ch;
       font-size: clamp(1.72rem, 7.6vw, 2.05rem);
       line-height: 1.13;
-    }
-
-    .alchemy-atmosphere {
-      width: 165px;
-      right: -3.5rem;
-      top: 45%;
-      opacity: 0.2;
     }
   }
 
