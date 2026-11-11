@@ -1,6 +1,6 @@
 # Personal Website -- Creative & Strategy Brief
 
-Status: approved creative direction and homepage approach for a **preview implementation**, not a final pixel-perfect specification or approval of public copy. Updated 2026-10-30.
+Status: approved creative direction and homepage approach for a **preview implementation**, not a final pixel-perfect specification or approval of public copy. Updated 2026-11-11.
 
 ## Purpose and positioning
 
@@ -49,6 +49,17 @@ Content priority: reader clarity first, editorial curation second, magical rewar
 ## Homepage design direction for the first Codex preview (agreed 2026-10-30)
 
 These are approved **design directions for a reviewable preview**, not permission to merge to `main`, publish to production, publish sample content, or lock the final words. Preview deployments from pull requests are permitted for review. The visual mockups were exploratory. The actual responsive Astro implementation must be reviewed before design sign-off.
+
+### Revised opening and collection direction (authorized for preview 2026-11-11)
+
+This revision replaces the headline-led opening described below for the next review preview. The remaining atmosphere, typography, accessibility, and publication boundaries in this brief still apply.
+
+- Use **Not Entirely Unrelated** as the provisional collection name and clearly associate it with **Jason Lyvers** in the header.
+- Replace the large slogan, promotional pitch, and hero CTA with a compact, conversational welcome. Use the owner-supplied wording for layout testing only; it remains provisional and is not approved production copy.
+- Bring the collection into view promptly after the welcome. Use **From the collection** as a provisional label, with one prominent featured item and smaller supporting entries that can represent Notes, Projects, or Reading according to the real work available.
+- The homepage must feel intentional with no published entries. Hide empty collection sections, category controls, and links without useful destinations.
+- Keep layout examples separate from published collections and normal builds. Examples must use visibly structural bracketed placeholders rather than invented article titles, book choices, client results, or personal claims.
+- A small portrait may sit near the welcome in a review state. Until an approved photograph exists, use only a clearly labeled placement placeholder; the normal no-image layout must remain complete and mobile must not squeeze the welcome beside the portrait.
 
 ### Positioning and personality
 

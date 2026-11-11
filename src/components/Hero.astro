@@ -1,240 +1,192 @@
 ---
+interface Props {
+  showPortraitPlaceholder?: boolean;
+}
+
+const { showPortraitPlaceholder = false } = Astro.props;
 ---
 
-<section class="hero" aria-labelledby="hero-title">
-  <div class="ambient-mark mark-one" aria-hidden="true">✦</div>
-  <div class="ambient-mark mark-two" aria-hidden="true">◌</div>
-  <div class="ambient-orbit" aria-hidden="true"></div>
-
-  <div class="hero-content">
-    <p class="eyebrow">Homepage preview <span aria-hidden="true">·</span> provisional copy</p>
-    <h1 id="hero-title">
-      Good questions have a way of <em>wandering.</em>
+<section class:list={['welcome', { 'with-portrait': showPortraitPlaceholder }]} aria-labelledby="welcome-title">
+  <div class="welcome-copy">
+    <p class="preview-label">Homepage preview <span aria-hidden="true">·</span> provisional wording</p>
+    <h1 id="welcome-title">
+      I’m Jason Lyvers. I work in digital marketing. That explains some of what you’ll find here.
     </h1>
-    <p class="hero-description">
-      This introduction is here to test tone, scale, and rhythm. Final language will be written and approved separately.
+    <p>
+      The rest involves books, questions, experiments, and connections I’m still trying to explain. Have a look around.
     </p>
-    <a class="hero-cta" href="#selected">
-      <span>Explore the page preview</span>
-      <svg aria-hidden="true" width="15" height="15" viewBox="0 0 16 16" fill="none">
-        <path d="M4 4h8v8M12 4 4.5 11.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
-      </svg>
-    </a>
-    <p class="marginalia" aria-label="Provisional marginal note">the words are still finding their shape</p>
   </div>
+
+  {showPortraitPlaceholder && (
+    <aside class="portrait-placeholder" aria-label="Portrait placement for review">
+      <div class="portrait-frame" aria-hidden="true">
+        <span class="portrait-mark">JL</span>
+        <span class="portrait-orbit"></span>
+      </div>
+      <p><strong>Portrait placement</strong><span>No photograph selected</span></p>
+    </aside>
+  )}
 </section>
 
 <style>
-  .hero {
-    width: min(100% - 2rem, 1180px);
-    min-height: min(700px, 82svh);
+  .welcome {
+    width: min(100% - 2rem, 1120px);
+    min-height: 0;
     margin: 0 auto;
-    padding: clamp(7.5rem, 15vh, 9rem) 0 clamp(3.5rem, 7vh, 5rem);
+    padding: clamp(9.5rem, 18vh, 12rem) 0 clamp(4rem, 8vw, 6.75rem);
     display: grid;
     align-items: center;
     position: relative;
-    isolation: isolate;
   }
 
-  .hero-content {
-    width: min(100%, 780px);
-    position: relative;
-    z-index: 1;
+  .welcome::after {
+    content: '';
+    width: 4px;
+    height: 4px;
+    position: absolute;
+    right: 2%;
+    bottom: 24%;
+    border-radius: 50%;
+    background: #c49b63;
+    box-shadow: 0 0 18px rgba(196, 155, 99, 0.35);
+    opacity: 0.65;
   }
 
-  .eyebrow {
-    margin: 0 0 1.35rem;
-    color: #d0ae78;
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.18em;
+  .welcome.with-portrait {
+    grid-template-columns: minmax(0, 1fr) minmax(190px, 242px);
+    gap: clamp(3rem, 9vw, 7rem);
+  }
+
+  .welcome-copy {
+    max-width: 790px;
+  }
+
+  .preview-label {
+    margin: 0 0 1.25rem;
+    color: #bd9966;
+    font-size: 0.68rem;
+    font-weight: 650;
+    letter-spacing: 0.17em;
     line-height: 1.5;
     text-transform: uppercase;
   }
 
   h1 {
-    max-width: 740px;
+    max-width: 19ch;
     margin: 0;
     color: var(--color-text);
     font-family: 'Newsreader', Georgia, serif;
-    font-size: clamp(3.35rem, 10vw, 7.15rem);
+    font-size: clamp(2.55rem, 5.6vw, 4.85rem);
     font-weight: 300;
-    letter-spacing: -0.047em;
-    line-height: 0.91;
+    letter-spacing: -0.038em;
+    line-height: 1.02;
     text-wrap: balance;
   }
 
-  h1 em {
-    color: #d3b17c;
-    font-family: 'Fraunces', Georgia, serif;
-    font-weight: 400;
-  }
-
-  .hero-description {
-    max-width: 590px;
-    margin: 1.75rem 0 0;
+  .welcome-copy > p:last-child {
+    max-width: 57ch;
+    margin: 1.6rem 0 0;
     color: var(--color-text-dim);
-    font-size: clamp(0.96rem, 1.5vw, 1.08rem);
-    line-height: 1.75;
+    font-size: clamp(1rem, 1.5vw, 1.12rem);
+    line-height: 1.78;
   }
 
-  .hero-cta {
-    width: fit-content;
-    min-height: 48px;
-    margin-top: 2rem;
-    padding: 0.76rem 1.05rem 0.76rem 1.15rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.85rem;
-    border: 1px solid rgba(205, 170, 112, 0.48);
-    border-radius: 999px;
-    color: var(--color-text);
-    font-size: 0.87rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+  .portrait-placeholder {
+    width: 100%;
+    margin-top: 0.75rem;
   }
 
-  .hero-cta:hover,
-  .hero-cta:focus-visible {
-    background: rgba(205, 170, 112, 0.09);
-    border-color: #d0aa70;
-    transform: translateY(-2px);
+  .portrait-frame {
+    aspect-ratio: 4 / 5;
+    display: grid;
+    place-items: center;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(205, 170, 112, 0.26);
+    background: linear-gradient(145deg, rgba(52, 40, 29, 0.68), rgba(24, 19, 15, 0.82)), #211a14;
   }
 
-  .marginalia {
-    width: fit-content;
-    margin: 1.4rem 0 0 clamp(1.5rem, 7vw, 5.2rem);
-    color: #aa9477;
-    font-family: 'Caveat', 'Bradley Hand', cursive;
-    font-size: clamp(1.02rem, 2.3vw, 1.24rem);
-    line-height: 1.25;
-    transform: rotate(-1.5deg);
-  }
-
-  .marginalia::before {
-    content: '↳';
-    margin-right: 0.45rem;
-    color: #8f7656;
-  }
-
-  .ambient-mark,
-  .ambient-orbit {
-    position: absolute;
-    z-index: -1;
-    color: rgba(205, 170, 112, 0.24);
-    pointer-events: none;
-    user-select: none;
-  }
-
-  .ambient-mark {
-    animation: drift 14s ease-in-out infinite;
-  }
-
-  .mark-one {
-    top: 24%;
-    right: 7%;
-    font-size: 0.9rem;
-  }
-
-  .mark-two {
-    right: 21%;
-    bottom: 20%;
-    color: rgba(205, 170, 112, 0.13);
-    font-size: 2rem;
-    animation-delay: -5s;
-  }
-
-  .ambient-orbit {
-    width: 180px;
-    height: 180px;
-    right: -30px;
-    bottom: 11%;
-    border: 1px solid rgba(205, 170, 112, 0.07);
-    border-radius: 50%;
-  }
-
-  .ambient-orbit::after {
+  .portrait-frame::before,
+  .portrait-frame::after,
+  .portrait-orbit {
     content: '';
-    width: 5px;
-    height: 5px;
     position: absolute;
-    top: 35px;
-    left: 19px;
-    border: 1px solid rgba(205, 170, 112, 0.35);
+    border: 1px solid rgba(205, 170, 112, 0.1);
     border-radius: 50%;
   }
 
-  @keyframes drift {
-    0%, 100% { transform: translate3d(0, 0, 0) rotate(0); }
-    50% { transform: translate3d(6px, -9px, 0) rotate(8deg); }
+  .portrait-frame::before {
+    width: 64%;
+    aspect-ratio: 1;
+  }
+
+  .portrait-frame::after {
+    width: 84%;
+    aspect-ratio: 1;
+    transform: translate(34%, 45%);
+  }
+
+  .portrait-orbit {
+    width: 55%;
+    aspect-ratio: 1;
+    transform: rotate(45deg);
+    border-radius: 0;
+    opacity: 0.55;
+  }
+
+  .portrait-mark {
+    color: #d4b681;
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: 0.06em;
+  }
+
+  .portrait-placeholder > p {
+    margin: 0.9rem 0 0;
+    display: grid;
+    gap: 0.2rem;
+    color: #a99a87;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    line-height: 1.5;
+    text-transform: uppercase;
+  }
+
+  .portrait-placeholder strong {
+    color: #d1b382;
+    font-weight: 600;
   }
 
   @media (max-width: 720px) {
-    .hero {
-      min-height: auto;
-      padding-top: 7.25rem;
-      padding-bottom: 4.5rem;
+    .welcome,
+    .welcome.with-portrait {
+      width: min(100% - 1.5rem, 1120px);
+      padding-top: 8.25rem;
+      padding-bottom: 3.75rem;
+      grid-template-columns: 1fr;
+      gap: 2.75rem;
     }
 
     h1 {
-      max-width: 600px;
-      font-size: clamp(3.25rem, 16vw, 5.1rem);
-      line-height: 0.94;
+      max-width: 18ch;
+      font-size: clamp(2.45rem, 11.5vw, 3.5rem);
+      line-height: 1.01;
     }
 
-    .hero-description {
-      max-width: 35rem;
-      margin-top: 1.5rem;
-      font-size: 0.98rem;
-      line-height: 1.7;
+    .portrait-placeholder {
+      width: min(56vw, 190px);
+      margin: 0;
     }
 
-    .hero-cta {
-      margin-top: 1.75rem;
-    }
-
-    .marginalia {
-      margin-top: 1.5rem;
-      margin-left: 1rem;
-    }
-
-    .mark-one {
-      top: 18%;
-      right: 4%;
-    }
-
-    .mark-two,
-    .ambient-orbit {
+    .welcome::after {
       display: none;
     }
   }
 
-  @media (max-width: 380px) {
-    .hero {
-      width: min(100% - 1.5rem, 1180px);
-      padding-top: 6.8rem;
-      padding-bottom: 4rem;
-    }
-
-    .eyebrow {
-      margin-bottom: 1.1rem;
-      font-size: 0.65rem;
-    }
-
+  @media (max-width: 370px) {
     h1 {
-      font-size: clamp(3.05rem, 16vw, 3.6rem);
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .ambient-mark {
-      animation: none;
-    }
-
-    .hero-cta:hover,
-    .hero-cta:focus-visible {
-      transform: none;
+      font-size: 2.35rem;
     }
   }
 </style>
