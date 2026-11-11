@@ -61,6 +61,9 @@ const supportingEntries = collectionEntries.filter((entry) => entry !== featured
 
     {featuredEntry ? (
       <section class="collection section-shell" aria-labelledby="collection-title">
+        <div class="collection-thread" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </div>
         <header class="section-heading">
           <div>
             <p class="section-kicker">A considered selection</p>
@@ -82,6 +85,11 @@ const supportingEntries = collectionEntries.filter((entry) => entry !== featured
       </section>
     ) : (
       <section class="quiet-empty section-shell" aria-labelledby="empty-title">
+        <div class="empty-sigil" aria-hidden="true">
+          <span class="sigil-circle"></span>
+          <span class="sigil-diamond"></span>
+          <span class="sigil-star">✦</span>
+        </div>
         <p class="section-kicker">The shelves are being arranged</p>
         <h2 id="empty-title">The collection is taking shape.</h2>
         <p>Nothing has been published here yet. The welcome can stand on its own while the first pieces are prepared with care.</p>
@@ -101,16 +109,30 @@ const supportingEntries = collectionEntries.filter((entry) => entry !== featured
   .section-shell, .site-footer { width: min(100% - 2rem, 1120px); margin-inline: auto; }
   .section-kicker { margin: 0 0 0.85rem; color: #bd9966; font-size: 0.68rem; font-weight: 650; letter-spacing: 0.17em; text-transform: uppercase; }
   h2 { margin: 0; color: var(--color-text); font-family: 'Newsreader', Georgia, serif; font-size: clamp(2.7rem, 6.6vw, 5rem); font-weight: 300; letter-spacing: -0.04em; line-height: 0.98; text-wrap: balance; }
-  .collection { padding: clamp(4rem, 7vw, 6.25rem) 0 clamp(5rem, 9vw, 8rem); border-top: 1px solid rgba(205, 170, 112, 0.15); }
+  .collection { padding: clamp(3.75rem, 6vw, 5.5rem) 0 clamp(5rem, 9vw, 8rem); position: relative; border-top: 1px solid rgba(205, 170, 112, 0.15); }
+  .collection-thread { width: min(28vw, 280px); height: 1px; position: absolute; top: -1px; right: 0; background: linear-gradient(90deg, transparent, rgba(205, 170, 112, 0.32)); }
+  .collection-thread::before { content: ''; width: 42%; height: 1px; position: absolute; right: 5%; top: -18px; background: rgba(205, 170, 112, 0.12); transform: rotate(-9deg); transform-origin: right; }
+  .collection-thread span { width: 4px; height: 4px; position: absolute; top: -2px; border: 1px solid rgba(213, 177, 119, 0.7); border-radius: 50%; background: #17130f; box-shadow: 0 0 9px rgba(213, 177, 119, 0.28); }
+  .collection-thread span:nth-child(1) { left: 28%; }
+  .collection-thread span:nth-child(2) { left: 61%; }
+  .collection-thread span:nth-child(3) { right: 0; }
   .section-heading { margin-bottom: clamp(2.2rem, 4vw, 3.3rem); display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(270px, 0.75fr); align-items: end; gap: 2rem; }
   .review-note { max-width: 46ch; margin: 0 0 0.2rem auto; color: #a99d8d; font-size: 0.78rem; line-height: 1.7; }
   .review-note strong { color: #d1b382; font-weight: 600; }
   .collection-layout { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr); gap: 1rem; }
   .supporting-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
-  .quiet-empty { margin-bottom: clamp(4rem, 9vw, 7rem); padding: clamp(3.5rem, 7vw, 5.5rem) clamp(1.4rem, 5vw, 4rem); position: relative; overflow: hidden; border: 1px solid rgba(205, 170, 112, 0.15); background: rgba(31, 24, 19, 0.42); }
+  .quiet-empty { margin-bottom: clamp(4rem, 9vw, 7rem); padding: clamp(3.5rem, 7vw, 5.5rem) clamp(1.4rem, 5vw, 4rem); position: relative; overflow: hidden; border: 1px solid rgba(205, 170, 112, 0.15); background: linear-gradient(145deg, rgba(36, 27, 21, 0.5), rgba(24, 19, 15, 0.4)); }
   .quiet-empty h2 { max-width: 12ch; font-size: clamp(2.5rem, 5.6vw, 4.3rem); }
   .quiet-empty > p:not(.section-kicker) { max-width: 57ch; margin: 1.3rem 0 0; color: var(--color-text-dim); font-size: 0.95rem; line-height: 1.75; }
   .quiet-mark { position: absolute; right: clamp(1.5rem, 6vw, 5rem); bottom: clamp(1.5rem, 5vw, 3.5rem); color: rgba(205, 170, 112, 0.25); font-size: 0.75rem; }
+  .empty-sigil { width: clamp(150px, 22vw, 245px); aspect-ratio: 1; position: absolute; right: clamp(-4.5rem, -2vw, -1rem); top: 50%; color: rgba(205, 170, 112, 0.14); transform: translateY(-50%); }
+  .sigil-circle, .sigil-diamond { position: absolute; inset: 12%; border: 1px solid currentColor; }
+  .sigil-circle { border-radius: 50%; }
+  .sigil-diamond { inset: 25%; transform: rotate(45deg); }
+  .sigil-circle::before, .sigil-circle::after { content: ''; position: absolute; background: currentColor; }
+  .sigil-circle::before { width: 140%; height: 1px; left: -20%; top: 50%; transform: rotate(-18deg); }
+  .sigil-circle::after { width: 1px; height: 140%; left: 50%; top: -20%; }
+  .sigil-star { position: absolute; inset: 0; display: grid; place-items: center; color: rgba(218, 180, 119, 0.55); font-size: 0.65rem; text-shadow: 0 0 12px rgba(218, 180, 119, 0.45); }
   .site-footer { padding: 2rem 0 2.6rem; display: flex; justify-content: space-between; gap: 2rem; border-top: 1px solid rgba(205, 170, 112, 0.15); color: #a99f91; font-size: 0.72rem; line-height: 1.65; }
   .site-footer p { max-width: 54ch; margin: 0; }
   .site-footer p:first-child span { margin-right: 0.4rem; color: #bd9966; }
@@ -125,6 +147,8 @@ const supportingEntries = collectionEntries.filter((entry) => entry !== featured
     .collection { padding-top: 3.5rem; padding-bottom: 5rem; }
     .supporting-grid { grid-template-columns: 1fr; }
     .quiet-empty { padding: 2.25rem 1.35rem 4.5rem; }
+    .empty-sigil { width: 155px; right: -4.8rem; top: 70%; opacity: 0.72; }
+    .collection-thread { width: 42vw; }
     .site-footer { flex-direction: column; gap: 0.7rem; }
   }
 </style>
