@@ -1,0 +1,61 @@
+<aside class="portrait-placeholder" aria-label="Portrait placement for review">
+  <div class="portrait-frame" aria-hidden="true">
+    <span class="portrait-mark">JL</span>
+    <span class="portrait-orbit"></span>
+  </div>
+  <p><strong>Portrait placement</strong><span>No photograph selected</span></p>
+</aside>
+
+<style>
+  .portrait-placeholder {
+    width: min(100%, 150px);
+  }
+
+  .portrait-frame {
+    aspect-ratio: 4 / 5;
+    display: grid;
+    place-items: center;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(205, 170, 112, 0.24);
+    background: linear-gradient(145deg, rgba(52, 40, 29, 0.64), rgba(24, 19, 15, 0.78)), #211a14;
+  }
+
+  .portrait-frame::before,
+  .portrait-frame::after,
+  .portrait-orbit {
+    content: '';
+    position: absolute;
+    border: 1px solid rgba(205, 170, 112, 0.1);
+    border-radius: 50%;
+  }
+
+  .portrait-frame::before { width: 64%; aspect-ratio: 1; }
+  .portrait-frame::after { width: 84%; aspect-ratio: 1; transform: translate(34%, 45%); }
+  .portrait-orbit { width: 55%; aspect-ratio: 1; transform: rotate(45deg); border-radius: 0; opacity: 0.55; }
+
+  .portrait-mark {
+    color: #d4b681;
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: 1.65rem;
+    font-weight: 300;
+    letter-spacing: 0.06em;
+  }
+
+  .portrait-placeholder > p {
+    margin: 0.7rem 0 0;
+    display: grid;
+    gap: 0.15rem;
+    color: #a99a87;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    line-height: 1.5;
+    text-transform: uppercase;
+  }
+
+  .portrait-placeholder strong { color: #d1b382; font-weight: 600; }
+
+  @media (max-width: 720px) {
+    .portrait-placeholder { width: 132px; }
+  }
+</style>

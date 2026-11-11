@@ -1,12 +1,4 @@
----
-interface Props {
-  showPortraitPlaceholder?: boolean;
-}
-
-const { showPortraitPlaceholder = false } = Astro.props;
----
-
-<section class:list={['welcome', { 'with-portrait': showPortraitPlaceholder }]} aria-labelledby="welcome-title">
+<section class="welcome" aria-labelledby="welcome-title">
   <div class="alchemy-atmosphere" aria-hidden="true">
     <svg viewBox="0 0 260 260" fill="none">
       <g class="slow-orbit">
@@ -24,7 +16,7 @@ const { showPortraitPlaceholder = false } = Astro.props;
   </div>
 
   <div class="welcome-copy">
-    <p class="preview-label">Homepage preview <span aria-hidden="true">·</span> provisional wording</p>
+    <p class="preview-label">A brief welcome <span aria-hidden="true">·</span> provisional wording</p>
     <h1 id="welcome-title">
       I’m Jason Lyvers. I work in digital marketing. That explains some of what you’ll find here.
     </h1>
@@ -32,54 +24,36 @@ const { showPortraitPlaceholder = false } = Astro.props;
       The rest involves books, questions, experiments, and connections I’m still trying to explain. Have a look around.
     </p>
   </div>
-
-  {showPortraitPlaceholder && (
-    <aside class="portrait-placeholder" aria-label="Portrait placement for review">
-      <div class="portrait-frame" aria-hidden="true">
-        <span class="portrait-mark">JL</span>
-        <span class="portrait-orbit"></span>
-      </div>
-      <p><strong>Portrait placement</strong><span>No photograph selected</span></p>
-    </aside>
-  )}
 </section>
 
 <style>
   .welcome {
-    width: min(100% - 2rem, 1120px);
-    min-height: 0;
-    margin: 0 auto;
-    padding: clamp(8.75rem, 14vh, 10rem) 0 clamp(3.25rem, 6vw, 4.75rem);
-    display: grid;
-    align-items: center;
+    min-width: 0;
+    padding: 0.6rem 0 2.4rem;
     position: relative;
+    isolation: isolate;
   }
 
   .welcome::after {
     content: '✦';
     position: absolute;
     left: 0;
-    bottom: 1.7rem;
+    bottom: 0;
     color: rgba(207, 167, 104, 0.65);
     font-size: 0.62rem;
     text-shadow: 0 0 18px rgba(196, 155, 99, 0.45);
   }
 
-  .welcome.with-portrait {
-    grid-template-columns: minmax(0, 1fr) minmax(180px, 218px);
-    gap: clamp(3rem, 8vw, 6rem);
-  }
-
   .welcome-copy {
-    max-width: 720px;
+    max-width: 630px;
     position: relative;
     z-index: 1;
   }
 
   .preview-label {
-    margin: 0 0 1.25rem;
+    margin: 0 0 1.15rem;
     color: #bd9966;
-    font-size: 0.68rem;
+    font-size: 0.66rem;
     font-weight: 650;
     letter-spacing: 0.17em;
     line-height: 1.5;
@@ -87,40 +61,36 @@ const { showPortraitPlaceholder = false } = Astro.props;
   }
 
   h1 {
-    max-width: 25ch;
+    max-width: 23ch;
     margin: 0;
     color: var(--color-text);
     font-family: 'Newsreader', Georgia, serif;
-    font-size: clamp(1.95rem, 3.4vw, 3rem);
+    font-size: clamp(1.75rem, 2.7vw, 2.35rem);
     font-weight: 350;
-    letter-spacing: -0.027em;
-    line-height: 1.12;
+    letter-spacing: -0.024em;
+    line-height: 1.13;
     text-wrap: balance;
   }
 
   .welcome-copy > p:last-child {
-    max-width: 57ch;
-    margin: 1.25rem 0 0;
+    max-width: 52ch;
+    margin: 1.15rem 0 0;
     color: var(--color-text-dim);
-    font-size: clamp(0.98rem, 1.25vw, 1.07rem);
-    line-height: 1.75;
+    font-size: clamp(0.93rem, 1.15vw, 1rem);
+    line-height: 1.72;
   }
 
   .alchemy-atmosphere {
-    width: min(29vw, 340px);
+    width: min(22vw, 235px);
     aspect-ratio: 1;
     position: absolute;
-    right: 0;
-    top: 51%;
+    right: -4.75rem;
+    top: 47%;
+    z-index: -1;
     color: #c39a61;
-    opacity: 0.46;
+    opacity: 0.28;
     pointer-events: none;
-    transform: translateY(-42%);
-  }
-
-  .with-portrait .alchemy-atmosphere {
-    right: -3.5rem;
-    opacity: 0.34;
+    transform: translateY(-50%);
   }
 
   .alchemy-atmosphere svg {
@@ -154,135 +124,38 @@ const { showPortraitPlaceholder = false } = Astro.props;
     line-height: 1;
   }
 
-  .glyph-one {
-    top: 8%;
-    right: 14%;
-    font-size: 0.68rem;
-  }
-
-  .glyph-two {
-    left: 4%;
-    bottom: 17%;
-    font-size: 0.8rem;
-    opacity: 0.68;
-  }
+  .glyph-one { top: 8%; right: 14%; font-size: 0.68rem; }
+  .glyph-two { left: 4%; bottom: 17%; font-size: 0.8rem; opacity: 0.68; }
 
   @keyframes alchemy-turn {
     to { transform: rotate(360deg); }
   }
 
-  .portrait-placeholder {
-    width: 100%;
-    margin-top: 0.25rem;
-    position: relative;
-    z-index: 1;
-  }
-
-  .portrait-frame {
-    aspect-ratio: 4 / 5;
-    display: grid;
-    place-items: center;
-    position: relative;
-    overflow: hidden;
-    border: 1px solid rgba(205, 170, 112, 0.26);
-    background: linear-gradient(145deg, rgba(52, 40, 29, 0.68), rgba(24, 19, 15, 0.82)), #211a14;
-  }
-
-  .portrait-frame::before,
-  .portrait-frame::after,
-  .portrait-orbit {
-    content: '';
-    position: absolute;
-    border: 1px solid rgba(205, 170, 112, 0.1);
-    border-radius: 50%;
-  }
-
-  .portrait-frame::before {
-    width: 64%;
-    aspect-ratio: 1;
-  }
-
-  .portrait-frame::after {
-    width: 84%;
-    aspect-ratio: 1;
-    transform: translate(34%, 45%);
-  }
-
-  .portrait-orbit {
-    width: 55%;
-    aspect-ratio: 1;
-    transform: rotate(45deg);
-    border-radius: 0;
-    opacity: 0.55;
-  }
-
-  .portrait-mark {
-    color: #d4b681;
-    font-family: 'Newsreader', Georgia, serif;
-    font-size: 2rem;
-    font-weight: 300;
-    letter-spacing: 0.06em;
-  }
-
-  .portrait-placeholder > p {
-    margin: 0.9rem 0 0;
-    display: grid;
-    gap: 0.2rem;
-    color: #a99a87;
-    font-size: 0.7rem;
-    letter-spacing: 0.08em;
-    line-height: 1.5;
-    text-transform: uppercase;
-  }
-
-  .portrait-placeholder strong {
-    color: #d1b382;
-    font-weight: 600;
-  }
-
   @media (max-width: 720px) {
-    .welcome,
-    .welcome.with-portrait {
-      width: min(100% - 1.5rem, 1120px);
-      padding-top: 8.25rem;
-      padding-bottom: 3.25rem;
-      grid-template-columns: 1fr;
-      gap: 2.35rem;
+    .welcome {
+      padding-top: 0;
+      padding-bottom: 2.25rem;
     }
 
     h1 {
       max-width: 24ch;
-      font-size: clamp(1.85rem, 8.2vw, 2.25rem);
-      line-height: 1.12;
+      font-size: clamp(1.72rem, 7.6vw, 2.05rem);
+      line-height: 1.13;
     }
 
-    .portrait-placeholder {
-      width: min(56vw, 190px);
-      margin: 0;
-    }
-
-    .alchemy-atmosphere,
-    .with-portrait .alchemy-atmosphere {
-      width: 180px;
-      right: -4.5rem;
-      top: 41%;
-      opacity: 0.22;
-    }
-
-    .welcome::after {
-      bottom: 1.25rem;
+    .alchemy-atmosphere {
+      width: 165px;
+      right: -3.5rem;
+      top: 45%;
+      opacity: 0.2;
     }
   }
 
   @media (max-width: 370px) {
-    h1 {
-      font-size: 1.78rem;
-    }
+    h1 { font-size: 1.68rem; }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .slow-orbit {
-      animation: none;
-    }
+    .slow-orbit { animation: none; }
   }
 </style>
