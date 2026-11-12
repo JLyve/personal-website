@@ -17,8 +17,8 @@ The exact dependency versions are recorded in `package-lock.json`. Codex uses th
 ## Who owns the work
 
 - **ChatGPT is the creative and technical lead.** It develops the direction with Jason, assesses software and workflow choices, reviews code and rendered previews, compares approved decisions with GitHub, and prepares the implementation and reconciliation handoffs. It reports what it could actually inspect.
-- **Codex is the implementation engineer.** It makes approved code and documentation changes together, checks the result, maintains the PR and preview, and supplies verified merged files after approval.
-- **Jason is the owner.** He makes meaningful creative and publishing decisions. He isn't expected to code, select repository paths, reconstruct prior decisions, or manage synchronization. When the app requires a manual Project-file upload or Custom Instructions replacement, the assistants provide the complete files and one clear set of steps.
+- **Codex is the implementation engineer.** It makes approved code and documentation changes together, checks the result, maintains the PR and preview, and reports the verified merged result after approval.
+- **Jason is the owner.** He makes meaningful creative and publishing decisions. He isn't expected to code, select repository paths, reconstruct prior decisions, or synchronize duplicate document copies.
 
 Keep the current tools and existing documents. This is a verified handoff process, not an automatic synchronization service or a new database.
 
@@ -125,13 +125,13 @@ ChatGPT owns the decision comparison before each implementation handoff and agai
 3. For each relevant approved decision, identify its GitHub document and implementation evidence. Put approved public-safe requirements into the existing document and the same PR as the code change. An updated document alone doesn't prove the code follows it.
 4. List missing items, material conflicts, and owner-approved deferrals in the existing handoff and PR. If a source isn't accessible, identify the verified public-safe handoff used and the access limit; don't claim a direct Notion comparison. Pause only dependent work while resolving a required gap.
 5. Don't recommend merging until required decisions, documentation, implementation checks, and production-content approvals are complete. A successful build or approval of a preview isn't permission to publish.
-6. After a verified merge, check the merged result. ChatGPT reconciles the private decision record when authorized; Codex supplies complete merged files and Custom Instructions for the required manual Project replacements in one handoff. Deployment and manual replacement stay pending until separately verified.
+6. After a verified merge, check the merged result and deployment separately. ChatGPT reconciles the private decision record when authorized; Codex reports the verified merge and deployment status plus any remaining authorized Notion action.
 
 Keep private reflection, transcripts, drafts, and private Notion links out of public files and PRs. Transfer only the specific public-safe material Jason has authorized. Don't create another tracker, duplicate specification, background task, or synchronization service.
 
 ### Private decision record
 
-Use the existing Living Creative Direction page. For each approved decision, keep one compact entry with its preview or production approval scope, GitHub document and PR link, and progress: **Awaiting implementation**, **In a PR**, or **Merged**. Note any remaining documentation, implementation, deployment, or Project-file action.
+Use the existing Living Creative Direction page. For each approved decision, keep one compact entry with its preview or production approval scope, GitHub document and PR link, and progress: **Awaiting implementation**, **In a PR**, or **Merged**. Note any remaining documentation, implementation, deployment, or authorized Notion-reconciliation action.
 
 These labels describe progress, not approval. A PR isn't merged merely because it was opened, and merging a document doesn't make its provisional design or copy final. Keep Working Directions and Exploratory Ideas in their existing sections.
 
@@ -192,25 +192,21 @@ The normal review process is:
 
 Codex will not merge a pull request or publish a change without approval.
 
-## How the Personal Website project stays aligned
+## How the maintained sources stay aligned
 
-GitHub is the authoritative source for the website and its durable documentation. The separate Personal Website project may contain convenience copies of Markdown files plus a Custom Instructions field, but those copies do not synchronize automatically.
+Use each maintained source for its defined purpose:
 
-The canonical Custom Instructions are stored in [`docs/PROJECT_CUSTOM_INSTRUCTIONS.md`](PROJECT_CUSTOM_INSTRUCTIONS.md). When that file changes, the owner must manually replace the Personal Website project's Custom Instructions with the complete merged version.
+- **GitHub** stores the website code, approved implementation requirements, and durable project documentation.
+- **Notion** stores private thinking, drafts, and decision records.
+- **The ChatGPT Project** stores conversations and stable instructions that point assistants to the current GitHub and Notion sources.
 
-Every pull request must use the repository pull-request template to identify whether it changes a file mirrored in the Personal Website project. The mirrored set currently includes:
+Jason has retired routine uploaded Project copies of GitHub documents. Do not create after-merge replacement packages, ask him to upload or confirm duplicate files, or treat Project-file replacement as a pending approval or completion requirement.
 
-- `AGENTS.md`;
-- `docs/PROJECT_GUIDE.md`;
-- `docs/CREATIVE_BRIEF.md`;
-- `docs/EDITORIAL_GUIDE.md`;
-- `docs/TECHNICAL_AUDIT_ROADMAP.md`;
-- `docs/PROJECT_CUSTOM_INSTRUCTIONS.md`; and
-- any additional file the owner later chooses to upload as Project knowledge.
+[`docs/PROJECT_CUSTOM_INSTRUCTIONS.md`](PROJECT_CUSTOM_INSTRUCTIONS.md) is the repository reference for stable source-pointer guidance. It directs assistants to the maintained sources rather than duplicating their detailed workflow. Changes to it do not create a routine request for Jason to replace already-current Project instructions.
 
-After every merge, Codex must compare the merged files against this set without waiting for a reminder. If synchronization is required, Codex provides the complete merged files and clear add, replace, or remove instructions in one handoff. If synchronization is not required, Codex explicitly says so. ChatGPT verifies the merged decision record and, when authorized, updates the private Notion status. The owner performs only the app-required manual upload or Custom Instructions replacement and confirms completion. Record any uncompleted step as pending.
+At the beginning of substantial work, fetch and read the latest relevant GitHub documents. Consult the relevant Notion records only when the task requires them and Jason has authorized access. If a required source is inaccessible, identify the gap and any verified public-safe handoff used; don't claim a direct comparison.
 
-If a new task begins before that confirmation, GitHub still governs. Codex should fetch the latest GitHub documentation, identify any mismatch with the Project copies, and continue only from the authoritative GitHub version.
+After an approved merge, verify the actual merged result and production deployment separately. Report any remaining authorized Notion reconciliation without creating another synchronization system. ChatGPT updates private decision progress only when authorized, using accurate labels and GitHub references.
 
 ## How GitHub and Cloudflare Pages work together
 

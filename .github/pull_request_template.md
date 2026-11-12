@@ -29,27 +29,9 @@
 
 <!-- Add the preview URL when available, or explain why no visual preview is needed. -->
 
-## Personal Website project synchronization
-
-- [ ] I checked whether this pull request changes a file mirrored in the separate Personal Website project or its Custom Instructions.
-- [ ] The pull request identifies one of the outcomes below.
-
-**Synchronization outcome:**
-
-- [ ] No Personal Website project file synchronization will be required after merge.
-- [ ] Synchronization will be required after merge.
-
-If synchronization will be required, list the affected items and the expected action:
-
-| File or setting | Add, replace, or remove |
-| --- | --- |
-|  |  |
-
-After merge, Codex must provide complete files from the merged `main` branch without waiting for the owner to ask. The owner must manually update the Personal Website project and confirm completion.
-
 ## After-merge handoff
 
-<!-- After an approved merge, provide the verified merged PR/commit, deployment result or pending status, and the complete required Project-file replacements together. ChatGPT reconciles private Notion entries only when authorized. Don't claim any pending step is complete. -->
+<!-- After an approved merge, report the verified merged PR/commit, deployment result or pending status, and any remaining authorized Notion reconciliation. There is no routine Project-file upload package. Don't claim any pending step is complete. -->
 
 ## Next owner action
 

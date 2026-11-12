@@ -48,7 +48,7 @@ Before a handoff or merge recommendation, follow the required decision check in 
 
 Keep affected GitHub documents in the same PR as the change. State the preview or production approval scope, evidence checked, missing items, owner-approved deferrals, and source-access limits in the PR template. Don't claim direct Notion review when using only a public-safe handoff. Pause only dependent work when a source or decision is missing.
 
-Don't recommend a merge with a required decision missing or conflicting, failed required validation, or unapproved production content. After an approved merge, supply the verified result and complete Project-file replacements together; ChatGPT reconciles private records only when authorized. Keep deployment and manual Project replacement pending until verified.
+Don't recommend a merge with a required decision missing or conflicting, failed required validation, or unapproved production content. After an approved merge, report the verified merged result and deployment status; ChatGPT reconciles private records only when authorized. Keep any remaining deployment or authorized Notion action pending until verified.
 
 ## Visual and content guardrails
 
@@ -77,22 +77,17 @@ Don't recommend a merge with a required decision missing or conflicting, failed 
 
 Update the relevant project documents in the same pull request when an approved decision changes.
 
-### Personal Website project synchronization
+### Maintained sources and after-merge handoff
 
-GitHub is authoritative, but the owner's separate Personal Website project may contain convenience copies of the durable Markdown files and a separate Custom Instructions field. Those copies do not update automatically.
+The maintained records are:
 
-At the beginning of substantial work, verify the latest GitHub versions of the required project documents. For every pull request, use the repository pull-request template to declare whether Personal Website project synchronization will be required after merge.
+- **GitHub:** website code, approved implementation requirements, and project documentation;
+- **Notion:** private thinking, drafts, and decision records; and
+- **ChatGPT Project:** conversations and stable instructions that point to the current GitHub and Notion sources.
 
-After every merge:
+The ChatGPT Project does not maintain routine uploaded copies of GitHub documents. Do not create a replacement package, ask Jason to upload or confirm duplicate files, or treat Project-file replacement as a pending approval or completion requirement.
 
-1. Compare the merged changes against `AGENTS.md`, `docs/PROJECT_GUIDE.md`, `docs/CREATIVE_BRIEF.md`, `docs/EDITORIAL_GUIDE.md`, `docs/TECHNICAL_AUDIT_ROADMAP.md`, `docs/PROJECT_CUSTOM_INSTRUCTIONS.md`, and any other file known to be mirrored in the Personal Website project.
-2. If any mirrored file changed, proactively provide its complete merged Markdown version and state whether the owner must add, replace, or remove it. If `docs/PROJECT_CUSTOM_INSTRUCTIONS.md` changed, provide the complete replacement Custom Instructions.
-3. If no mirrored file changed, explicitly state: “No Personal Website project file synchronization is required.”
-4. Do not wait for the owner to ask about synchronization.
-5. Do not describe synchronization as complete until the owner confirms the manual Project upload or Custom Instructions replacement.
-6. Use the required decision check to reconcile the approved decisions with the merged implementation. Name any remaining Notion, deployment, or Project-file action and provide one complete handoff; don't make Jason discover or assemble the updates.
-
-The assistant cannot directly replace uploaded Project files or edit Project Custom Instructions. Never imply that this manual action happened automatically.
+At the beginning of substantial work, verify the latest relevant GitHub documents and, when authorized and accessible, the relevant Notion records. After an approved merge, verify the merged result and deployment separately, then report any remaining authorized Notion reconciliation. If a required source is inaccessible, identify the gap and any verified public-safe handoff used; don't claim a comparison that didn't happen.
 
 Clearly distinguish:
 
