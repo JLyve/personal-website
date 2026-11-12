@@ -161,11 +161,17 @@ const supportingEntries = collectionEntries.filter((entry) => entry !== featured
   }
 
   .featured-heading {
-    margin-bottom: 1.65rem;
+    margin-bottom: 1.3rem;
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(160px, 0.45fr);
     align-items: end;
     gap: 1.5rem;
+  }
+
+  .featured-heading h2 {
+    font-size: clamp(1.75rem, 2.8vw, 2.35rem);
+    letter-spacing: -0.025em;
+    line-height: 1.05;
   }
 
   .review-note {
@@ -246,8 +252,8 @@ const supportingEntries = collectionEntries.filter((entry) => entry !== featured
     }
 
     .welcome-slot { padding-top: 0; }
-    .featured-heading { margin-bottom: 1.5rem; }
-    .featured-heading h2 { font-size: clamp(2.55rem, 12vw, 3.45rem); }
+    .featured-heading { margin-bottom: 1.2rem; }
+    .featured-heading h2 { font-size: clamp(1.85rem, 8vw, 2.2rem); }
     .portrait-slot { padding-top: 0.5rem; }
 
     .quiet-empty { min-height: 360px; padding: 2rem 1.35rem; }
