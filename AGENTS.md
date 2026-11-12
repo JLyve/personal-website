@@ -4,17 +4,17 @@ Read `docs/PROJECT_GUIDE.md`, `docs/CREATIVE_BRIEF.md`, and `docs/EDITORIAL_GUID
 
 ## Roles and scope
 
-- Codex implements and tests website changes in this Astro repository. ChatGPT is the thinking, creative-direction, and editorial partner.
+- ChatGPT is the creative and technical lead: it develops the direction, assesses implementation choices, reviews changes and previews, checks decision consistency, and prepares verified handoffs. Codex implements and tests website changes in this Astro repository and maintains the affected GitHub documents. Jason chooses the direction and approves publication; he isn't responsible for coding or reconciling the records.
 - The private Notion project workspace contains an Idea Inbox, a Living Creative Direction document, and Session Synopses. These records support private thinking and editorial development, but they do not automatically authorize website changes.
 - There is no automatic publishing or synchronization pipeline between Notion, Codex, GitHub, or Cloudflare. Never fetch, copy, publish, or commit private Notion material without explicit authorization.
 - The owner is a nondeveloper working through Codex Cloud on a Mac. Do not require Terminal, local Node.js, VS Code, or manual coding.
 - Preserve Darkness's MIT license and attribution and its working Astro foundations. Prefer simple, maintainable, accessible, fast static output over a complex app.
-- Start from the latest `main`. Make scoped changes in a separate branch and pull request.
+- For a new task, start from the latest `main` and make scoped changes in a separate branch and pull request. When asked to continue an existing PR, use its latest branch head, preserve its work, and account for relevant changes from `main`.
 - Never merge, publish an editorial Note, connect a new service, spend money, or introduce large design changes without explicit approval. Explain the proposed effect in plain English.
 - Review rendered layouts and actual interactions at desktop and mobile sizes whenever feasible.
 - Run `npm run astro -- check` and `npm run build`, or the repository's current equivalents. Report results honestly and do not claim untested features work.
 - The current production host is Cloudflare Pages at `https://personal-website-alg.pages.dev`. Approved merges to `main` can automatically deploy. Do not treat a merged pull request as a private change.
-- Keep the pre-launch search lock in `site.config.mjs` disabled (`SITE_INDEXING_ENABLED = false`) until the owner explicitly approves making the site crawlable and indexable. Enabling it is a launch action requiring its own reviewed pull request.
+- Keep search crawling and indexing disabled using `SITE_INDEXING_ENABLED = false` in `site.config.mjs` until the owner explicitly approves making the site crawlable and indexable. Enabling indexing is a launch action requiring its own reviewed pull request.
 - Treat the mandatory launch gates in `docs/TECHNICAL_AUDIT_ROADMAP.md` as blocking requirements. Do not enable indexing, submit a sitemap, or describe the site as launch-ready until those gates are complete and verified.
 - Maintain appropriate canonical URLs, sitemap, accurate page metadata, accessible navigation, image handling, and relevant truthful structured data. SEO is a foundation, not an excuse to inflate text.
 - Use semantic HTML. Provide keyboard and touch equivalents for hover effects, adequate contrast, reduced-motion support, and performance fallbacks for elaborate particle effects.
@@ -38,9 +38,17 @@ Apply these rules:
 - Working Directions and Exploratory Ideas may guide discussion and prototypes, but they must not silently become implementation requirements.
 - Session Synopses must never override the Living Creative Direction or a GitHub project document.
 - A newer edit date does not automatically make one source authoritative.
-- If Notion and GitHub conflict, stop and show the owner the exact conflict. Do not guess which direction replaced the other.
+- If Notion and GitHub conflict, show the exact conflict and pause only dependent work. Check for an explicit later approval before asking Jason to decide; don't infer authority from edit dates or guess which direction replaced the other.
 - When an approved decision changes the website direction, update the relevant GitHub document in the same pull request or before implementing the change.
 - Keep private reflection, raw dictation, transcripts, and unapproved drafts out of the public repository.
+
+### Required decision check
+
+Before a handoff or merge recommendation, follow the required decision check in `docs/PROJECT_GUIDE.md`. ChatGPT owns comparison with the relevant approved decisions; Codex verifies the implementation and documentation.
+
+Keep affected GitHub documents in the same PR as the change. State the preview or production approval scope, evidence checked, missing items, owner-approved deferrals, and source-access limits in the PR template. Don't claim direct Notion review when using only a public-safe handoff. Pause only dependent work when a source or decision is missing.
+
+Don't recommend a merge with a required decision missing or conflicting, failed required validation, or unapproved production content. After an approved merge, supply the verified result and complete Project-file replacements together; ChatGPT reconciles private records only when authorized. Keep deployment and manual Project replacement pending until verified.
 
 ## Visual and content guardrails
 
@@ -82,6 +90,7 @@ After every merge:
 3. If no mirrored file changed, explicitly state: “No Personal Website project file synchronization is required.”
 4. Do not wait for the owner to ask about synchronization.
 5. Do not describe synchronization as complete until the owner confirms the manual Project upload or Custom Instructions replacement.
+6. Use the required decision check to reconcile the approved decisions with the merged implementation. Name any remaining Notion, deployment, or Project-file action and provide one complete handoff; don't make Jason discover or assemble the updates.
 
 The assistant cannot directly replace uploaded Project files or edit Project Custom Instructions. Never imply that this manual action happened automatically.
 
