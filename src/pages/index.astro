@@ -2,7 +2,6 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Navigation from '../components/Navigation.astro';
 import Hero from '../components/Hero.astro';
-import PortraitPlaceholder from '../components/PortraitPlaceholder.astro';
 import CollectionCard from '../components/CollectionCard.astro';
 import { getPublishedNotes, getPublishedProjects } from '../utils/content';
 
@@ -64,7 +63,7 @@ const supportingEntries = collectionEntries.filter((entry) => entry !== featured
   <main class="collection-home">
     <div class="opening section-shell">
       <div class="welcome-slot">
-        <Hero />
+        <Hero showPortraitPlaceholder={reviewExamplesEnabled} />
       </div>
 
       {featuredEntry ? (
@@ -92,12 +91,6 @@ const supportingEntries = collectionEntries.filter((entry) => entry !== featured
           <p>Nothing has been published here yet. The welcome can stand on its own while the first pieces are prepared with care.</p>
           <span class="quiet-mark" aria-hidden="true">✦</span>
         </section>
-      )}
-
-      {reviewExamplesEnabled && (
-        <div class="portrait-slot">
-          <PortraitPlaceholder />
-        </div>
       )}
     </div>
 
@@ -127,9 +120,7 @@ const supportingEntries = collectionEntries.filter((entry) => entry !== featured
     padding: clamp(8.5rem, 14vh, 10rem) 0 clamp(4.5rem, 7vw, 6rem);
     display: grid;
     grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1.28fr);
-    grid-template-areas:
-      'welcome feature'
-      'portrait feature';
+    grid-template-areas: 'welcome feature';
     align-items: start;
     column-gap: var(--opening-gap);
     row-gap: 2rem;
@@ -138,7 +129,6 @@ const supportingEntries = collectionEntries.filter((entry) => entry !== featured
 
   .welcome-slot { grid-area: welcome; min-width: 0; padding-top: 2rem; }
   .featured-cluster, .quiet-empty { grid-area: feature; min-width: 0; }
-  .portrait-slot { grid-area: portrait; align-self: end; }
 
   .section-kicker {
     margin: 0 0 0.75rem;
@@ -246,16 +236,13 @@ const supportingEntries = collectionEntries.filter((entry) => entry !== featured
       grid-template-columns: 1fr;
       grid-template-areas:
         'welcome'
-        'feature'
-        'portrait';
+        'feature';
       row-gap: 2.25rem;
     }
 
     .welcome-slot { padding-top: 0; }
     .featured-heading { margin-bottom: 1.2rem; }
     .featured-heading h2 { font-size: clamp(1.85rem, 8vw, 2.2rem); }
-    .portrait-slot { padding-top: 0.5rem; }
-
     .quiet-empty { min-height: 360px; padding: 2rem 1.35rem; }
     .quiet-empty h2 { font-size: clamp(2.45rem, 11vw, 3.25rem); }
     .empty-sigil { width: 155px; right: -4rem; top: 1.2rem; opacity: 0.78; }

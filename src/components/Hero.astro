@@ -1,3 +1,13 @@
+---
+import PortraitPlaceholder from './PortraitPlaceholder.astro';
+
+interface Props {
+  showPortraitPlaceholder?: boolean;
+}
+
+const { showPortraitPlaceholder = false } = Astro.props;
+---
+
 <section class="welcome" aria-labelledby="welcome-title">
   <div class="alchemy-atmosphere" aria-hidden="true">
     <svg viewBox="0 0 260 260" fill="none">
@@ -14,6 +24,12 @@
     <span class="field-glyph glyph-one">✦</span>
     <span class="field-glyph glyph-two">◇</span>
   </div>
+
+  {showPortraitPlaceholder && (
+    <div class="portrait-placement">
+      <PortraitPlaceholder />
+    </div>
+  )}
 
   <div class="welcome-copy">
     <p class="preview-label">A brief welcome <span aria-hidden="true">·</span> provisional wording</p>
@@ -46,6 +62,12 @@
 
   .welcome-copy {
     max-width: 630px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .portrait-placement {
+    margin-bottom: 1.35rem;
     position: relative;
     z-index: 1;
   }
@@ -146,6 +168,8 @@
       font-size: clamp(1.72rem, 7.6vw, 2.05rem);
       line-height: 1.13;
     }
+
+    .portrait-placement { margin-bottom: 1.1rem; }
   }
 
   @media (max-width: 370px) {

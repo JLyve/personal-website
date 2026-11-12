@@ -57,10 +57,10 @@ This revision replaces the headline-led opening described below for the next rev
 - Use **Not Entirely Unrelated** as the provisional collection name and clearly associate it with **Jason Lyvers** in the header.
 - Replace the large slogan, promotional pitch, and hero CTA with a compact, conversational welcome. Use the owner-supplied wording for layout testing only; it remains provisional and is not approved production copy.
 - Use a genuinely collection-first restrained hybrid: pair the modest welcome with the prominent featured item in the first-screen composition instead of making visitors pass through a separate hero. Use **From the collection** as a provisional label, with smaller supporting entries that can represent Notes, Projects, or Reading according to the real work available.
-- On mobile, place the featured collection item before any optional portrait placement so the portrait cannot delay discovery.
+- Treat any optional portrait placement as part of the welcome itself. In the examples preview, place a small square portrait space above the welcome copy in normal document flow on desktop and mobile, aligned with the copy's left edge. The collection should follow the complete welcome as one uninterrupted sequence.
 - The homepage must feel intentional with no published entries. Hide empty collection sections, category controls, and links without useful destinations.
 - Keep layout examples separate from published collections and normal builds. Examples must use visibly structural bracketed placeholders rather than invented article titles, book choices, client results, or personal claims.
-- A small portrait may sit near the welcome in a review state. Until an approved photograph exists, use only a clearly labeled placement placeholder; the normal no-image layout must remain complete and mobile must not squeeze the welcome beside the portrait.
+- Until an approved photograph exists, use only a simple, clearly labeled square placement in the examples preview, without ornamental portrait-card styling. The normal no-image build must omit the placeholder and collapse its space completely.
 
 ### Positioning and personality
 
