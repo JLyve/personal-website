@@ -1,6 +1,6 @@
 # Personal Website -- Creative & Strategy Brief
 
-Status: approved creative direction and homepage approach for a **preview implementation**, not a final pixel-perfect specification or approval of public copy. Updated 2026-11-11.
+Status: approved creative direction and homepage approach for a **preview implementation**, not a final pixel-perfect specification or approval of public copy. Updated 2026-11-12.
 
 ## Purpose and positioning
 
@@ -57,10 +57,10 @@ This revision replaces the headline-led opening described below for the next rev
 - Use **Not Entirely Unrelated** as the provisional collection name and clearly associate it with **Jason Lyvers** in the header.
 - Replace the large slogan, promotional pitch, and hero CTA with a compact, conversational welcome. Use the owner-supplied wording for layout testing only; it remains provisional and is not approved production copy.
 - Use a genuinely collection-first restrained hybrid: pair the modest welcome with the prominent featured item in the first-screen composition instead of making visitors pass through a separate hero. Use **From the collection** as a provisional label, with smaller supporting entries that can represent Notes, Projects, or Reading according to the real work available.
-- Treat any optional portrait placement as part of the welcome itself. In the examples preview, place a small square portrait space above the welcome copy in normal document flow on desktop and mobile, aligned with the copy's left edge. The collection should follow the complete welcome as one uninterrupted sequence.
+- Treat any optional portrait placement as part of the welcome itself. Place the owner-supplied square portrait above the welcome copy in normal document flow on desktop and mobile, aligned with the copy's left edge. The collection should follow the complete welcome as one uninterrupted sequence.
 - The homepage must feel intentional with no published entries. Hide empty collection sections, category controls, and links without useful destinations.
 - Keep layout examples separate from published collections and normal builds. Examples must use visibly structural bracketed placeholders rather than invented article titles, book choices, client results, or personal claims.
-- Until an approved photograph exists, use only a simple, clearly labeled square placement in the examples preview, without ornamental portrait-card styling. The normal no-image build must omit the placeholder and collapse its space completely.
+- Show the owner-supplied review portrait in both the empty-collection and populated examples previews. Preserve its supplied square crop, proportions, and colors without retouching, filtering, sharpening, or further cropping. If no portrait is configured, omit the image and collapse its space completely.
 
 ### Positioning and personality
 
