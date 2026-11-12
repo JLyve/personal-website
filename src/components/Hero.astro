@@ -1,11 +1,9 @@
 ---
-import PortraitPlaceholder from './PortraitPlaceholder.astro';
-
 interface Props {
-  showPortraitPlaceholder?: boolean;
+  portraitSrc?: string;
 }
 
-const { showPortraitPlaceholder = false } = Astro.props;
+const { portraitSrc } = Astro.props;
 ---
 
 <section class="welcome" aria-labelledby="welcome-title">
@@ -25,9 +23,16 @@ const { showPortraitPlaceholder = false } = Astro.props;
     <span class="field-glyph glyph-two">◇</span>
   </div>
 
-  {showPortraitPlaceholder && (
+  {portraitSrc && (
     <div class="portrait-placement">
-      <PortraitPlaceholder />
+      <img
+        class="portrait-image"
+        src={portraitSrc}
+        alt="Jason Lyvers"
+        width="320"
+        height="320"
+        decoding="async"
+      />
     </div>
   )}
 
@@ -70,6 +75,12 @@ const { showPortraitPlaceholder = false } = Astro.props;
     margin-bottom: 1.35rem;
     position: relative;
     z-index: 1;
+  }
+
+  .portrait-image {
+    width: 88px;
+    height: 88px;
+    display: block;
   }
 
   .preview-label {
@@ -170,6 +181,7 @@ const { showPortraitPlaceholder = false } = Astro.props;
     }
 
     .portrait-placement { margin-bottom: 1.1rem; }
+    .portrait-image { width: 68px; height: 68px; }
   }
 
   @media (max-width: 370px) {
