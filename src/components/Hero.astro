@@ -1,240 +1,295 @@
 ---
+interface Props {
+  portraitSrc?: string;
+}
+
+const { portraitSrc } = Astro.props;
 ---
 
-<section class="hero" aria-labelledby="hero-title">
-  <div class="ambient-mark mark-one" aria-hidden="true">✦</div>
-  <div class="ambient-mark mark-two" aria-hidden="true">◌</div>
-  <div class="ambient-orbit" aria-hidden="true"></div>
+<section class="welcome" aria-labelledby="welcome-title">
+  <div class="alchemy-atmosphere" aria-hidden="true">
+    <svg viewBox="0 0 260 260" fill="none">
+      <g class="slow-orbit">
+        <circle cx="130" cy="130" r="76" />
+        <ellipse cx="130" cy="130" rx="112" ry="45" transform="rotate(-28 130 130)" />
+        <path d="M130 44 205 174H55L130 44Z" />
+        <path d="m130 82 48 48-48 48-48-48 48-48Z" />
+      </g>
+      <path class="fine-line" d="M18 130h224M130 18v224" />
+      <circle class="center-point" cx="130" cy="130" r="3" />
+      <circle class="wandering-point" cx="218" cy="78" r="2" />
+    </svg>
+    <span class="field-glyph glyph-one">✦</span>
+    <span class="field-glyph glyph-two">◇</span>
+  </div>
 
-  <div class="hero-content">
-    <p class="eyebrow">Homepage preview <span aria-hidden="true">·</span> provisional copy</p>
-    <h1 id="hero-title">
-      Good questions have a way of <em>wandering.</em>
+  {portraitSrc && (
+    <div class="portrait-placement">
+      <img
+        class="portrait-image"
+        src={portraitSrc}
+        alt="Jason Lyvers"
+        width="320"
+        height="320"
+        decoding="async"
+      />
+    </div>
+  )}
+
+  <div class="welcome-copy">
+    <p class="preview-label">A brief welcome <span aria-hidden="true">·</span> provisional wording</p>
+    <h1 id="welcome-title">
+      I'm Jason Lyvers, a <span class="profession-accent"><span class="profession-start">digital<svg class="profession-star" aria-hidden="true" focusable="false" viewBox="0 0 16 16"><path d="M8 0 10 6 16 8 10 10 8 16 6 10 0 8 6 6Z" /></svg></span> <span class="profession-middle">marketing<span class="profession-spark spark-start" aria-hidden="true"></span></span> <span class="profession-ending">strategist<span class="profession-spark spark-end" aria-hidden="true"></span></span></span> with a curiosity that rarely stays in its lane.
     </h1>
-    <p class="hero-description">
-      This introduction is here to test tone, scale, and rhythm. Final language will be written and approved separately.
+    <p>
+      I'm fascinated by life's mysteries, unexpected discoveries, and all the interesting things I might stumble across along the way.
     </p>
-    <a class="hero-cta" href="#selected">
-      <span>Explore the page preview</span>
-      <svg aria-hidden="true" width="15" height="15" viewBox="0 0 16 16" fill="none">
-        <path d="M4 4h8v8M12 4 4.5 11.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
-      </svg>
-    </a>
-    <p class="marginalia" aria-label="Provisional marginal note">the words are still finding their shape</p>
   </div>
 </section>
 
 <style>
-  .hero {
-    width: min(100% - 2rem, 1180px);
-    min-height: min(700px, 82svh);
-    margin: 0 auto;
-    padding: clamp(7.5rem, 15vh, 9rem) 0 clamp(3.5rem, 7vh, 5rem);
-    display: grid;
-    align-items: center;
+  .welcome {
+    min-width: 0;
+    padding: 0.6rem 0 2.4rem;
     position: relative;
     isolation: isolate;
   }
 
-  .hero-content {
-    width: min(100%, 780px);
+  .welcome::after {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    color: rgba(207, 167, 104, 0.65);
+    font-size: 0.62rem;
+    text-shadow: 0 0 18px rgba(196, 155, 99, 0.45);
+  }
+
+  .welcome-copy {
+    max-width: 630px;
     position: relative;
     z-index: 1;
   }
 
-  .eyebrow {
-    margin: 0 0 1.35rem;
-    color: #d0ae78;
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.18em;
+  .portrait-placement {
+    margin-bottom: 1.35rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .portrait-image {
+    width: 88px;
+    height: 88px;
+    display: block;
+  }
+
+  .preview-label {
+    margin: 0 0 1.15rem;
+    color: #bd9966;
+    font-size: 0.66rem;
+    font-weight: 650;
+    letter-spacing: 0.17em;
     line-height: 1.5;
     text-transform: uppercase;
   }
 
   h1 {
-    max-width: 740px;
+    max-width: 23ch;
     margin: 0;
     color: var(--color-text);
     font-family: 'Newsreader', Georgia, serif;
-    font-size: clamp(3.35rem, 10vw, 7.15rem);
-    font-weight: 300;
-    letter-spacing: -0.047em;
-    line-height: 0.91;
+    font-size: clamp(1.75rem, 2.7vw, 2.35rem);
+    font-weight: 350;
+    letter-spacing: -0.024em;
+    line-height: 1.13;
     text-wrap: balance;
   }
 
-  h1 em {
+  .profession-accent {
     color: #d3b17c;
     font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
     font-weight: 400;
+    background: radial-gradient(ellipse, rgba(195, 154, 97, 0.045), transparent 72%);
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
   }
 
-  .hero-description {
-    max-width: 590px;
-    margin: 1.75rem 0 0;
-    color: var(--color-text-dim);
-    font-size: clamp(0.96rem, 1.5vw, 1.08rem);
-    line-height: 1.75;
+  .profession-start,
+  .profession-middle,
+  .profession-ending {
+    position: relative;
   }
 
-  .hero-cta {
-    width: fit-content;
-    min-height: 48px;
-    margin-top: 2rem;
-    padding: 0.76rem 1.05rem 0.76rem 1.15rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.85rem;
-    border: 1px solid rgba(205, 170, 112, 0.48);
-    border-radius: 999px;
-    color: var(--color-text);
-    font-size: 0.87rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+  .profession-ending {
+    white-space: nowrap;
   }
 
-  .hero-cta:hover,
-  .hero-cta:focus-visible {
-    background: rgba(205, 170, 112, 0.09);
-    border-color: #d0aa70;
-    transform: translateY(-2px);
+  .profession-star,
+  .profession-spark {
+    offset-position: auto;
+    offset-anchor: left top;
+    offset-rotate: 0deg;
+    offset-distance: 0%;
   }
 
-  .marginalia {
-    width: fit-content;
-    margin: 1.4rem 0 0 clamp(1.5rem, 7vw, 5.2rem);
-    color: #aa9477;
-    font-family: 'Caveat', 'Bradley Hand', cursive;
-    font-size: clamp(1.02rem, 2.3vw, 1.24rem);
-    line-height: 1.25;
-    transform: rotate(-1.5deg);
+  .profession-star {
+    width: 0.24em;
+    height: 0.24em;
+    position: absolute;
+    left: 0.45em;
+    top: -0.14em;
+    z-index: -1;
+    display: block;
+    overflow: visible;
+    fill: #d6b477;
+    filter: drop-shadow(0 0 3px rgba(214, 180, 119, 0.4));
+    pointer-events: none;
+    opacity: 0.85;
+    offset-path: path('M0 0 C4 -3 8 -3 8 0 C8 3 4 3 0 0 C-4 -3 -8 -3 -8 0 C-8 3 -4 3 0 0 Z');
+    animation: profession-wander 16s linear infinite,
+      profession-shimmer 17s ease-in-out infinite;
+    animation-delay: -3s, -5s;
+    transition: none;
   }
 
-  .marginalia::before {
-    content: '↳';
-    margin-right: 0.45rem;
-    color: #8f7656;
-  }
-
-  .ambient-mark,
-  .ambient-orbit {
+  .profession-spark {
+    width: clamp(6px, 0.18em, 7px);
+    height: clamp(6px, 0.18em, 7px);
     position: absolute;
     z-index: -1;
-    color: rgba(205, 170, 112, 0.24);
+    background: #d6b477;
+    clip-path: polygon(50% 0, 63% 37%, 100% 50%, 63% 63%, 50% 100%, 37% 63%, 0 50%, 37% 37%);
+    opacity: 0.62;
     pointer-events: none;
     user-select: none;
+    animation: profession-wander 19s linear infinite,
+      profession-shimmer 16s ease-in-out infinite;
+    animation-delay: -7s, -3s;
   }
 
-  .ambient-mark {
-    animation: drift 14s ease-in-out infinite;
+  .spark-start {
+    top: -0.11em;
+    left: 0.5em;
+    offset-path: path('M0 0 C-1 -2 2 -4 5 -3 C8 -2 10 1 7 2 C4 3 1 2 0 0 Z');
   }
 
-  .mark-one {
-    top: 24%;
-    right: 7%;
-    font-size: 0.9rem;
+  .spark-end {
+    bottom: 0.01em;
+    left: 55%;
+    offset-path: path('M0 0 C0 2 -3 3 -6 2 C-9 1 -10 -2 -7 -3 C-4 -4 0 -2 0 0 Z');
+    animation-duration: 13s, 19s;
+    animation-delay: -10s, -7s;
   }
 
-  .mark-two {
-    right: 21%;
-    bottom: 20%;
-    color: rgba(205, 170, 112, 0.13);
-    font-size: 2rem;
-    animation-delay: -5s;
+  @keyframes profession-wander {
+    from { offset-distance: 0%; }
+    to { offset-distance: 100%; }
   }
 
-  .ambient-orbit {
-    width: 180px;
-    height: 180px;
-    right: -30px;
-    bottom: 11%;
-    border: 1px solid rgba(205, 170, 112, 0.07);
-    border-radius: 50%;
+  @keyframes profession-shimmer {
+    0%, 30%, 74%, 100% { opacity: 0.62; }
+    52% { opacity: 0.95; }
   }
 
-  .ambient-orbit::after {
-    content: '';
-    width: 5px;
-    height: 5px;
+  .welcome-copy > p:last-child {
+    max-width: 52ch;
+    margin: 1.15rem 0 0;
+    color: var(--color-text-dim);
+    font-size: clamp(0.93rem, 1.15vw, 1rem);
+    line-height: 1.72;
+  }
+
+  .alchemy-atmosphere {
+    width: min(104px, calc(var(--opening-gap, 5rem) - 16px));
+    aspect-ratio: 1;
     position: absolute;
-    top: 35px;
-    left: 19px;
-    border: 1px solid rgba(205, 170, 112, 0.35);
-    border-radius: 50%;
+    right: calc(var(--opening-gap, 5rem) / -2);
+    top: 54%;
+    z-index: -1;
+    color: #c39a61;
+    opacity: 0.28;
+    pointer-events: none;
+    transform: translate(50%, -50%);
   }
 
-  @keyframes drift {
-    0%, 100% { transform: translate3d(0, 0, 0) rotate(0); }
-    50% { transform: translate3d(6px, -9px, 0) rotate(8deg); }
+  .alchemy-atmosphere svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    stroke: currentColor;
+    stroke-width: 0.65;
+  }
+
+  .slow-orbit {
+    transform-origin: 130px 130px;
+    animation: alchemy-turn 36s linear infinite;
+  }
+
+  .fine-line {
+    opacity: 0.24;
+    stroke-dasharray: 1 9;
+  }
+
+  .center-point,
+  .wandering-point {
+    fill: #d9b578;
+    stroke: none;
+    filter: drop-shadow(0 0 8px rgba(217, 181, 120, 0.8));
+  }
+
+  .field-glyph {
+    position: absolute;
+    color: #d9b578;
+    line-height: 1;
+  }
+
+  .glyph-one { top: 8%; right: 14%; font-size: 0.68rem; }
+  .glyph-two { left: 4%; bottom: 17%; font-size: 0.8rem; opacity: 0.68; }
+
+  @keyframes alchemy-turn {
+    to { transform: rotate(360deg); }
+  }
+
+  @media (max-width: 860px) {
+    .alchemy-atmosphere { display: none; }
   }
 
   @media (max-width: 720px) {
-    .hero {
-      min-height: auto;
-      padding-top: 7.25rem;
-      padding-bottom: 4.5rem;
+    .welcome {
+      padding-top: 0;
+      padding-bottom: 2.25rem;
     }
 
     h1 {
-      max-width: 600px;
-      font-size: clamp(3.25rem, 16vw, 5.1rem);
-      line-height: 0.94;
+      max-width: 24ch;
+      font-size: clamp(1.72rem, 7.6vw, 2.05rem);
+      line-height: 1.13;
     }
 
-    .hero-description {
-      max-width: 35rem;
-      margin-top: 1.5rem;
-      font-size: 0.98rem;
-      line-height: 1.7;
-    }
-
-    .hero-cta {
-      margin-top: 1.75rem;
-    }
-
-    .marginalia {
-      margin-top: 1.5rem;
-      margin-left: 1rem;
-    }
-
-    .mark-one {
-      top: 18%;
-      right: 4%;
-    }
-
-    .mark-two,
-    .ambient-orbit {
-      display: none;
-    }
+    .portrait-placement { margin-bottom: 1.1rem; }
+    .portrait-image { width: 68px; height: 68px; }
   }
 
-  @media (max-width: 380px) {
-    .hero {
-      width: min(100% - 1.5rem, 1180px);
-      padding-top: 6.8rem;
-      padding-bottom: 4rem;
-    }
-
-    .eyebrow {
-      margin-bottom: 1.1rem;
-      font-size: 0.65rem;
-    }
-
-    h1 {
-      font-size: clamp(3.05rem, 16vw, 3.6rem);
-    }
+  @media (max-width: 370px) {
+    h1 { font-size: 1.68rem; }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .ambient-mark {
+    .slow-orbit { animation: none; }
+
+    .profession-star,
+    .profession-spark {
       animation: none;
+      transform: none;
+      offset-path: none;
+      offset-distance: 0%;
     }
 
-    .hero-cta:hover,
-    .hero-cta:focus-visible {
-      transform: none;
+    .profession-star { opacity: 0.85; }
+
+    .profession-spark {
+      opacity: 0.62;
     }
   }
 </style>

@@ -1,6 +1,6 @@
 # Personal Website -- Creative & Strategy Brief
 
-Status: approved creative direction and homepage approach for a **preview implementation**, not a final pixel-perfect specification or approval of public copy. Updated 2026-10-30.
+Status: approved creative direction and homepage approach for a **preview implementation**, not a final pixel-perfect specification or approval of public copy. Updated 2026-11-13.
 
 ## Purpose and positioning
 
@@ -49,6 +49,51 @@ Content priority: reader clarity first, editorial curation second, magical rewar
 ## Homepage design direction for the first Codex preview (agreed 2026-10-30)
 
 These are approved **design directions for a reviewable preview**, not permission to merge to `main`, publish to production, publish sample content, or lock the final words. Preview deployments from pull requests are permitted for review. The visual mockups were exploratory. The actual responsive Astro implementation must be reviewed before design sign-off.
+
+### Revised opening and collection direction (authorized for preview 2026-11-11)
+
+This revision replaces the headline-led opening described below for the next review preview. The remaining atmosphere, typography, accessibility, and publication boundaries in this brief still apply.
+
+- Keep **Not Entirely Unrelated** as the selected collection-name direction and clearly associate it with **Jason Lyvers** in the header. Final publication approval is separate from this preview direction.
+- Replace the large slogan, promotional pitch, and hero CTA with a compact, conversational welcome. Use the owner-supplied wording for layout testing only; it remains provisional and is not approved production copy.
+- Use a genuinely collection-first restrained hybrid: pair the modest welcome with the prominent featured item in the first-screen composition instead of making visitors pass through a separate hero. Use **From the collection** as a provisional label, with smaller supporting entries that can represent Notes, Projects, or Reading according to the real work available.
+- Treat any optional portrait placement as part of the welcome itself. Place the owner-supplied square portrait above the welcome copy in normal document flow on desktop and mobile, aligned with the copy's left edge. The collection should follow the complete welcome as one uninterrupted sequence.
+- The homepage must feel intentional with no published entries. Hide empty collection sections, category controls, and links without useful destinations.
+- Keep layout examples separate from published collections and normal builds. Examples must use visibly structural bracketed placeholders rather than invented article titles, book choices, client results, or personal claims.
+- Show the owner-supplied review portrait in both the empty-collection and populated examples previews. Preserve its supplied square crop, proportions, and colors without retouching, filtering, sharpening, or further cropping. If no portrait is configured, omit the image and collapse its space completely.
+
+### Welcome accent refinement (authorized for preview 2026-11-13)
+
+The owner's latest welcome-copy request replaces the initial wording from the [earlier PR comment](https://github.com/JLyve/personal-website/pull/13#issuecomment-6853929481). It authorizes only the revised wording below for the existing PR #13 previews. Preserve the compact welcome, portrait, collection layout, heading sizes, gold Fraunces Italic phrase, and all three Wandering Magic stars with their current paths, timing, shimmer and reduced-motion rules.
+
+Use this exact wording, **approved for preview only, not final publication copy**:
+
+> I'm Jason Lyvers, a digital marketing strategist with a curiosity that rarely stays in its lane.
+>
+> I'm fascinated by life's mysteries, unexpected discoveries, and all the interesting things I might stumble across along the way.
+
+- Wrap only **digital marketing strategist** in a semantic inline span, using the established **Fraunces Italic** in readable muted antique gold/copper against the surrounding Newsreader headline. Only those three words receive the accent; “with a curiosity that rarely stays in its lane” stays in the regular headline treatment.
+- Preserve the tiny, softly illuminated four-point star as a decorative ornament above the phrase, not an inline mark after the final word. The owner's subsequent footnote-marker feedback replaces the initial static, after-phrase placement with the quiet motion described below. Keep it hidden from assistive technology, with no link, button, hover trigger, blinking, underline, chip, or heavy glow.
+- Let the phrase wrap naturally on phone widths, using word anchors for decorations without changing the headline's size or the surrounding layout rules. The sentence continues normally after “strategist” with no inline star, added punctuation or reserved ornament space.
+- Preserve the supplied portrait and its dimensions, the reduced collection-headline sizes, fonts already loaded, collection design, and both empty/example review states. Add no libraries or private material.
+
+The wording and visual treatment remain approved for preview only. **Not Entirely Unrelated** remains the selected name direction, with final publication approval still separate. This authorization doesn't approve final copy, final design, merge, or production publication. Keep `SITE_INDEXING_ENABLED = false` and layout fixtures out of the normal build.
+
+### Wandering Magic (authorized for preview 2026-11-13)
+
+The owner's scoped Wandering Magic request replaces the limited back-and-forth drift around **digital marketing strategist** in the existing PR #13 previews. Keep exactly the current three antique-gold stars and make them feel like tiny magical fireflies gently exploring the phrase. Animation refinements must preserve the currently approved preview wording above and don't make any name, copy, or visual treatment final.
+
+- Preserve the exact Fraunces Italic font, weight, gold text color, heading sizes, and existing four-point star. Keep the portrait, welcome wording, layout, and collection design unchanged.
+- Use three independent, closed cubic-Bezier CSS motion paths: a shallow figure-eight above “digital” (16 seconds), a rightward curved loop around “marketing” (19 seconds), and a leftward curved loop below “strategist” (13 seconds). Each travels approximately 8 to 9px from its resting anchor, within the requested 6 to 10px range. Matching start/end points and tangents make the loops continuous, without a jump, pause or backtracking reset.
+- Keep the paths mainly horizontal with only a few pixels of vertical movement to fit the whitespace between wrapped lines. Anchor each star to its word, with independent starting phases and brightness timing. The stars stay upright and slightly behind the lettering, never crossing readable strokes.
+- Preserve the current original SVG size and shape, the smaller responsive 6 to 7px stars, and gentle 62% to 95% shimmer. Retain the staggered 17-, 16-, and 19-second brightness cycles; no flashes, trails, extra particles or larger halos.
+- Preserve the earlier footnote-cue correction: keep the original star above “digital” outside the text flow, distribute the smaller points around “marketing” and “strategist”, and don't place any ornament inline after the highlighted phrase.
+- A nearly transparent, static warm glow may sit behind each wrapped text fragment for depth. Don't animate, blur, fade, mask, or recolor the lettering itself. All words stay readable and selectable.
+- Decorations are noninteractive and hidden from screen readers. They occupy no layout space and must not clip, collide with nearby text, or create horizontal scrolling at phone or desktop widths.
+- Under `prefers-reduced-motion: reduce`, remove animations, transforms and motion paths from all three ornaments. Reset the path distance and retain the original star at 85% opacity and the smaller points at 62%, in the same detached composition.
+- Review normal and example collection builds on phones and desktop, including wrapped phrases and reduced motion. Keep examples out of normal builds and `SITE_INDEXING_ENABLED = false`.
+
+This is a preview-only refinement in PR #13. Final design approval, merge, and production publication remain pending. No new dependency, private source material, or automatic Notion update is authorized.
 
 ### Positioning and personality
 
