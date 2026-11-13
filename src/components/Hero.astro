@@ -39,7 +39,7 @@ const { portraitSrc } = Astro.props;
   <div class="welcome-copy">
     <p class="preview-label">A brief welcome <span aria-hidden="true">·</span> provisional wording</p>
     <h1 id="welcome-title">
-      I’m Jason Lyvers, a <span class="profession-accent">digital marketing <span class="profession-ending">strategist<svg class="profession-star" aria-hidden="true" focusable="false" viewBox="0 0 16 16"><path d="M8 0 10 6 16 8 10 10 8 16 6 10 0 8 6 6Z" /></svg></span></span>. That explains some of what you’ll find here.
+      I’m Jason Lyvers, a <span class="profession-accent"><span class="profession-start">digital<span class="profession-spark spark-start" aria-hidden="true"></span></span> marketing <span class="profession-ending">strategist<span class="profession-spark spark-end" aria-hidden="true"></span><svg class="profession-star" aria-hidden="true" focusable="false" viewBox="0 0 16 16"><path d="M8 0 10 6 16 8 10 10 8 16 6 10 0 8 6 6Z" /></svg></span></span>. That explains some of what you’ll find here.
     </h1>
     <p>
       The rest involves books, ideas, questions, and connections I’m still trying to explain. Have a look around.
@@ -110,6 +110,14 @@ const { portraitSrc } = Astro.props;
     font-family: 'Fraunces', Georgia, serif;
     font-style: italic;
     font-weight: 400;
+    background: radial-gradient(ellipse, rgba(195, 154, 97, 0.045), transparent 72%);
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+
+  .profession-start,
+  .profession-ending {
+    position: relative;
   }
 
   .profession-ending {
@@ -128,6 +136,46 @@ const { portraitSrc } = Astro.props;
     pointer-events: none;
     animation: none;
     transition: none;
+  }
+
+  .profession-spark {
+    width: 0.12em;
+    height: 0.12em;
+    position: absolute;
+    z-index: -1;
+    background: #d6b477;
+    clip-path: polygon(50% 0, 63% 37%, 100% 50%, 63% 63%, 50% 100%, 37% 63%, 0 50%, 37% 37%);
+    opacity: 0.35;
+    pointer-events: none;
+    user-select: none;
+    animation: profession-drift 14s ease-in-out infinite alternate,
+      profession-shimmer 31s ease-in-out infinite;
+  }
+
+  .spark-start {
+    top: 0.04em;
+    left: 0.5em;
+    --spark-x: 1.5px;
+    --spark-y: -2px;
+  }
+
+  .spark-end {
+    bottom: -0.02em;
+    left: 55%;
+    --spark-x: -1.5px;
+    --spark-y: 1.5px;
+    animation-duration: 18s, 37s;
+    animation-delay: -7s, -19s;
+  }
+
+  @keyframes profession-drift {
+    from { transform: translate(0, 0); }
+    to { transform: translate(var(--spark-x), var(--spark-y)); }
+  }
+
+  @keyframes profession-shimmer {
+    0%, 42%, 60%, 100% { opacity: 0.35; }
+    51% { opacity: 0.6; }
   }
 
   .welcome-copy > p:last-child {
@@ -215,5 +263,11 @@ const { portraitSrc } = Astro.props;
 
   @media (prefers-reduced-motion: reduce) {
     .slow-orbit { animation: none; }
+
+    .profession-spark {
+      animation: none;
+      transform: none;
+      opacity: 0.4;
+    }
   }
 </style>

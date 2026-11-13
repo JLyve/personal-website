@@ -79,6 +79,19 @@ Use this exact provisional wording:
 
 The wording, accent treatment, and **Not Entirely Unrelated** name remain provisional. This authorization doesn't approve final design, merge, or production publication. Keep `SITE_INDEXING_ENABLED = false` and layout fixtures out of the normal build.
 
+### Quiet welcome enchantment (authorized for preview 2026-11-13)
+
+The owner's subsequent scoped request authorizes two additional tiny antique-gold sparkles around and slightly behind **digital marketing strategist** in the existing PR #13 previews. This extends the accent refinement above; the existing four-point star remains visible and static. It doesn't authorize changing the welcome wording or treating any name, copy, or visual treatment as final.
+
+- Preserve the exact Fraunces Italic font, weight, gold text color, heading sizes, and existing four-point star. Keep the portrait, welcome wording, layout, and collection design unchanged.
+- Anchor the two smaller sparkles to words within the phrase so they follow natural line wrapping. Use lightweight CSS only, with slow 14 to 18 second drift cycles of at most 2px per axis and staggered, occasional 31 to 37 second brightness cycles. Keep the sparkles dim and continuously present; don't flash, burst, or move them across readable lettering.
+- A nearly transparent, static warm glow may sit behind each wrapped text fragment for depth. Don't animate, blur, fade, mask, or recolor the lettering itself. All words stay readable and selectable.
+- Decorations are noninteractive and hidden from screen readers. They occupy no layout space and must not clip, collide with nearby text, or create horizontal scrolling at phone or desktop widths.
+- Under `prefers-reduced-motion: reduce`, remove sparkle animations and transforms and retain a dim, attractive static composition. The original star remains unchanged in both modes.
+- Review normal and example collection builds on phones and desktop, including wrapped phrases and reduced motion. Keep examples out of normal builds and `SITE_INDEXING_ENABLED = false`.
+
+This is a preview-only refinement in PR #13. Final design approval, merge, and production publication remain pending. No new dependency, private source material, or automatic Notion update is authorized.
+
 ### Positioning and personality
 
 - A free thinker's commonplace book: intellectually curious, welcoming, conversational, a little mischievous. Thoughtful ideas, good books, creative strategy, unusual connections, people, places, and things.
