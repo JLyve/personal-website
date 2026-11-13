@@ -39,7 +39,7 @@ const { portraitSrc } = Astro.props;
   <div class="welcome-copy">
     <p class="preview-label">A brief welcome <span aria-hidden="true">·</span> provisional wording</p>
     <h1 id="welcome-title">
-      I’m Jason Lyvers, a <span class="profession-accent"><span class="profession-start">digital<span class="profession-spark spark-start" aria-hidden="true"></span></span> marketing <span class="profession-ending">strategist<span class="profession-spark spark-end" aria-hidden="true"></span><svg class="profession-star" aria-hidden="true" focusable="false" viewBox="0 0 16 16"><path d="M8 0 10 6 16 8 10 10 8 16 6 10 0 8 6 6Z" /></svg></span></span>. That explains some of what you’ll find here.
+      I’m Jason Lyvers, a <span class="profession-accent"><span class="profession-start">digital<svg class="profession-star" aria-hidden="true" focusable="false" viewBox="0 0 16 16"><path d="M8 0 10 6 16 8 10 10 8 16 6 10 0 8 6 6Z" /></svg></span> <span class="profession-middle">marketing<span class="profession-spark spark-start" aria-hidden="true"></span></span> <span class="profession-ending">strategist<span class="profession-spark spark-end" aria-hidden="true"></span></span></span>. That explains some of what you’ll find here.
     </h1>
     <p>
       The rest involves books, ideas, questions, and connections I’m still trying to explain. Have a look around.
@@ -116,6 +116,7 @@ const { portraitSrc } = Astro.props;
   }
 
   .profession-start,
+  .profession-middle,
   .profession-ending {
     position: relative;
   }
@@ -127,14 +128,21 @@ const { portraitSrc } = Astro.props;
   .profession-star {
     width: 0.24em;
     height: 0.24em;
-    margin-left: 0.16em;
-    display: inline-block;
-    vertical-align: 0.38em;
+    position: absolute;
+    left: 0.45em;
+    top: -0.18em;
+    z-index: -1;
+    display: block;
     overflow: visible;
     fill: #d6b477;
     filter: drop-shadow(0 0 3px rgba(214, 180, 119, 0.4));
     pointer-events: none;
-    animation: none;
+    opacity: 0.85;
+    --spark-x: 2.5px;
+    --spark-y: 2px;
+    animation: profession-drift 9s ease-in-out infinite alternate,
+      profession-shimmer 17s ease-in-out infinite;
+    animation-delay: -2s, -5s;
     transition: none;
   }
 
@@ -265,9 +273,15 @@ const { portraitSrc } = Astro.props;
   @media (prefers-reduced-motion: reduce) {
     .slow-orbit { animation: none; }
 
+    .profession-star,
     .profession-spark {
       animation: none;
       transform: none;
+    }
+
+    .profession-star { opacity: 0.85; }
+
+    .profession-spark {
       opacity: 0.62;
     }
   }
