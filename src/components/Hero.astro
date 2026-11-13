@@ -139,33 +139,34 @@ const { portraitSrc } = Astro.props;
   }
 
   .profession-spark {
-    width: 0.12em;
-    height: 0.12em;
+    width: clamp(6px, 0.18em, 7px);
+    height: clamp(6px, 0.18em, 7px);
     position: absolute;
     z-index: -1;
     background: #d6b477;
     clip-path: polygon(50% 0, 63% 37%, 100% 50%, 63% 63%, 50% 100%, 37% 63%, 0 50%, 37% 37%);
-    opacity: 0.35;
+    opacity: 0.62;
     pointer-events: none;
     user-select: none;
-    animation: profession-drift 14s ease-in-out infinite alternate,
-      profession-shimmer 31s ease-in-out infinite;
+    animation: profession-drift 8s ease-in-out infinite alternate,
+      profession-shimmer 16s ease-in-out infinite;
+    animation-delay: 0s, -3s;
   }
 
   .spark-start {
-    top: 0.04em;
+    top: -0.04em;
     left: 0.5em;
-    --spark-x: 1.5px;
-    --spark-y: -2px;
+    --spark-x: 3px;
+    --spark-y: -2.5px;
   }
 
   .spark-end {
-    bottom: -0.02em;
+    bottom: 0.04em;
     left: 55%;
-    --spark-x: -1.5px;
-    --spark-y: 1.5px;
-    animation-duration: 18s, 37s;
-    animation-delay: -7s, -19s;
+    --spark-x: -2.5px;
+    --spark-y: 2px;
+    animation-duration: 10s, 19s;
+    animation-delay: -4s, -7s;
   }
 
   @keyframes profession-drift {
@@ -174,8 +175,8 @@ const { portraitSrc } = Astro.props;
   }
 
   @keyframes profession-shimmer {
-    0%, 42%, 60%, 100% { opacity: 0.35; }
-    51% { opacity: 0.6; }
+    0%, 30%, 74%, 100% { opacity: 0.62; }
+    52% { opacity: 0.95; }
   }
 
   .welcome-copy > p:last-child {
@@ -267,7 +268,7 @@ const { portraitSrc } = Astro.props;
     .profession-spark {
       animation: none;
       transform: none;
-      opacity: 0.4;
+      opacity: 0.62;
     }
   }
 </style>
