@@ -39,10 +39,10 @@ const { portraitSrc } = Astro.props;
   <div class="welcome-copy">
     <p class="preview-label">A brief welcome <span aria-hidden="true">·</span> provisional wording</p>
     <h1 id="welcome-title">
-      I’m Jason Lyvers. I work in digital marketing. That explains some of what you’ll find here.
+      I’m Jason Lyvers, a <span class="profession-accent">digital marketing <span class="profession-ending">strategist<svg class="profession-star" aria-hidden="true" focusable="false" viewBox="0 0 16 16"><path d="M8 0 10 6 16 8 10 10 8 16 6 10 0 8 6 6Z" /></svg></span></span>. That explains some of what you’ll find here.
     </h1>
     <p>
-      The rest involves books, questions, experiments, and connections I’m still trying to explain. Have a look around.
+      The rest involves books, ideas, questions, and connections I’m still trying to explain. Have a look around.
     </p>
   </div>
 </section>
@@ -103,6 +103,31 @@ const { portraitSrc } = Astro.props;
     letter-spacing: -0.024em;
     line-height: 1.13;
     text-wrap: balance;
+  }
+
+  .profession-accent {
+    color: #d3b17c;
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .profession-ending {
+    white-space: nowrap;
+  }
+
+  .profession-star {
+    width: 0.24em;
+    height: 0.24em;
+    margin-left: 0.16em;
+    display: inline-block;
+    vertical-align: 0.38em;
+    overflow: visible;
+    fill: #d6b477;
+    filter: drop-shadow(0 0 3px rgba(214, 180, 119, 0.4));
+    pointer-events: none;
+    animation: none;
+    transition: none;
   }
 
   .welcome-copy > p:last-child {
