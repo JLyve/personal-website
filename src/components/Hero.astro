@@ -125,12 +125,20 @@ const { portraitSrc } = Astro.props;
     white-space: nowrap;
   }
 
+  .profession-star,
+  .profession-spark {
+    offset-position: auto;
+    offset-anchor: left top;
+    offset-rotate: 0deg;
+    offset-distance: 0%;
+  }
+
   .profession-star {
     width: 0.24em;
     height: 0.24em;
     position: absolute;
     left: 0.45em;
-    top: -0.18em;
+    top: -0.14em;
     z-index: -1;
     display: block;
     overflow: visible;
@@ -138,11 +146,10 @@ const { portraitSrc } = Astro.props;
     filter: drop-shadow(0 0 3px rgba(214, 180, 119, 0.4));
     pointer-events: none;
     opacity: 0.85;
-    --spark-x: 2.5px;
-    --spark-y: 2px;
-    animation: profession-drift 9s ease-in-out infinite alternate,
+    offset-path: path('M0 0 C4 -3 8 -3 8 0 C8 3 4 3 0 0 C-4 -3 -8 -3 -8 0 C-8 3 -4 3 0 0 Z');
+    animation: profession-wander 16s linear infinite,
       profession-shimmer 17s ease-in-out infinite;
-    animation-delay: -2s, -5s;
+    animation-delay: -3s, -5s;
     transition: none;
   }
 
@@ -156,30 +163,28 @@ const { portraitSrc } = Astro.props;
     opacity: 0.62;
     pointer-events: none;
     user-select: none;
-    animation: profession-drift 8s ease-in-out infinite alternate,
+    animation: profession-wander 19s linear infinite,
       profession-shimmer 16s ease-in-out infinite;
-    animation-delay: 0s, -3s;
+    animation-delay: -7s, -3s;
   }
 
   .spark-start {
-    top: -0.04em;
+    top: -0.11em;
     left: 0.5em;
-    --spark-x: 3px;
-    --spark-y: -2.5px;
+    offset-path: path('M0 0 C-1 -2 2 -4 5 -3 C8 -2 10 1 7 2 C4 3 1 2 0 0 Z');
   }
 
   .spark-end {
-    bottom: 0.04em;
+    bottom: 0.01em;
     left: 55%;
-    --spark-x: -2.5px;
-    --spark-y: 2px;
-    animation-duration: 10s, 19s;
-    animation-delay: -4s, -7s;
+    offset-path: path('M0 0 C0 2 -3 3 -6 2 C-9 1 -10 -2 -7 -3 C-4 -4 0 -2 0 0 Z');
+    animation-duration: 13s, 19s;
+    animation-delay: -10s, -7s;
   }
 
-  @keyframes profession-drift {
-    from { transform: translate(0, 0); }
-    to { transform: translate(var(--spark-x), var(--spark-y)); }
+  @keyframes profession-wander {
+    from { offset-distance: 0%; }
+    to { offset-distance: 100%; }
   }
 
   @keyframes profession-shimmer {
@@ -277,6 +282,8 @@ const { portraitSrc } = Astro.props;
     .profession-spark {
       animation: none;
       transform: none;
+      offset-path: none;
+      offset-distance: 0%;
     }
 
     .profession-star { opacity: 0.85; }
