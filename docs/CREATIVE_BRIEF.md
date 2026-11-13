@@ -73,22 +73,23 @@ Use this exact provisional wording:
 > The rest involves books, ideas, questions, and connections I’m still trying to explain. Have a look around.
 
 - Wrap only **digital marketing strategist** in a semantic inline span, using the established **Fraunces Italic** in readable muted antique gold/copper against the surrounding Newsreader headline.
-- Place one tiny, softly illuminated four-point star directly after the phrase. It stays visible and completely static, including under reduced motion. It is decorative and hidden from assistive technology, with no link, button, hover trigger, blinking, pulsing, underline, chip, or heavy glow.
-- Let the phrase wrap naturally on phone widths, keeping the star attached to its final word without changing the headline's size or the surrounding layout rules.
+- Preserve the tiny, softly illuminated four-point star as a decorative ornament above the phrase, not an inline mark after the final word. The owner's subsequent footnote-marker feedback replaces the initial static, after-phrase placement with the quiet motion described below. Keep it hidden from assistive technology, with no link, button, hover trigger, blinking, underline, chip, or heavy glow.
+- Let the phrase wrap naturally on phone widths, using word anchors for decorations without changing the headline's size or the surrounding layout rules. Keep the period directly after “strategist” with no intervening star or reserved ornament space.
 - Preserve the supplied portrait and its dimensions, the reduced collection-headline sizes, fonts already loaded, collection design, and both empty/example review states. Add no libraries or private material.
 
 The wording, accent treatment, and **Not Entirely Unrelated** name remain provisional. This authorization doesn't approve final design, merge, or production publication. Keep `SITE_INDEXING_ENABLED = false` and layout fixtures out of the normal build.
 
 ### Quiet welcome enchantment (authorized for preview 2026-11-13)
 
-The owner's subsequent scoped request authorizes two additional tiny antique-gold sparkles around and slightly behind **digital marketing strategist** in the existing PR #13 previews. This extends the accent refinement above; the existing four-point star remains visible and static. It doesn't authorize changing the welcome wording or treating any name, copy, or visual treatment as final.
+The owner's subsequent scoped request authorizes two additional tiny antique-gold sparkles around and slightly behind **digital marketing strategist** in the existing PR #13 previews. All three stars now join the same quiet composition; this includes the owner's correction that the fixed star beside “strategist” read like an annotation. It doesn't authorize changing the welcome wording or treating any name, copy, or visual treatment as final.
 
 - Preserve the exact Fraunces Italic font, weight, gold text color, heading sizes, and existing four-point star. Keep the portrait, welcome wording, layout, and collection design unchanged.
 - Anchor the two smaller sparkles to words within the phrase so they follow natural line wrapping. Use lightweight CSS only, with slow 8 to 10 second one-way drift cycles of at most 3px per axis and staggered, occasional 16 to 19 second brightness cycles. Keep the sparkles continuously present; don't flash, burst, or move them across readable lettering.
 - Visibility correction following owner review: the initial 0.12em sparkles at 35% opacity and very slow motion were too faint to assess at normal viewing size. Use responsive 6 to 7px sparkles, 62% resting opacity and a gentle rise to 95%, with offset phases that reveal a shimmer within the first few seconds. Preserve the restrained composition, original star, text styling and wrapping rather than asking the owner to hunt for an almost invisible effect.
+- To remove the footnote cue, keep the original four-point SVG's shape, proportions, antique-gold color and soft illumination, but position it above “digital” outside the text flow. Give it a 9-second one-way drift cycle of at most 2.5px per axis and a staggered 17-second soft shimmer. Distribute the two smaller points around “marketing” and “strategist”; don't leave any ornament between the final word and its period.
 - A nearly transparent, static warm glow may sit behind each wrapped text fragment for depth. Don't animate, blur, fade, mask, or recolor the lettering itself. All words stay readable and selectable.
 - Decorations are noninteractive and hidden from screen readers. They occupy no layout space and must not clip, collide with nearby text, or create horizontal scrolling at phone or desktop widths.
-- Under `prefers-reduced-motion: reduce`, remove sparkle animations and transforms and retain a dim, attractive static composition. The original star remains unchanged in both modes.
+- Under `prefers-reduced-motion: reduce`, remove animations and transforms from all three ornaments. Retain the original star at 85% opacity and the smaller points at 62%, in the same detached composition.
 - Review normal and example collection builds on phones and desktop, including wrapped phrases and reduced motion. Keep examples out of normal builds and `SITE_INDEXING_ENABLED = false`.
 
 This is a preview-only refinement in PR #13. Final design approval, merge, and production publication remain pending. No new dependency, private source material, or automatic Notion update is authorized.
