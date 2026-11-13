@@ -66,15 +66,15 @@ This revision replaces the headline-led opening described below for the next rev
 
 The owner's latest welcome-copy request replaces the initial wording from the [earlier PR comment](https://github.com/JLyve/personal-website/pull/13#issuecomment-6853929481). It authorizes only the revised wording below for the existing PR #13 previews. Preserve the compact welcome, portrait, collection layout, heading sizes, gold Fraunces Italic phrase, and all three Wandering Magic stars with their current paths, timing, shimmer and reduced-motion rules.
 
-Use this exact wording, **approved for preview, not yet final publication copy**:
+Use this exact wording, **approved for preview only, not final publication copy**:
 
-> I'm Jason Lyvers, a digital marketing strategist. But that's just what I do for a living.
+> I'm Jason Lyvers, a digital marketing strategist with a curiosity that rarely stays in its lane.
 >
 > I'm fascinated by life's mysteries, unexpected discoveries, and all the interesting things I might stumble across along the way.
 
-- Wrap only **digital marketing strategist** in a semantic inline span, using the established **Fraunces Italic** in readable muted antique gold/copper against the surrounding Newsreader headline.
+- Wrap only **digital marketing strategist** in a semantic inline span, using the established **Fraunces Italic** in readable muted antique gold/copper against the surrounding Newsreader headline. Only those three words receive the accent; “with a curiosity that rarely stays in its lane” stays in the regular headline treatment.
 - Preserve the tiny, softly illuminated four-point star as a decorative ornament above the phrase, not an inline mark after the final word. The owner's subsequent footnote-marker feedback replaces the initial static, after-phrase placement with the quiet motion described below. Keep it hidden from assistive technology, with no link, button, hover trigger, blinking, underline, chip, or heavy glow.
-- Let the phrase wrap naturally on phone widths, using word anchors for decorations without changing the headline's size or the surrounding layout rules. Keep the period directly after “strategist” with no intervening star or reserved ornament space.
+- Let the phrase wrap naturally on phone widths, using word anchors for decorations without changing the headline's size or the surrounding layout rules. The sentence continues normally after “strategist” with no inline star, added punctuation or reserved ornament space.
 - Preserve the supplied portrait and its dimensions, the reduced collection-headline sizes, fonts already loaded, collection design, and both empty/example review states. Add no libraries or private material.
 
 The wording and visual treatment remain approved for preview only. **Not Entirely Unrelated** remains the selected name direction, with final publication approval still separate. This authorization doesn't approve final copy, final design, merge, or production publication. Keep `SITE_INDEXING_ENABLED = false` and layout fixtures out of the normal build.
@@ -87,7 +87,7 @@ The owner's scoped Wandering Magic request replaces the limited back-and-forth d
 - Use three independent, closed cubic-Bezier CSS motion paths: a shallow figure-eight above “digital” (16 seconds), a rightward curved loop around “marketing” (19 seconds), and a leftward curved loop below “strategist” (13 seconds). Each travels approximately 8 to 9px from its resting anchor, within the requested 6 to 10px range. Matching start/end points and tangents make the loops continuous, without a jump, pause or backtracking reset.
 - Keep the paths mainly horizontal with only a few pixels of vertical movement to fit the whitespace between wrapped lines. Anchor each star to its word, with independent starting phases and brightness timing. The stars stay upright and slightly behind the lettering, never crossing readable strokes.
 - Preserve the current original SVG size and shape, the smaller responsive 6 to 7px stars, and gentle 62% to 95% shimmer. Retain the staggered 17-, 16-, and 19-second brightness cycles; no flashes, trails, extra particles or larger halos.
-- Preserve the earlier footnote-cue correction: keep the original star above “digital” outside the text flow, distribute the smaller points around “marketing” and “strategist”, and leave no ornament between the final word and its period.
+- Preserve the earlier footnote-cue correction: keep the original star above “digital” outside the text flow, distribute the smaller points around “marketing” and “strategist”, and don't place any ornament inline after the highlighted phrase.
 - A nearly transparent, static warm glow may sit behind each wrapped text fragment for depth. Don't animate, blur, fade, mask, or recolor the lettering itself. All words stay readable and selectable.
 - Decorations are noninteractive and hidden from screen readers. They occupy no layout space and must not clip, collide with nearby text, or create horizontal scrolling at phone or desktop widths.
 - Under `prefers-reduced-motion: reduce`, remove animations, transforms and motion paths from all three ornaments. Reset the path distance and retain the original star at 85% opacity and the smaller points at 62%, in the same detached composition.
