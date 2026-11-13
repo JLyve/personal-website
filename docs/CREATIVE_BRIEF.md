@@ -1,6 +1,6 @@
 # Personal Website -- Creative & Strategy Brief
 
-Status: approved creative direction and homepage approach for a **preview implementation**, not a final pixel-perfect specification or approval of public copy. Updated 2026-11-12.
+Status: approved creative direction and homepage approach for a **preview implementation**, not a final pixel-perfect specification or approval of public copy. Updated 2026-11-13.
 
 ## Purpose and positioning
 
@@ -61,6 +61,23 @@ This revision replaces the headline-led opening described below for the next rev
 - The homepage must feel intentional with no published entries. Hide empty collection sections, category controls, and links without useful destinations.
 - Keep layout examples separate from published collections and normal builds. Examples must use visibly structural bracketed placeholders rather than invented article titles, book choices, client results, or personal claims.
 - Show the owner-supplied review portrait in both the empty-collection and populated examples previews. Preserve its supplied square crop, proportions, and colors without retouching, filtering, sharpening, or further cropping. If no portrait is configured, omit the image and collapse its space completely.
+
+### Welcome accent refinement (authorized for preview 2026-11-13)
+
+This scoped revision updates the provisional welcome wording and one inline accent in the existing PR #13 previews. It preserves the compact welcome, portrait, collection layout, heading sizes, and other typography. The [owner's PR comment](https://github.com/JLyve/personal-website/pull/13#issuecomment-6853929481) authorizes this treatment for review only.
+
+Use this exact provisional wording:
+
+> I’m Jason Lyvers, a digital marketing strategist. That explains some of what you’ll find here.
+>
+> The rest involves books, ideas, questions, and connections I’m still trying to explain. Have a look around.
+
+- Wrap only **digital marketing strategist** in a semantic inline span, using the established **Fraunces Italic** in readable muted antique gold/copper against the surrounding Newsreader headline.
+- Place one tiny, softly illuminated four-point star directly after the phrase. It stays visible and completely static, including under reduced motion. It is decorative and hidden from assistive technology, with no link, button, hover trigger, blinking, pulsing, underline, chip, or heavy glow.
+- Let the phrase wrap naturally on phone widths, keeping the star attached to its final word without changing the headline's size or the surrounding layout rules.
+- Preserve the supplied portrait and its dimensions, the reduced collection-headline sizes, fonts already loaded, collection design, and both empty/example review states. Add no libraries or private material.
+
+The wording, accent treatment, and **Not Entirely Unrelated** name remain provisional. This authorization doesn't approve final design, merge, or production publication. Keep `SITE_INDEXING_ENABLED = false` and layout fixtures out of the normal build.
 
 ### Positioning and personality
 
