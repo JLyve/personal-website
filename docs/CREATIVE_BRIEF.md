@@ -57,14 +57,23 @@ This revision replaces the headline-led opening described below for the next rev
 - Keep **Not Entirely Unrelated** as the selected collection-name direction and clearly associate it with **Jason Lyvers** in the header. Final publication approval is separate from this preview direction.
 - Replace the large slogan, promotional pitch, and hero CTA with a compact, conversational welcome. Use the owner-supplied wording for layout testing only; it remains provisional and is not approved production copy.
 - Use a genuinely collection-first restrained hybrid: pair the modest welcome with the prominent featured item in the first-screen composition instead of making visitors pass through a separate hero. Use **From the collection** as a provisional label, with smaller supporting entries that can represent Notes, Projects, or Reading according to the real work available.
-- Treat any optional portrait placement as part of the welcome itself. Place the owner-supplied square portrait above the welcome copy in normal document flow on desktop and mobile, aligned with the copy's left edge. The collection should follow the complete welcome as one uninterrupted sequence.
+- Keep the compact welcome left aligned with no portrait or reserved portrait space on the homepage. The collection should follow the complete welcome as one uninterrupted sequence.
 - The homepage must feel intentional with no published entries. Hide empty collection sections, category controls, and links without useful destinations.
 - Keep layout examples separate from published collections and normal builds. Examples must use visibly structural bracketed placeholders rather than invented article titles, book choices, client results, or personal claims.
-- Show the owner-supplied review portrait in both the empty-collection and populated examples previews. Preserve its supplied square crop, proportions, and colors without retouching, filtering, sharpening, or further cropping. If no portrait is configured, omit the image and collapse its space completely.
+- Show the owner-supplied review portrait only on the provisional About page. Preserve its supplied square crop, proportions, colors, and image quality without retouching, filtering, sharpening, replacement, or further cropping.
+
+### About-only portrait comparison (authorized for preview 2026-11-16)
+
+This direction supersedes the earlier PR #13 portrait-on-home placement for a comparison preview only. It does not approve the final portrait placement or an About design.
+
+- Remove the portrait from both homepage review states and collapse its former space completely. Keep the current welcome copy, **Jason Lyvers**, **digital marketing strategist**, collection layout, heading sizes, typography, Wandering Magic stars, navigation, and responsive behavior unchanged except for spacing inherently removed with the portrait.
+- Place the same supplied portrait near the opening introduction on the provisional About page. Treat it as a natural introduction to the person rather than a large personal-brand hero or résumé headshot. Preserve the source file, square crop, colors, proportions, and image quality exactly.
+- Use clearly labeled structural preview language for the future sequence: introduction to the person → how he thinks → professional approach → selected evidence-based work → invitation to connect. Do not invent biography, credentials, professional claims, evidence, email addresses, LinkedIn URLs, or Contact copy. Do not add a contact form or separate Contact page.
+- This About-only portrait preview is authorized for comparison in the existing PR #13 only. Final portrait placement, final About layout, approved About copy, contact details, merge, publication, and production deployment remain unapproved.
 
 ### Welcome accent refinement (authorized for preview 2026-11-13)
 
-The owner's latest welcome-copy request replaces the initial wording from the [earlier PR comment](https://github.com/JLyve/personal-website/pull/13#issuecomment-6853929481). It authorizes only the revised wording below for the existing PR #13 previews. Preserve the compact welcome, portrait, collection layout, heading sizes, gold Fraunces Italic phrase, and all three Wandering Magic stars with their current paths, timing, shimmer and reduced-motion rules.
+The owner's latest welcome-copy request replaces the initial wording from the [earlier PR comment](https://github.com/JLyve/personal-website/pull/13#issuecomment-6853929481). It authorizes only the revised wording below for the existing PR #13 previews. Preserve the compact welcome, collection layout, heading sizes, gold Fraunces Italic phrase, and all three Wandering Magic stars with their current paths, timing, shimmer and reduced-motion rules.
 
 Use this exact wording, **approved for preview only, not final publication copy**:
 
@@ -75,7 +84,7 @@ Use this exact wording, **approved for preview only, not final publication copy*
 - Wrap only **digital marketing strategist** in a semantic inline span, using the established **Fraunces Italic** in readable muted antique gold/copper against the surrounding Newsreader headline. Only those three words receive the accent; “with a curiosity that rarely stays in its lane” stays in the regular headline treatment.
 - Preserve the tiny, softly illuminated four-point star as a decorative ornament above the phrase, not an inline mark after the final word. The owner's subsequent footnote-marker feedback replaces the initial static, after-phrase placement with the quiet motion described below. Keep it hidden from assistive technology, with no link, button, hover trigger, blinking, underline, chip, or heavy glow.
 - Let the phrase wrap naturally on phone widths, using word anchors for decorations without changing the headline's size or the surrounding layout rules. The sentence continues normally after “strategist” with no inline star, added punctuation or reserved ornament space.
-- Preserve the supplied portrait and its dimensions, the reduced collection-headline sizes, fonts already loaded, collection design, and both empty/example review states. Add no libraries or private material.
+- Preserve the supplied portrait file for the About-only placement, the reduced collection-headline sizes, fonts already loaded, collection design, and both empty/example review states. Add no libraries or private material.
 
 The wording and visual treatment remain approved for preview only. **Not Entirely Unrelated** remains the selected name direction, with final publication approval still separate. This authorization doesn't approve final copy, final design, merge, or production publication. Keep `SITE_INDEXING_ENABLED = false` and layout fixtures out of the normal build.
 
@@ -83,7 +92,7 @@ The wording and visual treatment remain approved for preview only. **Not Entirel
 
 The owner's scoped Wandering Magic request replaces the limited back-and-forth drift around **digital marketing strategist** in the existing PR #13 previews. Keep exactly the current three antique-gold stars and make them feel like tiny magical fireflies gently exploring the phrase. Animation refinements must preserve the currently approved preview wording above and don't make any name, copy, or visual treatment final.
 
-- Preserve the exact Fraunces Italic font, weight, gold text color, heading sizes, and existing four-point star. Keep the portrait, welcome wording, layout, and collection design unchanged.
+- Preserve the exact Fraunces Italic font, weight, gold text color, heading sizes, and existing four-point star. Keep the About-only portrait placement, welcome wording, homepage layout, and collection design unchanged.
 - Use three independent, closed cubic-Bezier CSS motion paths: a shallow figure-eight above “digital” (16 seconds), a rightward curved loop around “marketing” (19 seconds), and a leftward curved loop below “strategist” (13 seconds). Each travels approximately 8 to 9px from its resting anchor, within the requested 6 to 10px range. Matching start/end points and tangents make the loops continuous, without a jump, pause or backtracking reset.
 - Keep the paths mainly horizontal with only a few pixels of vertical movement to fit the whitespace between wrapped lines. Anchor each star to its word, with independent starting phases and brightness timing. The stars stay upright and slightly behind the lettering, never crossing readable strokes.
 - Preserve the current original SVG size and shape, the smaller responsive 6 to 7px stars, and gentle 62% to 95% shimmer. Retain the staggered 17-, 16-, and 19-second brightness cycles; no flashes, trails, extra particles or larger halos.

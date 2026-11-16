@@ -15,7 +15,6 @@ type HomepageEntry = {
 };
 
 const base = import.meta.env.BASE_URL;
-const portraitSrc = `${base}images/jason-portrait-web-320.png`;
 const examplesReviewBranch = 'preview-examples/not-entirely-unrelated-homepage';
 const reviewExamplesEnabled =
   import.meta.env.HOMEPAGE_REVIEW_STATE === 'examples' ||
@@ -64,7 +63,7 @@ const supportingEntries = collectionEntries.filter((entry) => entry !== featured
   <main class="collection-home">
     <div class="opening section-shell">
       <div class="welcome-slot">
-        <Hero portraitSrc={portraitSrc} />
+        <Hero />
       </div>
 
       {featuredEntry ? (
