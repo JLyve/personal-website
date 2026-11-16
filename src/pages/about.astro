@@ -1,22 +1,268 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Navigation from '../components/Navigation.astro';
-import ProvisionalEmptyState from '../components/ProvisionalEmptyState.astro';
+
+const base = import.meta.env.BASE_URL;
+const portraitSrc = `${base}images/jason-portrait-web-320.png`;
 ---
 
 <BaseLayout
   editorial
-  title="About — Structure preview"
-  description="A provisional About page awaiting approved personal and professional context."
+  title="About Jason Lyvers — Structure preview"
+  description="A review-only About structure for Jason Lyvers with provisional, clearly labeled content areas."
 >
   <Navigation />
-  <ProvisionalEmptyState
-    eyebrow="About · Structure preview"
-    title="An introduction belongs here—after approval."
-    description="This page is reserved for an approved introduction and truthful context. The design is ready; the personal wording will be developed separately."
-    statusTitle="No owner biography is published."
-    statusDescription="The original Darkness demo biography and service claims have been removed. No personal history, credentials, or professional claims are assumed."
-    structureLabel="Provisional page structure"
-    structureItems={['Approved introduction', 'Working perspective', 'Relevant evidence and paths']}
-  />
+
+  <main class="about-preview">
+    <div class="page-shell">
+      <header class="about-intro">
+        <div class="intro-copy">
+          <p class="eyebrow">About <span aria-hidden="true">·</span> structure preview</p>
+          <h1>About</h1>
+          <p class="placeholder-copy">[Approved introduction to Jason will appear here.]</p>
+          <p class="preview-note">This review shows hierarchy and portrait placement only. No biography or professional claims are implied.</p>
+        </div>
+
+        <figure class="portrait-placement">
+          <img
+            src={portraitSrc}
+            alt="Jason Lyvers"
+            width="320"
+            height="320"
+            decoding="async"
+          />
+          <figcaption>Portrait placement <span aria-hidden="true">·</span> review preview</figcaption>
+        </figure>
+      </header>
+
+      <div class="about-sequence" aria-label="Provisional About page sequence">
+        <section aria-labelledby="thinking-title">
+          <p class="sequence-number" aria-hidden="true">01</p>
+          <div>
+            <p class="section-label">Provisional section</p>
+            <h2 id="thinking-title">How he thinks</h2>
+            <p>[Approved perspective and thinking approach will appear here.]</p>
+          </div>
+        </section>
+
+        <section aria-labelledby="approach-title">
+          <p class="sequence-number" aria-hidden="true">02</p>
+          <div>
+            <p class="section-label">Provisional section</p>
+            <h2 id="approach-title">Professional approach</h2>
+            <p>[Approved description of Jason's professional approach will appear here.]</p>
+          </div>
+        </section>
+
+        <section aria-labelledby="evidence-title">
+          <p class="sequence-number" aria-hidden="true">03</p>
+          <div>
+            <p class="section-label">Provisional section</p>
+            <h2 id="evidence-title">Selected evidence-based work</h2>
+            <p>[Approved examples and supporting evidence will appear here. No results, clients, or credentials are assumed.]</p>
+          </div>
+        </section>
+
+        <section aria-labelledby="connect-title">
+          <p class="sequence-number" aria-hidden="true">04</p>
+          <div>
+            <p class="section-label">Provisional section</p>
+            <h2 id="connect-title">Invitation to connect</h2>
+            <p>[Approved invitation and connection details will appear here. No contact route is included in this preview.]</p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="about-footer">
+    <p>Structure preview. No private drafts or unapproved personal content are included.</p>
+    <p>Built from the open-source <a href="https://github.com/kpab/astro-darkness">Darkness Astro theme</a> by kpab.</p>
+  </footer>
 </BaseLayout>
+
+<style>
+  .about-preview,
+  .about-footer {
+    width: min(100% - 2rem, 1120px);
+    margin-inline: auto;
+  }
+
+  .about-preview {
+    min-height: calc(100svh - 108px);
+    padding: clamp(8.5rem, 15vh, 10rem) 0 clamp(4rem, 8vw, 6rem);
+    color: var(--color-text);
+  }
+
+  .about-intro {
+    max-width: 820px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 120px;
+    align-items: end;
+    gap: clamp(2rem, 6vw, 4.5rem);
+  }
+
+  .eyebrow,
+  .section-label {
+    color: #c4a16d;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.17em;
+    line-height: 1.5;
+    text-transform: uppercase;
+  }
+
+  .eyebrow { margin: 0 0 1rem; }
+
+  h1,
+  h2 {
+    margin: 0;
+    color: var(--color-text);
+    font-family: 'Newsreader', Georgia, serif;
+    font-weight: 300;
+    text-wrap: balance;
+  }
+
+  h1 {
+    font-size: clamp(3rem, 6.4vw, 4.8rem);
+    letter-spacing: -0.045em;
+    line-height: 0.98;
+  }
+
+  .placeholder-copy {
+    max-width: 52ch;
+    margin: 1.35rem 0 0;
+    color: #ded2c1;
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: clamp(1.08rem, 1.6vw, 1.3rem);
+    line-height: 1.55;
+  }
+
+  .preview-note {
+    max-width: 58ch;
+    margin: 0.75rem 0 0;
+    color: #aaa092;
+    font-size: 0.78rem;
+    line-height: 1.65;
+  }
+
+  .portrait-placement {
+    margin: 0;
+    align-self: center;
+  }
+
+  .portrait-placement img {
+    width: 120px;
+    height: 120px;
+    display: block;
+  }
+
+  .portrait-placement figcaption {
+    margin-top: 0.65rem;
+    color: #9f9587;
+    font-size: 0.58rem;
+    letter-spacing: 0.08em;
+    line-height: 1.5;
+    text-transform: uppercase;
+  }
+
+  .about-sequence {
+    margin-top: clamp(3.5rem, 7vw, 5.75rem);
+    border-top: 1px solid rgba(205, 170, 112, 0.2);
+  }
+
+  .about-sequence section {
+    min-height: 180px;
+    padding: clamp(1.75rem, 4vw, 3rem) 0;
+    display: grid;
+    grid-template-columns: minmax(46px, 0.18fr) minmax(0, 1fr);
+    gap: clamp(1rem, 4vw, 3rem);
+    border-bottom: 1px solid rgba(205, 170, 112, 0.16);
+  }
+
+  .sequence-number {
+    margin: 0;
+    color: #8f785c;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+  }
+
+  .section-label { margin: 0 0 0.8rem; }
+
+  h2 {
+    font-size: clamp(2rem, 4.2vw, 3.4rem);
+    letter-spacing: -0.035em;
+    line-height: 1;
+  }
+
+  .about-sequence section div > p:last-child {
+    max-width: 64ch;
+    margin: 1rem 0 0;
+    color: var(--color-text-dim);
+    font-size: 0.92rem;
+    line-height: 1.75;
+  }
+
+  .about-footer {
+    padding: 2rem 0 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    border-top: 1px solid rgba(205, 170, 112, 0.15);
+    color: #a9a093;
+    font-size: 0.72rem;
+    line-height: 1.65;
+  }
+
+  .about-footer p {
+    max-width: 52ch;
+    margin: 0;
+  }
+
+  .about-footer a {
+    color: #ccb184;
+    text-underline-offset: 0.2rem;
+  }
+
+  @media (max-width: 720px) {
+    .about-preview,
+    .about-footer {
+      width: min(100% - 1.5rem, 1120px);
+    }
+
+    .about-preview {
+      min-height: auto;
+      padding-top: 7.3rem;
+      padding-bottom: 4rem;
+    }
+
+    .about-intro {
+      grid-template-columns: 1fr;
+      align-items: start;
+      gap: 1.6rem;
+    }
+
+    h1 { font-size: clamp(3rem, 14vw, 4rem); }
+
+    .portrait-placement img {
+      width: 96px;
+      height: 96px;
+    }
+
+    .about-sequence { margin-top: 3.2rem; }
+
+    .about-sequence section {
+      min-height: 0;
+      grid-template-columns: 34px minmax(0, 1fr);
+      gap: 0.75rem;
+    }
+
+    h2 { font-size: clamp(1.8rem, 8vw, 2.35rem); }
+
+    .about-footer {
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+  }
+</style>
