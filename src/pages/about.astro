@@ -38,9 +38,18 @@ const projectsHref = `${base}projects/`;
 
       <div class="about-sequence" aria-label="About Jason Lyvers">
         <section aria-labelledby="thinking-title">
-          <p class="sequence-number" aria-hidden="true">01<span class="section-glint glint-one" aria-hidden="true"></span></p>
+          <p class="sequence-number" aria-hidden="true">01</p>
           <div>
-            <h2 id="thinking-title">How I think</h2>
+            <div class="section-heading-line">
+              <h2 id="thinking-title">How I think</h2>
+              <span class="section-charm think-charm" aria-hidden="true">
+                <svg aria-hidden="true" focusable="false" viewBox="0 0 44 32">
+                  <path class="charm-line think-orbit" aria-hidden="true" d="M4 23 C9 8 25 4 39 13" />
+                  <circle class="charm-node" aria-hidden="true" cx="7" cy="23" r="1.3" />
+                  <path class="charm-spark think-star" aria-hidden="true" d="M11 12.5 12 15 14.5 16 12 17 11 19.5 10 17 7.5 16 10 15Z" />
+                </svg>
+              </span>
+            </div>
             <p>My interests show up in little bursts of rabbit holes. I’ll get hooked on a question, follow it into neighboring subjects, and come back later when something pulls me in again.</p>
             <p>I like taking an idea from one place and putting it next to something from somewhere else to see if they make each other better. A connection can turn into something useful, or show me exactly where my thinking broke.</p>
             <p>I’m interested in what other people think and why they see things the way they do. I like conversations where someone can change their mind or leave with a better question.</p>
@@ -49,9 +58,18 @@ const projectsHref = `${base}projects/`;
         </section>
 
         <section aria-labelledby="work-title">
-          <p class="sequence-number" aria-hidden="true">02<span class="section-glint glint-two" aria-hidden="true"></span></p>
+          <p class="sequence-number" aria-hidden="true">02</p>
           <div>
-            <h2 id="work-title">How I work</h2>
+            <div class="section-heading-line">
+              <h2 id="work-title">How I work</h2>
+              <span class="section-charm work-charm" aria-hidden="true">
+                <svg aria-hidden="true" focusable="false" viewBox="0 0 44 32">
+                  <path class="charm-line work-diamond" aria-hidden="true" d="M22 4 36 16 22 28 8 16Z" />
+                  <line class="work-dash" aria-hidden="true" x1="22" y1="5" x2="27" y2="9.3" />
+                  <path class="charm-spark work-corner-spark" aria-hidden="true" d="M36 13 36.8 15.2 39 16 36.8 16.8 36 19 35.2 16.8 33 16 35.2 15.2Z" />
+                </svg>
+              </span>
+            </div>
             <p>Most marketing advice starts with a tactic. I usually want to back up a step.</p>
             <p>Who is this for? What are they trying to understand? What evidence do we have, and what would make the answer more useful?</p>
             <p>Those questions shape how I work on websites and search. They also shape how I think about content that may appear in AI-generated answers.</p>
@@ -62,18 +80,40 @@ const projectsHref = `${base}projects/`;
         </section>
 
         <section aria-labelledby="selected-work-title">
-          <p class="sequence-number" aria-hidden="true">03<span class="section-glint glint-three" aria-hidden="true"></span></p>
+          <p class="sequence-number" aria-hidden="true">03</p>
           <div>
-            <h2 id="selected-work-title">Selected work</h2>
+            <div class="section-heading-line">
+              <h2 id="selected-work-title">Selected work</h2>
+              <span class="section-charm selected-charm" aria-hidden="true">
+                <svg aria-hidden="true" focusable="false" viewBox="0 0 44 32">
+                  <line class="charm-line" aria-hidden="true" x1="10" y1="20" x2="22" y2="13" />
+                  <line class="charm-line" aria-hidden="true" x1="22" y1="13" x2="35" y2="22" />
+                  <circle class="charm-node" aria-hidden="true" cx="10" cy="20" r="1.4" />
+                  <circle class="charm-node" aria-hidden="true" cx="22" cy="13" r="1.25" />
+                  <circle class="charm-node" aria-hidden="true" cx="35" cy="22" r="1.5" />
+                  <path class="charm-spark selected-glint" aria-hidden="true" d="M10 17 10.8 19.2 13 20 10.8 20.8 10 23 9.2 20.8 7 20 9.2 19.2Z" />
+                </svg>
+              </span>
+            </div>
             <p>The projects here will be specific about what I contributed, who else was involved, and what the evidence supports. Good work is usually shared work, and every public result needs a source I can stand behind.</p>
             <p class="section-action"><a href={projectsHref}>Explore selected projects</a></p>
           </div>
         </section>
 
         <section aria-labelledby="connect-title">
-          <p class="sequence-number" aria-hidden="true">04<span class="section-glint glint-four" aria-hidden="true"></span></p>
+          <p class="sequence-number" aria-hidden="true">04</p>
           <div>
-            <h2 id="connect-title">Connect</h2>
+            <div class="section-heading-line">
+              <h2 id="connect-title">Connect</h2>
+              <span class="section-charm connect-charm" aria-hidden="true">
+                <svg aria-hidden="true" focusable="false" viewBox="0 0 44 32">
+                  <line class="charm-line connect-thread" aria-hidden="true" x1="7" y1="16" x2="37" y2="16" />
+                  <ellipse class="connect-glow" aria-hidden="true" cx="22" cy="16" rx="7" ry="4" />
+                  <circle class="connect-point connect-point-left" aria-hidden="true" cx="11" cy="16" r="3" />
+                  <circle class="connect-point connect-point-right" aria-hidden="true" cx="33" cy="16" r="3" />
+                </svg>
+              </span>
+            </div>
             <p>I like good questions, useful disagreements, unexpected common ground, and work worth thinking through.</p>
             <p>Send me an email if something here makes you want to compare notes or talk about a project. You can also find me on LinkedIn.</p>
             <p>No pitch required.</p>
@@ -133,8 +173,7 @@ const projectsHref = `${base}projects/`;
     color: #d6b477;
   }
 
-  .about-title-star,
-  .section-glint {
+  .about-title-star {
     position: absolute;
     pointer-events: none;
     user-select: none;
@@ -206,50 +245,10 @@ const projectsHref = `${base}projects/`;
 
   .sequence-number {
     margin: 0;
-    position: relative;
     color: #8f785c;
     font-size: 0.65rem;
     font-weight: 600;
     letter-spacing: 0.14em;
-  }
-
-  .section-glint {
-    width: 5.5px;
-    height: 5.5px;
-    left: 2.6rem;
-    top: 0.14rem;
-    background: #d6b477;
-    clip-path: polygon(50% 0, 63% 37%, 100% 50%, 63% 63%, 50% 100%, 37% 63%, 0 50%, 37% 37%);
-    filter: drop-shadow(0 0 6px rgba(214, 180, 119, 0.42));
-    opacity: 0.46;
-  }
-
-  .glint-one {
-    offset-path: path('M0 0 C4 -2 10 -2 14 1 C10 4 4 3 0 0 Z');
-    animation: about-wander 17s linear infinite,
-      about-glint-shimmer 13s ease-in-out infinite;
-    animation-delay: -3s, -1s;
-  }
-
-  .glint-two {
-    offset-path: path('M0 0 C-4 2 -9 3 -12 0 C-8 -3 -3 -2 0 0 Z');
-    animation: about-wander 21s linear infinite,
-      about-glint-shimmer 17s ease-in-out infinite;
-    animation-delay: -11s, -7s;
-  }
-
-  .glint-three {
-    offset-path: path('M0 0 C5 3 12 2 16 -1 C12 -4 5 -3 0 0 Z');
-    animation: about-wander 19s linear infinite,
-      about-glint-shimmer 15s ease-in-out infinite;
-    animation-delay: -6s, -12s;
-  }
-
-  .glint-four {
-    offset-path: path('M0 0 C-3 -3 -8 -2 -10 1 C-7 4 -2 3 0 0 Z');
-    animation: about-wander 23s linear infinite,
-      about-glint-shimmer 19s ease-in-out infinite;
-    animation-delay: -17s, -4s;
   }
 
   @keyframes about-wander {
@@ -262,15 +261,170 @@ const projectsHref = `${base}projects/`;
     56% { opacity: 0.84; }
   }
 
-  @keyframes about-glint-shimmer {
-    0%, 38%, 82%, 100% { opacity: 0.35; }
-    58% { opacity: 0.72; }
-  }
-
   h2 {
     font-size: clamp(2rem, 4.2vw, 3.4rem);
     letter-spacing: -0.035em;
     line-height: 1;
+  }
+
+  .section-heading-line {
+    width: fit-content;
+    max-width: 100%;
+    position: relative;
+  }
+
+  .section-charm {
+    width: 42px;
+    height: 32px;
+    position: absolute;
+    left: calc(100% + 0.75rem);
+    top: 50%;
+    color: #d6b477;
+    pointer-events: none;
+    transform: translateY(-50%);
+    user-select: none;
+  }
+
+  .section-charm,
+  .section-charm * {
+    pointer-events: none;
+  }
+
+  .section-charm svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: visible;
+  }
+
+  .charm-line {
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 0.9;
+    opacity: 0.22;
+  }
+
+  .charm-node {
+    fill: currentColor;
+    opacity: 0.42;
+  }
+
+  .charm-spark,
+  .connect-point,
+  .work-dash {
+    filter: drop-shadow(0 0 6px rgba(214, 180, 119, 0.42));
+  }
+
+  .charm-spark {
+    fill: currentColor;
+    opacity: 0.52;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+
+  .think-orbit {
+    stroke-width: 1;
+    stroke-dasharray: 2 1.4;
+  }
+
+  .think-star {
+    animation: think-charm-motion 19s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+    animation-delay: -5s;
+  }
+
+  .work-diamond { opacity: 0.24; }
+
+  .work-dash {
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-width: 1.8;
+    opacity: 0.58;
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: work-dash-motion 23s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+    animation-delay: -9s;
+  }
+
+  .work-corner-spark {
+    animation: work-corner-shimmer 23s ease-in-out infinite;
+    animation-delay: -15s;
+  }
+
+  .selected-charm .charm-line { opacity: 0.18; }
+
+  .selected-glint {
+    animation: selected-charm-motion 17s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+    animation-delay: -12s;
+  }
+
+  .connect-thread { opacity: 0.2; }
+
+  .connect-glow {
+    fill: rgba(214, 180, 119, 0.16);
+    filter: blur(3px);
+    opacity: 0.2;
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: connect-shared-glow 25s ease-in-out infinite;
+    animation-delay: -6s;
+  }
+
+  .connect-point {
+    fill: currentColor;
+    opacity: 0.52;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+
+  .connect-point-left {
+    animation: connect-left-motion 25s ease-in-out infinite;
+    animation-delay: -6s;
+  }
+
+  .connect-point-right {
+    animation: connect-right-motion 25s ease-in-out infinite;
+    animation-delay: -6s;
+  }
+
+  @keyframes think-charm-motion {
+    0%, 100% { opacity: 0.42; transform: translate(0, 0); }
+    25% { opacity: 0.58; transform: translate(4px, -3px); }
+    50% { opacity: 0.78; transform: translate(10px, -4px); }
+    75% { opacity: 0.56; transform: translate(6px, 1px); }
+  }
+
+  @keyframes work-dash-motion {
+    0%, 100% { opacity: 0.42; transform: translate(0, 0); }
+    50% { opacity: 0.76; transform: translate(7px, 6px); }
+  }
+
+  @keyframes work-corner-shimmer {
+    0%, 34%, 78%, 100% { opacity: 0.4; }
+    56% { opacity: 0.74; }
+  }
+
+  @keyframes selected-charm-motion {
+    0%, 100% { opacity: 0.42; transform: translate(0, 0); }
+    25% { opacity: 0.58; transform: translate(6px, -5px); }
+    50% { opacity: 0.78; transform: translate(12px, -7px); }
+    75% { opacity: 0.56; transform: translate(6px, 1px); }
+  }
+
+  @keyframes connect-left-motion {
+    0%, 100% { opacity: 0.44; transform: translateX(0); }
+    50% { opacity: 0.76; transform: translateX(6px); }
+  }
+
+  @keyframes connect-right-motion {
+    0%, 100% { opacity: 0.44; transform: translateX(0); }
+    50% { opacity: 0.76; transform: translateX(-6px); }
+  }
+
+  @keyframes connect-shared-glow {
+    0%, 100% { opacity: 0.12; transform: scaleX(0.7); }
+    50% { opacity: 0.46; transform: scaleX(1); }
   }
 
   .about-sequence section > div > p {
@@ -333,10 +487,6 @@ const projectsHref = `${base}projects/`;
     text-underline-offset: 0.2rem;
   }
 
-  @media (min-width: 721px) and (min-height: 840px) {
-    .glint-three { animation-play-state: paused; }
-  }
-
   @media (max-width: 720px) {
     .about-preview,
     .about-footer {
@@ -363,18 +513,6 @@ const projectsHref = `${base}projects/`;
       top: -0.22em;
     }
 
-    .section-glint {
-      width: 4.5px;
-      height: 4.5px;
-      left: 0.95rem;
-      filter: drop-shadow(0 0 5px rgba(214, 180, 119, 0.38));
-    }
-
-    .glint-one { offset-path: path('M0 0 C3 -1 6 -2 8 1 C6 3 2 2 0 0 Z'); }
-    .glint-two { offset-path: path('M0 0 C-2 2 -5 2 -7 0 C-5 -2 -2 -2 0 0 Z'); }
-    .glint-three { offset-path: path('M0 0 C3 2 7 2 10 -1 C7 -3 3 -2 0 0 Z'); }
-    .glint-four { offset-path: path('M0 0 C-2 -2 -6 -2 -8 1 C-6 3 -2 2 0 0 Z'); }
-
     .portrait-placement {
       width: 100%;
     }
@@ -395,15 +533,67 @@ const projectsHref = `${base}projects/`;
 
     h2 { font-size: clamp(1.8rem, 8vw, 2.35rem); }
 
+    .section-charm {
+      width: 30px;
+      height: 24px;
+      left: calc(100% + 0.55rem);
+    }
+
+    .charm-spark,
+    .connect-point,
+    .work-dash {
+      filter: drop-shadow(0 0 5px rgba(214, 180, 119, 0.38));
+    }
+
+    .think-star { animation-name: think-charm-motion-mobile; }
+    .work-dash { animation-name: work-dash-motion-mobile; }
+    .selected-glint { animation-name: selected-charm-motion-mobile; }
+    .connect-point-left { animation-name: connect-left-motion-mobile; }
+    .connect-point-right { animation-name: connect-right-motion-mobile; }
+
     .about-footer {
       flex-direction: column;
       gap: 0.9rem;
     }
   }
 
+  @keyframes think-charm-motion-mobile {
+    0%, 100% { opacity: 0.42; transform: translate(0, 0); }
+    25% { opacity: 0.58; transform: translate(3px, -2px); }
+    50% { opacity: 0.78; transform: translate(7px, -3px); }
+    75% { opacity: 0.56; transform: translate(4px, 1px); }
+  }
+
+  @keyframes work-dash-motion-mobile {
+    0%, 100% { opacity: 0.42; transform: translate(0, 0); }
+    50% { opacity: 0.76; transform: translate(5px, 4px); }
+  }
+
+  @keyframes selected-charm-motion-mobile {
+    0%, 100% { opacity: 0.42; transform: translate(0, 0); }
+    25% { opacity: 0.58; transform: translate(3px, -3px); }
+    50% { opacity: 0.78; transform: translate(7px, -3px); }
+    75% { opacity: 0.56; transform: translate(4px, 1px); }
+  }
+
+  @keyframes connect-left-motion-mobile {
+    0%, 100% { opacity: 0.44; transform: translateX(0); }
+    50% { opacity: 0.76; transform: translateX(4px); }
+  }
+
+  @keyframes connect-right-motion-mobile {
+    0%, 100% { opacity: 0.44; transform: translateX(0); }
+    50% { opacity: 0.76; transform: translateX(-4px); }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .about-title-star,
-    .section-glint {
+    .think-star,
+    .work-dash,
+    .work-corner-spark,
+    .selected-glint,
+    .connect-point,
+    .connect-glow {
       animation: none;
       transform: none;
       offset-path: none;
@@ -411,6 +601,10 @@ const projectsHref = `${base}projects/`;
     }
 
     .about-title-star { opacity: 0.58; }
-    .section-glint { opacity: 0.38; }
+    .section-charm { opacity: 0.62; }
+    .charm-spark,
+    .connect-point,
+    .work-dash { opacity: 0.52; }
+    .connect-glow { opacity: 0.18; }
   }
 </style>
