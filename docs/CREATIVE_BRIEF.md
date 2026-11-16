@@ -85,14 +85,15 @@ This comparison replaces the 96px mobile and 120px desktop square thumbnail in t
 
 The owner supplied the following About copy for the existing PR #13 review preview. This authorization supersedes the earlier placeholder-only requirement for the rendered About page, but it does not approve the copy for publication. Use **more than a decade** rather than an exact experience total, and use the **past three-ish years** description of work helping a local cremation provider become easier to find online. Omit VYTL until it has a credible public presence.
 
-Email and LinkedIn destinations have not been supplied. Do not invent them or create empty, fake, or `#` links. Their supplied labels may appear only as clearly noninteractive preview labels. “Explore selected projects” may link to the existing Projects route as a useful review destination.
+For this review preview, activate **View my experience on LinkedIn** and **Find me on LinkedIn** with `https://www.linkedin.com/in/jasonlyvers/`, and activate **Email Jason** with `mailto:jasonalyvers@gmail.com`. Do not display the raw email address. “Explore selected projects” continues to link to the existing Projects route as a useful review destination. These contact destinations are supplied for preview evaluation only; contact publication remains unapproved.
 
 #### About heading and restrained magic refinement (authorized for preview 2026-11-16)
 
 - Keep the single semantic heading **“Hi, I’m Jason.”** in the existing Newsreader typeface, weight, size, spacing, and punctuation. Wrap only **“Jason.”** in a semantic inline span and use the homepage highlight’s muted antique gold (`#d6b477`); do not italicize it or change typeface.
 - Place one small decorative four-point SVG star above “Jason.” using the existing homepage star geometry and antique-gold color. Give it a soft shimmer and an 18-second closed CSS motion path that stays within 8px of its anchor, outside the letterforms and document flow.
-- Add only two smaller decorative glints, associated with the section numbers for **02 · How I work** and **04 · Connect**. Use slow, staggered 17- and 20-second closed CSS paths and subdued shimmer timing. Keep them away from copy, links, and the portrait.
-- Keep all three decorations `aria-hidden`, noninteractive, and CSS-only. On phones, reduce the title-star size and hide both section glints so only the title star moves. Under `prefers-reduced-motion: reduce`, remove every animation and motion path, keep one quiet static title star, and hide the section glints.
+- Replace the two earlier section glints with one consistent firefly-like four-point glint beside each section number, **01 through 04**, in the left number-and-divider area. Use 5.5px glints on desktop with soft 35%–72% opacity, a restrained 6px glow, and independent mostly horizontal closed paths traveling approximately 10–16px. Use 17-, 21-, 19-, and 23-second durations with staggered phases.
+- On phones, retain all four glints at 4.5px, reduce their mostly horizontal paths to approximately 6–10px, and keep them inside the narrow number column. Normal viewport composition should expose no more than two moving decorations at once. When a tall desktop viewport would otherwise show three animated section anchors together, pause the **03 · Selected work** glint as a quiet static decoration while retaining its path and timing for shorter viewports.
+- Keep the title star and all four section glints `aria-hidden`, noninteractive, and CSS-only. Under `prefers-reduced-motion: reduce`, remove every animation and motion path and retain the title star and section glints as quiet static decorations at reduced opacity.
 - The treatment must occupy no layout space and create no shift, overflow, clipping, collision, or photo overlap. It adds no dependency or JavaScript animation system.
 
 #### Hi, I’m Jason.
@@ -147,7 +148,7 @@ Email Jason
 
 Find me on LinkedIn
 
-This exact copy, the heading color, motion treatment, unsupplied email and LinkedIn links, merge, publication, and production deployment remain unapproved. The larger vertical portrait and About layout also remain review-preview treatments rather than final design approval. Do not update Notion as part of this authorization.
+This exact copy remains approved for preview only. Contact publication, the heading color, motion treatment, merge, publication, and production deployment remain unapproved. The larger vertical portrait and About layout also remain review-preview treatments rather than final design approval. Do not update Notion as part of this authorization.
 
 ### Welcome accent refinement (authorized for preview 2026-11-13)
 
