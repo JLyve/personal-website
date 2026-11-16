@@ -60,16 +60,26 @@ This revision replaces the headline-led opening described below for the next rev
 - Keep the compact welcome left aligned with no portrait or reserved portrait space on the homepage. The collection should follow the complete welcome as one uninterrupted sequence.
 - The homepage must feel intentional with no published entries. Hide empty collection sections, category controls, and links without useful destinations.
 - Keep layout examples separate from published collections and normal builds. Examples must use visibly structural bracketed placeholders rather than invented article titles, book choices, client results, or personal claims.
-- Show the owner-supplied review portrait only on the provisional About page. Preserve its supplied square crop, proportions, colors, and image quality without retouching, filtering, sharpening, replacement, or further cropping.
+- Show the current owner-supplied review portrait only on the provisional About page. The larger vertical comparison described below supersedes the earlier square-thumbnail display for this preview; retain the square asset for comparison.
 
 ### About-only portrait comparison (authorized for preview 2026-11-16)
 
 This direction supersedes the earlier PR #13 portrait-on-home placement for a comparison preview only. It does not approve the final portrait placement or an About design.
 
 - Remove the portrait from both homepage review states and collapse its former space completely. Keep the current welcome copy, **Jason Lyvers**, **digital marketing strategist**, collection layout, heading sizes, typography, Wandering Magic stars, navigation, and responsive behavior unchanged except for spacing inherently removed with the portrait.
-- Place the same supplied portrait near the opening introduction on the provisional About page. Treat it as a natural introduction to the person rather than a large personal-brand hero or résumé headshot. Preserve the source file, square crop, colors, proportions, and image quality exactly.
+- Place the supplied portrait near the opening introduction on the provisional About page. Treat it as a natural introduction to the person rather than a large personal-brand hero or résumé headshot. The initial square-thumbnail implementation is retained in deployment history for comparison and is superseded in the current preview by the larger vertical treatment below.
 - Use clearly labeled structural preview language for the future sequence: introduction to the person → how he thinks → professional approach → selected evidence-based work → invitation to connect. Do not invent biography, credentials, professional claims, evidence, email addresses, LinkedIn URLs, or Contact copy. Do not add a contact form or separate Contact page.
 - This About-only portrait preview is authorized for comparison in the existing PR #13 only. Final portrait placement, final About layout, approved About copy, contact details, merge, publication, and production deployment remain unapproved.
+
+### Larger vertical About portrait comparison (authorized for preview 2026-11-16)
+
+This comparison replaces the 96px mobile and 120px desktop square thumbnail in the current PR #13 preview only. It does not approve the new photograph or make any About decision final.
+
+- Use the owner-supplied **Warm Portrait by the Window** photograph as the current About portrait. Preserve the complete vertical composition, natural colors, facial appearance, clothing, background, and approximately 4:5 proportions. Create only a proportionally resized and compressed web derivative; do not retouch, regenerate, sharpen, recolor, stretch, or crop it. Keep the existing square portrait asset during comparison.
+- On desktop, use a balanced two-column About opening with the editorial portrait on the left at approximately 320–352px wide and the provisional introduction on the right. On mobile, stack the portrait above the introduction at nearly the full content width with no horizontal overflow. The photograph should read as part of the introduction, without a mechanical component caption or a personal-brand hero treatment.
+- Keep the page title and structural preview status clear. Use accurate alternative text, and keep all unapproved biography, professional evidence, and connection details as labeled placeholders. Do not add biography, credentials, client claims, performance results, an email address, LinkedIn URL, Contact copy, contact form, or separate Contact page.
+- Keep the homepage portrait-free with no reserved image space, and otherwise leave its welcome, collection presentation, navigation, typography, animation, and responsive behavior unchanged. Keep `SITE_INDEXING_ENABLED = false`.
+- The final image, exact size, portrait placement, About layout, About copy, contact details, merge, publication, and production deployment remain unapproved. This is an About-only review comparison in the existing PR.
 
 ### Welcome accent refinement (authorized for preview 2026-11-13)
 
