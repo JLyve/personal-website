@@ -28,9 +28,9 @@ const projectsHref = `${base}projects/`;
         </figure>
 
         <div class="intro-copy">
-          <h1>Hi, I’m Jason.</h1>
+          <h1>Hi, I’m <span class="about-name">Jason.<svg class="about-title-star" aria-hidden="true" focusable="false" viewBox="0 0 16 16"><path d="M8 0 10 6 16 8 10 10 8 16 6 10 0 8 6 6Z" /></svg></span></h1>
           <p class="intro-lead">I’m a digital marketing strategist, which is the tidy answer. The less tidy answer is that I’m a generalist with a curiosity that rarely stays in its lane.</p>
-          <p>I’ve worked in marketing for more than a decade. For the past three-ish years, I’ve been helping a local cremation provider become easier to find online. I also spend a lot of time thinking about how useful information shows up in AI-generated answers.</p>
+          <p>I’ve worked in marketing for more than a decade. For the past three-ish years, I’ve been helping a local cremation provider become easier to find online.</p>
           <p>People looking for funeral or cremation information may be grieving and under time pressure. A wrong fact can cost a family money or time, so I care a lot about getting the answer right and making it easy to understand.</p>
           <p>The site gives the rest of my attention somewhere to go: books, philosophy, creativity, odd connections, and whatever has sent me down the latest rabbit hole.</p>
         </div>
@@ -42,21 +42,20 @@ const projectsHref = `${base}projects/`;
           <div>
             <h2 id="thinking-title">How I think</h2>
             <p>My interests show up in little bursts of rabbit holes. I’ll get hooked on a question, follow it into neighboring subjects, and come back later when something pulls me in again.</p>
-            <p>I’m a generalist. I like taking an idea from one place and putting it next to something from somewhere else to see if they make each other better. A connection can turn into something useful, or show me exactly where my thinking broke.</p>
+            <p>I like taking an idea from one place and putting it next to something from somewhere else to see if they make each other better. A connection can turn into something useful, or show me exactly where my thinking broke.</p>
             <p>I’m interested in what other people think and why they see things the way they do. I like conversations where someone can change their mind or leave with a better question.</p>
             <p>Either one counts.</p>
           </div>
         </section>
 
         <section aria-labelledby="work-title">
-          <p class="sequence-number" aria-hidden="true">02</p>
+          <p class="sequence-number" aria-hidden="true">02<span class="section-glint work-glint" aria-hidden="true"></span></p>
           <div>
             <h2 id="work-title">How I work</h2>
             <p>Most marketing advice starts with a tactic. I usually want to back up a step.</p>
             <p>Who is this for? What are they trying to understand? What evidence do we have, and what would make the answer more useful?</p>
             <p>Those questions shape how I work on websites and search. They also shape how I think about content that may appear in AI-generated answers.</p>
-            <p>AI is part of my process. I use it to research, compare sources, test ideas, and pressure-check writing. Two models can agree and still be wrong. I still read the work, check the links, verify the claims, and make the final editorial call.</p>
-            <p>The final judgment stays with the person whose name is on the work.</p>
+            <p>AI is part of my process. I use it to research, compare sources, test ideas, and pressure-check writing. Two models can agree and still be wrong. I still read the work, check the links, and verify the claims. The final judgment stays with the person whose name is on the work.</p>
             <p>LinkedIn has the dates and job titles, because someone ought to keep them in order.</p>
             <p class="preview-link-label">
               View my experience on LinkedIn
@@ -69,14 +68,13 @@ const projectsHref = `${base}projects/`;
           <p class="sequence-number" aria-hidden="true">03</p>
           <div>
             <h2 id="selected-work-title">Selected work</h2>
-            <p>I want the projects here to show what I contributed, who else was involved, and what the evidence supports.</p>
-            <p>Good work is usually shared work. The case studies will name the people and limits that shaped the result. Every public result needs a source I can stand behind.</p>
+            <p>The projects here will be specific about what I contributed, who else was involved, and what the evidence supports. Good work is usually shared work, and every public result needs a source I can stand behind.</p>
             <p class="section-action"><a href={projectsHref}>Explore selected projects</a></p>
           </div>
         </section>
 
         <section aria-labelledby="connect-title">
-          <p class="sequence-number" aria-hidden="true">04</p>
+          <p class="sequence-number" aria-hidden="true">04<span class="section-glint connect-glint" aria-hidden="true"></span></p>
           <div>
             <h2 id="connect-title">Connect</h2>
             <p>I like good questions, useful disagreements, unexpected common ground, and work worth thinking through.</p>
@@ -139,6 +137,37 @@ const projectsHref = `${base}projects/`;
     line-height: 0.98;
   }
 
+  .about-name {
+    position: relative;
+    color: #d6b477;
+  }
+
+  .about-title-star,
+  .section-glint {
+    position: absolute;
+    pointer-events: none;
+    user-select: none;
+    offset-position: auto;
+    offset-anchor: left top;
+    offset-rotate: 0deg;
+    offset-distance: 0%;
+  }
+
+  .about-title-star {
+    width: 0.18em;
+    height: 0.18em;
+    right: 0.03em;
+    top: -0.25em;
+    overflow: visible;
+    fill: #d6b477;
+    filter: drop-shadow(0 0 3px rgba(214, 180, 119, 0.35));
+    opacity: 0.72;
+    offset-path: path('M0 0 C4 -3 8 -3 8 0 C8 3 4 3 0 0 C-4 -3 -8 -3 -8 0 C-8 3 -4 3 0 0 Z');
+    animation: about-wander 18s linear infinite,
+      about-title-shimmer 19s ease-in-out infinite;
+    animation-delay: -4s, -7s;
+  }
+
   .intro-copy {
     max-width: 60ch;
   }
@@ -186,10 +215,50 @@ const projectsHref = `${base}projects/`;
 
   .sequence-number {
     margin: 0;
+    position: relative;
     color: #8f785c;
     font-size: 0.65rem;
     font-weight: 600;
     letter-spacing: 0.14em;
+  }
+
+  .section-glint {
+    width: 5px;
+    height: 5px;
+    left: 2.6rem;
+    top: 0.16rem;
+    background: #d6b477;
+    clip-path: polygon(50% 0, 63% 37%, 100% 50%, 63% 63%, 50% 100%, 37% 63%, 0 50%, 37% 37%);
+    opacity: 0.42;
+  }
+
+  .work-glint {
+    offset-path: path('M0 0 C3 -2 6 0 6 3 C4 5 1 4 0 0 Z');
+    animation: about-wander 17s linear infinite,
+      about-glint-shimmer 23s ease-in-out infinite;
+    animation-delay: -6s, -2s;
+  }
+
+  .connect-glint {
+    offset-path: path('M0 0 C-2 3 -5 4 -7 1 C-6 -2 -2 -3 0 0 Z');
+    animation: about-wander 20s linear infinite,
+      about-glint-shimmer 19s ease-in-out infinite;
+    animation-delay: -13s, -11s;
+  }
+
+  @keyframes about-wander {
+    from { offset-distance: 0%; }
+    to { offset-distance: 100%; }
+  }
+
+  @keyframes about-title-shimmer {
+    0%, 34%, 78%, 100% { opacity: 0.64; }
+    56% { opacity: 0.84; }
+  }
+
+  @keyframes about-glint-shimmer {
+    0%, 38%, 82%, 100% { opacity: 0.34; }
+    58% { opacity: 0.58; }
   }
 
   h2 {
@@ -281,6 +350,14 @@ const projectsHref = `${base}projects/`;
 
     h1 { font-size: clamp(3rem, 14vw, 4rem); }
 
+    .about-title-star {
+      width: 0.15em;
+      height: 0.15em;
+      top: -0.22em;
+    }
+
+    .section-glint { display: none; }
+
     .portrait-placement {
       width: 100%;
     }
@@ -305,5 +382,18 @@ const projectsHref = `${base}projects/`;
       flex-direction: column;
       gap: 0.9rem;
     }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .about-title-star,
+    .section-glint {
+      animation: none;
+      transform: none;
+      offset-path: none;
+      offset-distance: 0%;
+    }
+
+    .about-title-star { opacity: 0.68; }
+    .section-glint { display: none; }
   }
 </style>
