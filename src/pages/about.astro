@@ -4,12 +4,13 @@ import Navigation from '../components/Navigation.astro';
 
 const base = import.meta.env.BASE_URL;
 const portraitSrc = `${base}images/jason-portrait-window-896.webp`;
+const projectsHref = `${base}projects/`;
 ---
 
 <BaseLayout
   editorial
-  title="About Jason Lyvers — Structure preview"
-  description="A review-only About structure for Jason Lyvers with provisional, clearly labeled content areas."
+  title="About Jason Lyvers"
+  description="Jason Lyvers is a digital marketing strategist and curious generalist who cares about useful, accurate information."
 >
   <Navigation />
 
@@ -27,48 +28,70 @@ const portraitSrc = `${base}images/jason-portrait-window-896.webp`;
         </figure>
 
         <div class="intro-copy">
-          <p class="eyebrow">About <span aria-hidden="true">·</span> structure preview</p>
-          <h1>About</h1>
-          <p class="placeholder-copy">[Approved introduction to Jason will appear here.]</p>
-          <p class="preview-note">This review shows hierarchy and portrait placement only. No biography or professional claims are implied.</p>
+          <h1>Hi, I’m Jason.</h1>
+          <p class="intro-lead">I’m a digital marketing strategist, which is the tidy answer. The less tidy answer is that I’m a generalist with a curiosity that rarely stays in its lane.</p>
+          <p>I’ve worked in marketing for more than a decade. For the past three-ish years, I’ve been helping a local cremation provider become easier to find online. I also spend a lot of time thinking about how useful information shows up in AI-generated answers.</p>
+          <p>People looking for funeral or cremation information may be grieving and under time pressure. A wrong fact can cost a family money or time, so I care a lot about getting the answer right and making it easy to understand.</p>
+          <p>The site gives the rest of my attention somewhere to go: books, philosophy, creativity, odd connections, and whatever has sent me down the latest rabbit hole.</p>
         </div>
-
       </header>
 
-      <div class="about-sequence" aria-label="Provisional About page sequence">
+      <div class="about-sequence" aria-label="About Jason Lyvers">
         <section aria-labelledby="thinking-title">
           <p class="sequence-number" aria-hidden="true">01</p>
           <div>
-            <p class="section-label">Provisional section</p>
-            <h2 id="thinking-title">How he thinks</h2>
-            <p>[Approved perspective and thinking approach will appear here.]</p>
+            <h2 id="thinking-title">How I think</h2>
+            <p>My interests show up in little bursts of rabbit holes. I’ll get hooked on a question, follow it into neighboring subjects, and come back later when something pulls me in again.</p>
+            <p>I’m a generalist. I like taking an idea from one place and putting it next to something from somewhere else to see if they make each other better. A connection can turn into something useful, or show me exactly where my thinking broke.</p>
+            <p>I’m interested in what other people think and why they see things the way they do. I like conversations where someone can change their mind or leave with a better question.</p>
+            <p>Either one counts.</p>
           </div>
         </section>
 
-        <section aria-labelledby="approach-title">
+        <section aria-labelledby="work-title">
           <p class="sequence-number" aria-hidden="true">02</p>
           <div>
-            <p class="section-label">Provisional section</p>
-            <h2 id="approach-title">Professional approach</h2>
-            <p>[Approved description of Jason's professional approach will appear here.]</p>
+            <h2 id="work-title">How I work</h2>
+            <p>Most marketing advice starts with a tactic. I usually want to back up a step.</p>
+            <p>Who is this for? What are they trying to understand? What evidence do we have, and what would make the answer more useful?</p>
+            <p>Those questions shape how I work on websites and search. They also shape how I think about content that may appear in AI-generated answers.</p>
+            <p>AI is part of my process. I use it to research, compare sources, test ideas, and pressure-check writing. Two models can agree and still be wrong. I still read the work, check the links, verify the claims, and make the final editorial call.</p>
+            <p>The final judgment stays with the person whose name is on the work.</p>
+            <p>LinkedIn has the dates and job titles, because someone ought to keep them in order.</p>
+            <p class="preview-link-label">
+              View my experience on LinkedIn
+              <span>Link unavailable in this preview</span>
+            </p>
           </div>
         </section>
 
-        <section aria-labelledby="evidence-title">
+        <section aria-labelledby="selected-work-title">
           <p class="sequence-number" aria-hidden="true">03</p>
           <div>
-            <p class="section-label">Provisional section</p>
-            <h2 id="evidence-title">Selected evidence-based work</h2>
-            <p>[Approved examples and supporting evidence will appear here. No results, clients, or credentials are assumed.]</p>
+            <h2 id="selected-work-title">Selected work</h2>
+            <p>I want the projects here to show what I contributed, who else was involved, and what the evidence supports.</p>
+            <p>Good work is usually shared work. The case studies will name the people and limits that shaped the result. Every public result needs a source I can stand behind.</p>
+            <p class="section-action"><a href={projectsHref}>Explore selected projects</a></p>
           </div>
         </section>
 
         <section aria-labelledby="connect-title">
           <p class="sequence-number" aria-hidden="true">04</p>
           <div>
-            <p class="section-label">Provisional section</p>
-            <h2 id="connect-title">Invitation to connect</h2>
-            <p>[Approved invitation and connection details will appear here. No contact route is included in this preview.]</p>
+            <h2 id="connect-title">Connect</h2>
+            <p>I like good questions, useful disagreements, unexpected common ground, and work worth thinking through.</p>
+            <p>Send me an email if something here makes you want to compare notes or talk about a project. You can also find me on LinkedIn.</p>
+            <p>No pitch required.</p>
+            <div class="preview-actions" aria-label="Connection links unavailable in this preview">
+              <p class="preview-link-label">
+                Email Jason
+                <span>Link unavailable in this preview</span>
+              </p>
+              <p class="preview-link-label">
+                Find me on LinkedIn
+                <span>Link unavailable in this preview</span>
+              </p>
+            </div>
           </div>
         </section>
       </div>
@@ -76,7 +99,6 @@ const portraitSrc = `${base}images/jason-portrait-window-896.webp`;
   </main>
 
   <footer class="about-footer">
-    <p>Structure preview. No private drafts or unapproved personal content are included.</p>
     <p>Built from the open-source <a href="https://github.com/kpab/astro-darkness">Darkness Astro theme</a> by kpab.</p>
   </footer>
 </BaseLayout>
@@ -102,18 +124,6 @@ const portraitSrc = `${base}images/jason-portrait-window-896.webp`;
     gap: clamp(3rem, 7vw, 6rem);
   }
 
-  .eyebrow,
-  .section-label {
-    color: #c4a16d;
-    font-size: 0.68rem;
-    font-weight: 600;
-    letter-spacing: 0.17em;
-    line-height: 1.5;
-    text-transform: uppercase;
-  }
-
-  .eyebrow { margin: 0 0 1rem; }
-
   h1,
   h2 {
     margin: 0;
@@ -129,21 +139,24 @@ const portraitSrc = `${base}images/jason-portrait-window-896.webp`;
     line-height: 0.98;
   }
 
-  .placeholder-copy {
+  .intro-copy {
+    max-width: 60ch;
+  }
+
+  .intro-copy p {
+    margin: 1rem 0 0;
+    color: var(--color-text-dim);
+    font-size: 0.9rem;
+    line-height: 1.72;
+  }
+
+  .intro-copy .intro-lead {
     max-width: 52ch;
     margin: 1.35rem 0 0;
     color: #ded2c1;
     font-family: 'Newsreader', Georgia, serif;
     font-size: clamp(1.08rem, 1.6vw, 1.3rem);
     line-height: 1.55;
-  }
-
-  .preview-note {
-    max-width: 58ch;
-    margin: 0.75rem 0 0;
-    color: #aaa092;
-    font-size: 0.78rem;
-    line-height: 1.65;
   }
 
   .portrait-placement {
@@ -179,15 +192,13 @@ const portraitSrc = `${base}images/jason-portrait-window-896.webp`;
     letter-spacing: 0.14em;
   }
 
-  .section-label { margin: 0 0 0.8rem; }
-
   h2 {
     font-size: clamp(2rem, 4.2vw, 3.4rem);
     letter-spacing: -0.035em;
     line-height: 1;
   }
 
-  .about-sequence section div > p:last-child {
+  .about-sequence section > div > p {
     max-width: 64ch;
     margin: 1rem 0 0;
     color: var(--color-text-dim);
@@ -195,10 +206,44 @@ const portraitSrc = `${base}images/jason-portrait-window-896.webp`;
     line-height: 1.75;
   }
 
+  .preview-link-label {
+    color: #ccb184 !important;
+    font-size: 0.78rem !important;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+
+  .preview-link-label span {
+    display: block;
+    margin-top: 0.22rem;
+    color: #92887b;
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .preview-actions {
+    margin-top: 1.35rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem 2.5rem;
+  }
+
+  .preview-actions .preview-link-label {
+    margin: 0;
+  }
+
+  .section-action a {
+    color: #ccb184;
+    font-weight: 600;
+    text-underline-offset: 0.24rem;
+  }
+
   .about-footer {
     padding: 2rem 0 2.5rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     gap: 2rem;
     border-top: 1px solid rgba(205, 170, 112, 0.15);
     color: #a9a093;

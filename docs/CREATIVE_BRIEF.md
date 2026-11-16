@@ -81,6 +81,70 @@ This comparison replaces the 96px mobile and 120px desktop square thumbnail in t
 - Keep the homepage portrait-free with no reserved image space, and otherwise leave its welcome, collection presentation, navigation, typography, animation, and responsive behavior unchanged. Keep `SITE_INDEXING_ENABLED = false`.
 - The final image, exact size, portrait placement, About layout, About copy, contact details, merge, publication, and production deployment remain unapproved. This is an About-only review comparison in the existing PR.
 
+### About copy preview (authorized 2026-11-16)
+
+The owner supplied the following About copy for the existing PR #13 review preview. This authorization supersedes the earlier placeholder-only requirement for the rendered About page, but it does not approve the copy for publication. Use **more than a decade** rather than an exact experience total, and use the **past three-ish years** description of work helping a local cremation provider become easier to find online. Omit VYTL until it has a credible public presence.
+
+Email and LinkedIn destinations have not been supplied. Do not invent them or create empty, fake, or `#` links. Their supplied labels may appear only as clearly noninteractive preview labels. “Explore selected projects” may link to the existing Projects route as a useful review destination.
+
+#### Hi, I’m Jason.
+
+I’m a digital marketing strategist, which is the tidy answer. The less tidy answer is that I’m a generalist with a curiosity that rarely stays in its lane.
+
+I’ve worked in marketing for more than a decade. For the past three-ish years, I’ve been helping a local cremation provider become easier to find online. I also spend a lot of time thinking about how useful information shows up in AI-generated answers.
+
+People looking for funeral or cremation information may be grieving and under time pressure. A wrong fact can cost a family money or time, so I care a lot about getting the answer right and making it easy to understand.
+
+The site gives the rest of my attention somewhere to go: books, philosophy, creativity, odd connections, and whatever has sent me down the latest rabbit hole.
+
+#### How I think
+
+My interests show up in little bursts of rabbit holes. I’ll get hooked on a question, follow it into neighboring subjects, and come back later when something pulls me in again.
+
+I’m a generalist. I like taking an idea from one place and putting it next to something from somewhere else to see if they make each other better. A connection can turn into something useful, or show me exactly where my thinking broke.
+
+I’m interested in what other people think and why they see things the way they do. I like conversations where someone can change their mind or leave with a better question.
+
+Either one counts.
+
+#### How I work
+
+Most marketing advice starts with a tactic. I usually want to back up a step.
+
+Who is this for? What are they trying to understand? What evidence do we have, and what would make the answer more useful?
+
+Those questions shape how I work on websites and search. They also shape how I think about content that may appear in AI-generated answers.
+
+AI is part of my process. I use it to research, compare sources, test ideas, and pressure-check writing. Two models can agree and still be wrong. I still read the work, check the links, verify the claims, and make the final editorial call.
+
+The final judgment stays with the person whose name is on the work.
+
+LinkedIn has the dates and job titles, because someone ought to keep them in order.
+
+View my experience on LinkedIn
+
+#### Selected work
+
+I want the projects here to show what I contributed, who else was involved, and what the evidence supports.
+
+Good work is usually shared work. The case studies will name the people and limits that shaped the result. Every public result needs a source I can stand behind.
+
+Explore selected projects
+
+#### Connect
+
+I like good questions, useful disagreements, unexpected common ground, and work worth thinking through.
+
+Send me an email if something here makes you want to compare notes or talk about a project. You can also find me on LinkedIn.
+
+No pitch required.
+
+Email Jason
+
+Find me on LinkedIn
+
+This exact copy, the unsupplied email and LinkedIn links, merge, publication, and production deployment remain unapproved. The larger vertical portrait and About layout also remain review-preview treatments rather than final design approval. Do not update Notion as part of this authorization.
+
 ### Welcome accent refinement (authorized for preview 2026-11-13)
 
 The owner's latest welcome-copy request replaces the initial wording from the [earlier PR comment](https://github.com/JLyve/personal-website/pull/13#issuecomment-6853929481). It authorizes only the revised wording below for the existing PR #13 previews. Preserve the compact welcome, collection layout, heading sizes, gold Fraunces Italic phrase, and all three Wandering Magic stars with their current paths, timing, shimmer and reduced-motion rules.
