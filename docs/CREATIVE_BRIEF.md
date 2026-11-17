@@ -1,6 +1,32 @@
 # Personal Website -- Creative & Strategy Brief
 
-Status: approved creative direction and homepage approach for a **preview implementation**, not a final pixel-perfect specification or approval of public copy. Updated 2026-11-13.
+Status: approved production starting baseline for the search-hidden site. The design and copy may continue to evolve. Updated 2026-11-17.
+
+## Production starting baseline (approved 2026-11-17)
+
+Jason approved the current PR #13 result for publication to the existing search-hidden production site as a starting baseline. This approval supersedes the merge and production-publication deferrals recorded in the dated preview notes below; those notes remain as historical context for how the result developed.
+
+The approved production baseline includes:
+
+- the collection-first homepage with no portrait;
+- the normal empty-collection homepage state;
+- the current identity and introductory homepage wording;
+- the current About layout and larger vertical portrait;
+- the complete current About copy;
+- the published LinkedIn links to `https://www.linkedin.com/in/jasonlyvers/` and email link to `mailto:jasonalyvers@gmail.com`;
+- the antique-gold **“Jason.”** heading treatment;
+- the title star and four larger, faster section charms; and
+- the current responsive, accessibility, keyboard, and reduced-motion behavior.
+
+Approval establishes a production starting point, not a permanent creative lock. The site name, homepage wording, About copy, portrait treatment, and motion may be refined in later reviewed pull requests.
+
+The following boundaries remain in force:
+
+- Example collection content is review fixture content only and must not enter the normal production build.
+- Empty Notes and Projects states may remain until real approved content is available.
+- `SITE_INDEXING_ENABLED` must remain `false`.
+- Search indexing and launch approval, a custom domain, new pages, real project evidence, and future content remain separate decisions.
+- Private Notion material must not enter the public repository, and this approval does not authorize or imply a Notion update.
 
 ## Purpose and positioning
 
@@ -48,7 +74,7 @@ Content priority: reader clarity first, editorial curation second, magical rewar
 
 ## Homepage design direction for the first Codex preview (agreed 2026-10-30)
 
-These are approved **design directions for a reviewable preview**, not permission to merge to `main`, publish to production, publish sample content, or lock the final words. Preview deployments from pull requests are permitted for review. The visual mockups were exploratory. The actual responsive Astro implementation must be reviewed before design sign-off.
+The dated subsections below preserve the review instructions and approval boundaries that applied while PR #13 was being developed. Statements that the current PR #13 result was not approved for merge or production were superseded by the production starting-baseline approval on 2026-11-17. The restrictions on example content, search indexing, private material, and separate future decisions remain active.
 
 ### Revised opening and collection direction (authorized for preview 2026-11-11)
 
@@ -247,7 +273,7 @@ Astro's static pages should be crawlable and fast. Verify unique titles/descript
 
 ## Open decisions (do not guess)
 
-Final site name and logo treatment; exact palette and font-loading/performance decisions; approved About copy, content inventory, hero and card wording; final layouts beyond the homepage, taxonomy, and contact mechanism; custom domain. The homepage typography, mobile-first structure, typography-led cards, and restrained magical interactions are chosen for **preview implementation**, but remain subject to real-site review and revision.
+Possible future refinements to the site name and logo treatment, homepage wording, About copy, portrait treatment, and motion; exact palette and font-loading/performance decisions; content inventory; final layouts beyond the current Home and About baseline; taxonomy; custom domain; new pages; real project evidence; future content; and search-indexing launch approval. The current production baseline may be revised through later reviewed pull requests; do not treat approval of PR #13 as approval of these deferred decisions.
 
 ## Links
 
