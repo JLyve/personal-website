@@ -1,8 +1,8 @@
 # Notes -- Editorial Guide & Voice-First Workflow
 
-Status: agreed voice-first workflow. The private Notion project workspace, Idea Inbox, Living Creative Direction, and Session Synopses are created and accessible to ChatGPT. The Idea Inbox fields were verified on 2026-11-03. There is no automatic synchronization or publication.
+Status: agreed voice-first workflow and approved Notes editorial umbrella. The private Notion project workspace, Idea Inbox, Living Creative Direction, and Session Synopses are created and accessible to ChatGPT. The Idea Inbox fields were verified on 2026-11-03. There is no automatic synchronization or publication.
 
-Updated 2026-11-03.
+Updated 2026-11-17.
 
 ## Editorial promise
 
@@ -10,7 +10,7 @@ Updated 2026-11-03.
 
 The site publishes *Notes*, not public sections titled Blogs or Writings.
 
-A Note may be a short observation, researched idea, experiment, philosophical reflection, or conversation-shaped exploration. The author is not required to identify as a professional writer.
+A Note may be a short observation, researched idea, professional exploration, experiment, philosophical reflection, or conversation-shaped exploration. Notes are the editorial umbrella for the author's thinking and work; professional material does not require a separate portfolio or “case study” content type. The author is not required to identify as a professional writer.
 
 ### Voice and quality
 
@@ -36,6 +36,16 @@ These formats are flexible, not quotas.
 **Experiment:** A real test or creation that explains the question, what was tried, observed results, and lessons. Include evidence and visuals when helpful.
 
 All formats may be conversational and carefully edited. Content length and metadata should match the material rather than an arbitrary SEO target.
+
+Professional work follows the same formats and standards:
+
+- Use a **Field Note** for a short professional observation only when the material genuinely fits that form.
+- Use a **Deep Note** for substantive professional work that benefits from researched context, evidence, nuance, or alternative perspectives.
+- Use an **Experiment** when the work is best organized around a question, method, observations, evidence, and lessons.
+
+Do not relabel professional Notes as portfolio entries or “case studies” by default. Be precise about contribution, collaborators, evidence, uncertainty, and supported results. The format follows the material rather than its professional or personal subject.
+
+Magnolia Cremations is the likely first professional Deep Note or Experiment. Its title, exact format, copy, design, and publication are not approved. This guide does not supply or imply those decisions.
 
 ## Voice-first process
 
@@ -160,7 +170,11 @@ Cite external sources when they provide necessary support. Link related content 
 
 ## Website implementation boundary
 
-The current Astro theme may use `src/content/blog/` and existing routes. The public label “Notes” should not force an unreviewed URL or collection migration. Decide the URL scheme and redirects separately.
+The current Astro theme uses `src/content/blog/` and `/blog/` for public Notes. The public label “Notes” does not by itself approve a URL migration; decide any URL scheme and redirects separately.
+
+The approved target architecture retires Projects as a separate public content type and destination. The current implementation still contains the Projects navigation item, `/projects/` route, `projects` collection and homepage loading, and the About link. Their removal is awaiting a future reviewed implementation pull request. Until then, do not add new project entries or describe the migration as complete.
+
+Reading and About remain separate experiences. Professional work belongs in Notes, but this decision does not invent replacement About copy, a replacement About link, a Magnolia title, a page design, or publication approval.
 
 Draft material must not appear in generated production pages, the sitemap, site search, or feeds.
 
