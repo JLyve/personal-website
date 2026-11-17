@@ -44,7 +44,7 @@ const projectsHref = `${base}projects/`;
               <h2 id="thinking-title">How I think</h2>
               <span class="section-charm think-charm" aria-hidden="true">
                 <svg aria-hidden="true" focusable="false" viewBox="0 0 44 32">
-                  <path class="charm-line think-orbit" aria-hidden="true" d="M4 23 C9 8 25 4 39 13" />
+                  <path class="charm-line think-orbit" aria-hidden="true" d="M4 24 C5 8 22 1 38 9 C40 10 41 12 41 14" />
                   <circle class="charm-node" aria-hidden="true" cx="7" cy="23" r="1.3" />
                   <path class="charm-spark think-star" aria-hidden="true" d="M11 12.5 12 15 14.5 16 12 17 11 19.5 10 17 7.5 16 10 15Z" />
                 </svg>
@@ -107,10 +107,10 @@ const projectsHref = `${base}projects/`;
               <h2 id="connect-title">Connect</h2>
               <span class="section-charm connect-charm" aria-hidden="true">
                 <svg aria-hidden="true" focusable="false" viewBox="0 0 44 32">
-                  <line class="charm-line connect-thread" aria-hidden="true" x1="7" y1="16" x2="37" y2="16" />
+                  <line class="charm-line connect-thread" aria-hidden="true" x1="5" y1="16" x2="39" y2="16" />
                   <ellipse class="connect-glow" aria-hidden="true" cx="22" cy="16" rx="7" ry="4" />
-                  <circle class="connect-point connect-point-left" aria-hidden="true" cx="11" cy="16" r="3" />
-                  <circle class="connect-point connect-point-right" aria-hidden="true" cx="33" cy="16" r="3" />
+                  <circle class="connect-point connect-point-left" aria-hidden="true" cx="8" cy="16" r="3.2" />
+                  <circle class="connect-point connect-point-right" aria-hidden="true" cx="36" cy="16" r="3.2" />
                 </svg>
               </span>
             </div>
@@ -274,10 +274,10 @@ const projectsHref = `${base}projects/`;
   }
 
   .section-charm {
-    width: 42px;
-    height: 32px;
+    width: 50px;
+    height: 36px;
     position: absolute;
-    left: calc(100% + 0.75rem);
+    left: calc(100% + 0.9rem);
     top: 50%;
     color: #d6b477;
     pointer-events: none;
@@ -303,38 +303,41 @@ const projectsHref = `${base}projects/`;
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke-width: 0.9;
-    opacity: 0.22;
+    opacity: 0.3;
   }
 
   .charm-node {
     fill: currentColor;
-    opacity: 0.42;
+    opacity: 0.5;
   }
 
   .charm-spark,
   .connect-point,
   .work-dash {
-    filter: drop-shadow(0 0 6px rgba(214, 180, 119, 0.42));
+    filter: drop-shadow(0 0 8px rgba(214, 180, 119, 0.46));
   }
 
   .charm-spark {
     fill: currentColor;
-    opacity: 0.52;
+    opacity: 0.56;
     transform-box: fill-box;
     transform-origin: center;
   }
 
   .think-orbit {
-    stroke-width: 1;
+    stroke-width: 1.05;
     stroke-dasharray: 2 1.4;
+    opacity: 0.34;
   }
 
   .think-star {
-    animation: think-charm-motion 19s cubic-bezier(0.45, 0, 0.55, 1) infinite;
-    animation-delay: -5s;
+    offset-path: path('M0 0 C4 -7 13 -9 17 -2 C20 4 14 9 6 7 C2 6 -1 3 0 0 Z');
+    offset-rotate: 0deg;
+    animation: think-charm-motion 11s linear infinite;
+    animation-delay: -2.2s;
   }
 
-  .work-diamond { opacity: 0.24; }
+  .work-diamond { opacity: 0.32; }
 
   .work-dash {
     stroke: currentColor;
@@ -343,88 +346,97 @@ const projectsHref = `${base}projects/`;
     opacity: 0.58;
     transform-box: fill-box;
     transform-origin: center;
-    animation: work-dash-motion 23s cubic-bezier(0.45, 0, 0.55, 1) infinite;
-    animation-delay: -9s;
+    offset-path: path('M0 0 C5 2 10 6 13 9 C10 13 5 17 0 18 C-5 17 -10 13 -13 9 C-10 5 -5 1 0 0 Z');
+    offset-rotate: auto 0deg;
+    animation: work-dash-motion 13s linear infinite;
+    animation-delay: -6.1s;
   }
 
   .work-corner-spark {
-    animation: work-corner-shimmer 23s ease-in-out infinite;
-    animation-delay: -15s;
+    animation: work-corner-shimmer 13s ease-in-out infinite;
+    animation-delay: -6.1s;
   }
 
-  .selected-charm .charm-line { opacity: 0.18; }
+  .selected-charm .charm-line { opacity: 0.28; }
+  .selected-charm .charm-node { opacity: 0.56; }
 
   .selected-glint {
-    animation: selected-charm-motion 17s cubic-bezier(0.45, 0, 0.55, 1) infinite;
-    animation-delay: -12s;
+    offset-path: path('M0 0 C4 -4 8 -7 12 -7 C14 -7 14 -5 12 -4 C8 0 4 3 0 0 C-1 -1 -1 -1 0 0 Z');
+    offset-rotate: 0deg;
+    animation: selected-charm-motion 10s linear infinite;
+    animation-delay: -7.3s;
   }
 
-  .connect-thread { opacity: 0.2; }
+  .connect-thread { opacity: 0.3; }
 
   .connect-glow {
-    fill: rgba(214, 180, 119, 0.16);
-    filter: blur(3px);
-    opacity: 0.2;
+    fill: rgba(214, 180, 119, 0.22);
+    filter: blur(4px);
+    opacity: 0.22;
     transform-box: fill-box;
     transform-origin: center;
-    animation: connect-shared-glow 25s ease-in-out infinite;
-    animation-delay: -6s;
+    animation: connect-shared-glow 12s ease-in-out infinite;
+    animation-delay: -3.8s;
   }
 
   .connect-point {
     fill: currentColor;
-    opacity: 0.52;
+    opacity: 0.56;
     transform-box: fill-box;
     transform-origin: center;
   }
 
   .connect-point-left {
-    animation: connect-left-motion 25s ease-in-out infinite;
-    animation-delay: -6s;
+    animation: connect-left-motion 12s ease-in-out infinite;
+    animation-delay: -3.8s;
   }
 
   .connect-point-right {
-    animation: connect-right-motion 25s ease-in-out infinite;
-    animation-delay: -6s;
+    animation: connect-right-motion 12s ease-in-out infinite;
+    animation-delay: -3.8s;
   }
 
   @keyframes think-charm-motion {
-    0%, 100% { opacity: 0.42; transform: translate(0, 0); }
-    25% { opacity: 0.58; transform: translate(4px, -3px); }
-    50% { opacity: 0.78; transform: translate(10px, -4px); }
-    75% { opacity: 0.56; transform: translate(6px, 1px); }
+    0%, 100% { opacity: 0.54; offset-distance: 0%; }
+    25% { opacity: 0.7; offset-distance: 25%; }
+    50% { opacity: 0.85; offset-distance: 50%; }
+    75% { opacity: 0.64; offset-distance: 75%; }
   }
 
   @keyframes work-dash-motion {
-    0%, 100% { opacity: 0.42; transform: translate(0, 0); }
-    50% { opacity: 0.76; transform: translate(7px, 6px); }
+    0%, 100% { opacity: 0.54; offset-distance: 0%; }
+    25% { opacity: 0.82; offset-distance: 25%; }
+    50% { opacity: 0.68; offset-distance: 50%; }
+    75% { opacity: 0.78; offset-distance: 75%; }
   }
 
   @keyframes work-corner-shimmer {
-    0%, 34%, 78%, 100% { opacity: 0.4; }
-    56% { opacity: 0.74; }
+    0%, 52%, 100% { opacity: 0.42; }
+    18% { opacity: 0.58; }
+    27% { opacity: 0.84; }
+    40% { opacity: 0.54; }
   }
 
   @keyframes selected-charm-motion {
-    0%, 100% { opacity: 0.42; transform: translate(0, 0); }
-    25% { opacity: 0.58; transform: translate(6px, -5px); }
-    50% { opacity: 0.78; transform: translate(12px, -7px); }
-    75% { opacity: 0.56; transform: translate(6px, 1px); }
+    0%, 100% { opacity: 0.54; offset-distance: 0%; }
+    25% { opacity: 0.72; offset-distance: 25%; }
+    50% { opacity: 0.85; offset-distance: 50%; }
+    75% { opacity: 0.66; offset-distance: 75%; }
   }
 
   @keyframes connect-left-motion {
-    0%, 100% { opacity: 0.44; transform: translateX(0); }
-    50% { opacity: 0.76; transform: translateX(6px); }
+    0%, 100% { opacity: 0.54; transform: translateX(0); }
+    50% { opacity: 0.85; transform: translateX(14px); }
   }
 
   @keyframes connect-right-motion {
-    0%, 100% { opacity: 0.44; transform: translateX(0); }
-    50% { opacity: 0.76; transform: translateX(-6px); }
+    0%, 100% { opacity: 0.54; transform: translateX(0); }
+    50% { opacity: 0.85; transform: translateX(-14px); }
   }
 
   @keyframes connect-shared-glow {
-    0%, 100% { opacity: 0.12; transform: scaleX(0.7); }
-    50% { opacity: 0.46; transform: scaleX(1); }
+    0%, 100% { opacity: 0.14; transform: scale(0.64); }
+    50% { opacity: 0.58; transform: scale(1.08); }
   }
 
   .about-sequence section > div > p {
@@ -534,20 +546,32 @@ const projectsHref = `${base}projects/`;
     h2 { font-size: clamp(1.8rem, 8vw, 2.35rem); }
 
     .section-charm {
-      width: 30px;
-      height: 24px;
-      left: calc(100% + 0.55rem);
+      width: 36px;
+      height: 26px;
+      left: calc(100% + 0.65rem);
     }
 
     .charm-spark,
     .connect-point,
     .work-dash {
-      filter: drop-shadow(0 0 5px rgba(214, 180, 119, 0.38));
+      filter: drop-shadow(0 0 6px rgba(214, 180, 119, 0.42));
     }
 
-    .think-star { animation-name: think-charm-motion-mobile; }
-    .work-dash { animation-name: work-dash-motion-mobile; }
-    .selected-glint { animation-name: selected-charm-motion-mobile; }
+    .think-star {
+      offset-path: path('M0 0 C3 -5 8 -6 11 -1 C13 3 9 6 4 5 C1 4 -1 2 0 0 Z');
+      animation-name: think-charm-motion;
+    }
+
+    .work-dash {
+      offset-path: path('M0 0 C3 2 7 4 9 6 C7 9 3 11 0 12 C-3 11 -7 9 -9 6 C-7 3 -3 1 0 0 Z');
+      animation-name: work-dash-motion;
+    }
+
+    .selected-glint {
+      offset-path: path('M0 0 C3 -3 6 -5 9 -5 C10 -5 10 -4 9 -3 C6 0 3 2 0 0 C-1 -1 -1 -1 0 0 Z');
+      animation-name: selected-charm-motion;
+    }
+
     .connect-point-left { animation-name: connect-left-motion-mobile; }
     .connect-point-right { animation-name: connect-right-motion-mobile; }
 
@@ -557,33 +581,14 @@ const projectsHref = `${base}projects/`;
     }
   }
 
-  @keyframes think-charm-motion-mobile {
-    0%, 100% { opacity: 0.42; transform: translate(0, 0); }
-    25% { opacity: 0.58; transform: translate(3px, -2px); }
-    50% { opacity: 0.78; transform: translate(7px, -3px); }
-    75% { opacity: 0.56; transform: translate(4px, 1px); }
-  }
-
-  @keyframes work-dash-motion-mobile {
-    0%, 100% { opacity: 0.42; transform: translate(0, 0); }
-    50% { opacity: 0.76; transform: translate(5px, 4px); }
-  }
-
-  @keyframes selected-charm-motion-mobile {
-    0%, 100% { opacity: 0.42; transform: translate(0, 0); }
-    25% { opacity: 0.58; transform: translate(3px, -3px); }
-    50% { opacity: 0.78; transform: translate(7px, -3px); }
-    75% { opacity: 0.56; transform: translate(4px, 1px); }
-  }
-
   @keyframes connect-left-motion-mobile {
-    0%, 100% { opacity: 0.44; transform: translateX(0); }
-    50% { opacity: 0.76; transform: translateX(4px); }
+    0%, 100% { opacity: 0.54; transform: translateX(0); }
+    50% { opacity: 0.85; transform: translateX(10px); }
   }
 
   @keyframes connect-right-motion-mobile {
-    0%, 100% { opacity: 0.44; transform: translateX(0); }
-    50% { opacity: 0.76; transform: translateX(-4px); }
+    0%, 100% { opacity: 0.54; transform: translateX(0); }
+    50% { opacity: 0.85; transform: translateX(-10px); }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -601,10 +606,10 @@ const projectsHref = `${base}projects/`;
     }
 
     .about-title-star { opacity: 0.58; }
-    .section-charm { opacity: 0.62; }
+    .section-charm { opacity: 0.64; }
     .charm-spark,
     .connect-point,
-    .work-dash { opacity: 0.52; }
-    .connect-glow { opacity: 0.18; }
+    .work-dash { opacity: 0.56; }
+    .connect-glow { opacity: 0.2; }
   }
 </style>
