@@ -1,0 +1,68 @@
+---
+interface Props {
+  kind: 'Note' | 'Project' | 'Reading';
+  title: string;
+  excerpt: string;
+  href?: string | undefined;
+  featured?: boolean | undefined;
+  placeholder?: boolean | undefined;
+}
+
+const { kind, title, excerpt, href, featured = false, placeholder = false } = Astro.props;
+const CardContent = href ? 'a' : 'div';
+---
+
+<article class:list={['collection-card', { featured, placeholder }]}>
+  <CardContent class="card-content" href={href}>
+    <div class="card-meta">
+      <span>{kind}</span>
+      {placeholder && <span>Layout example</span>}
+    </div>
+    <h3>{title}</h3>
+    <p>{excerpt}</p>
+    {href && (
+      <span class="card-action">
+        Open {kind.toLowerCase()}
+        <svg aria-hidden="true" width="16" height="12" viewBox="0 0 16 12" fill="none">
+          <path d="M1 6h13M10 2l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </span>
+    )}
+    <span class="card-glint" aria-hidden="true">✦</span>
+    <span class="card-geometry" aria-hidden="true"></span>
+  </CardContent>
+</article>
+
+<style>
+  .collection-card, .card-content { height: 100%; }
+  .card-content { min-height: 250px; padding: clamp(1.4rem, 3vw, 2.2rem); display: flex; flex-direction: column; position: relative; overflow: hidden; border: 1px solid rgba(205, 170, 112, 0.18); background: rgba(31, 24, 19, 0.54); color: var(--color-text); text-decoration: none; transition: border-color 180ms ease, background 180ms ease, transform 180ms ease; }
+  .featured .card-content { min-height: 340px; background: linear-gradient(145deg, rgba(53, 40, 29, 0.7), rgba(27, 21, 17, 0.72)); }
+  .card-content::before { content: ''; width: 38%; height: 1px; position: absolute; top: 0; left: 0; background: linear-gradient(90deg, #ca9e65, transparent); opacity: 0.7; }
+  .card-meta { margin-bottom: clamp(2rem, 5vw, 4.5rem); display: flex; justify-content: space-between; gap: 1rem; color: #bc9b6b; font-size: 0.65rem; font-weight: 650; letter-spacing: 0.15em; line-height: 1.4; text-transform: uppercase; }
+  .featured .card-meta { margin-bottom: clamp(2rem, 4vw, 3rem); }
+  .card-meta span:last-child:not(:first-child) { color: #958673; text-align: right; }
+  h3 { max-width: 17ch; margin: 0; color: var(--color-text); font-family: 'Newsreader', Georgia, serif; font-size: clamp(1.8rem, 3.3vw, 2.55rem); font-weight: 350; letter-spacing: -0.025em; line-height: 1.08; }
+  .featured h3 { max-width: 15ch; font-size: clamp(2.17rem, 4.93vw, 3.95rem); font-weight: 300; line-height: 0.98; }
+  p { max-width: 46ch; margin: 1.05rem 0 0; color: var(--color-text-dim); font-size: 0.92rem; line-height: 1.7; }
+  .featured p { max-width: 52ch; font-size: 0.98rem; }
+  .card-action { min-height: 44px; margin-top: 1.7rem; display: inline-flex; align-items: center; gap: 0.6rem; color: #d5b884; font-size: 0.8rem; font-weight: 650; letter-spacing: 0.04em; }
+  .card-glint { position: absolute; top: 1.35rem; right: 1.35rem; color: #d6b477; font-size: 0.68rem; opacity: 0.34; text-shadow: 0 0 12px rgba(214, 180, 119, 0.28); transition: opacity 220ms ease, transform 320ms ease; }
+  .placeholder .card-glint { top: auto; right: 1.35rem; bottom: 1.35rem; }
+  .card-geometry { width: 118px; height: 118px; position: absolute; right: -46px; bottom: -48px; border: 1px solid rgba(205, 170, 112, 0.12); border-radius: 50%; transition: transform 600ms ease, border-color 220ms ease; }
+  .featured .card-geometry { width: 180px; height: 180px; right: -62px; bottom: -74px; }
+  .card-geometry::before { content: ''; position: absolute; inset: 25%; border: 1px solid rgba(205, 170, 112, 0.1); transform: rotate(45deg); }
+  .card-geometry::after { content: ''; width: 4px; height: 4px; position: absolute; top: 16%; left: 21%; border-radius: 50%; background: rgba(218, 180, 119, 0.58); box-shadow: 0 0 10px rgba(218, 180, 119, 0.35); }
+  a.card-content:hover, a.card-content:focus-visible { border-color: rgba(205, 170, 112, 0.46); background: rgba(46, 35, 26, 0.72); transform: translateY(-2px); }
+  a.card-content:hover .card-glint, a.card-content:focus-visible .card-glint { opacity: 0.9; transform: rotate(20deg) scale(1.15); }
+  a.card-content:hover .card-geometry, a.card-content:focus-visible .card-geometry { border-color: rgba(205, 170, 112, 0.25); transform: rotate(14deg); }
+  @media (max-width: 720px) {
+    .card-content { min-height: 300px; }
+    .featured .card-content { min-height: 280px; }
+    .featured .card-meta { margin-bottom: 1.75rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .card-content, .card-glint, .card-geometry { transition: none; }
+    a.card-content:hover, a.card-content:focus-visible { transform: none; }
+    a.card-content:hover .card-geometry, a.card-content:focus-visible .card-geometry { transform: none; }
+  }
+</style>

@@ -29,6 +29,7 @@ const noteBase = z.object({
   updatedDate: z.coerce.date().optional(),
   heroImage: z.string().optional(),
   tags: z.array(nonEmptyString).optional(),
+  homepage: z.enum(['featured', 'supporting']).optional(),
 });
 
 const noteSchema = z.discriminatedUnion('status', [
@@ -69,6 +70,7 @@ const projects = defineCollection({
     github: z.string().optional(),
     tags: z.array(nonEmptyString).optional(),
     featured: z.boolean().default(false),
+    homepage: z.enum(['featured', 'supporting']).optional(),
   }),
 });
 

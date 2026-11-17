@@ -1,22 +1,615 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Navigation from '../components/Navigation.astro';
-import ProvisionalEmptyState from '../components/ProvisionalEmptyState.astro';
+
+const base = import.meta.env.BASE_URL;
+const portraitSrc = `${base}images/jason-portrait-window-896.webp`;
+const projectsHref = `${base}projects/`;
 ---
 
 <BaseLayout
   editorial
-  title="About — Structure preview"
-  description="A provisional About page awaiting approved personal and professional context."
+  title="About Jason Lyvers"
+  description="Jason Lyvers is a digital marketing strategist and curious generalist who cares about useful, accurate information."
 >
   <Navigation />
-  <ProvisionalEmptyState
-    eyebrow="About · Structure preview"
-    title="An introduction belongs here—after approval."
-    description="This page is reserved for an approved introduction and truthful context. The design is ready; the personal wording will be developed separately."
-    statusTitle="No owner biography is published."
-    statusDescription="The original Darkness demo biography and service claims have been removed. No personal history, credentials, or professional claims are assumed."
-    structureLabel="Provisional page structure"
-    structureItems={['Approved introduction', 'Working perspective', 'Relevant evidence and paths']}
-  />
+
+  <main class="about-preview">
+    <div class="page-shell">
+      <header class="about-intro">
+        <figure class="portrait-placement">
+          <img
+            src={portraitSrc}
+            alt="Jason smiling in a warm room by a window."
+            width="896"
+            height="1120"
+            decoding="async"
+          />
+        </figure>
+
+        <div class="intro-copy">
+          <h1>Hi, I’m <span class="about-name">Jason.<svg class="about-title-star" aria-hidden="true" focusable="false" viewBox="0 0 16 16"><path d="M8 0 10 6 16 8 10 10 8 16 6 10 0 8 6 6Z" /></svg></span></h1>
+          <p class="intro-lead">I’m a digital marketing strategist, which is the tidy answer. The less tidy answer is that I’m a generalist with a curiosity that rarely stays in its lane.</p>
+          <p>I’ve worked in marketing for more than a decade. For the past three-ish years, I’ve been helping a local cremation provider become easier to find online.</p>
+          <p>People looking for funeral or cremation information may be grieving and under time pressure. A wrong fact can cost a family money or time, so I care a lot about getting the answer right and making it easy to understand.</p>
+          <p>The site gives the rest of my attention somewhere to go: books, philosophy, creativity, odd connections, and whatever has sent me down the latest rabbit hole.</p>
+        </div>
+      </header>
+
+      <div class="about-sequence" aria-label="About Jason Lyvers">
+        <section aria-labelledby="thinking-title">
+          <p class="sequence-number" aria-hidden="true">01</p>
+          <div>
+            <div class="section-heading-line">
+              <h2 id="thinking-title">How I think</h2>
+              <span class="section-charm think-charm" aria-hidden="true">
+                <svg aria-hidden="true" focusable="false" viewBox="0 0 44 32">
+                  <path class="charm-line think-orbit" aria-hidden="true" d="M4 24 C5 8 22 1 38 9 C40 10 41 12 41 14" />
+                  <circle class="charm-node" aria-hidden="true" cx="7" cy="23" r="1.3" />
+                  <path class="charm-spark think-star" aria-hidden="true" d="M11 12.5 12 15 14.5 16 12 17 11 19.5 10 17 7.5 16 10 15Z" />
+                </svg>
+              </span>
+            </div>
+            <p>My interests show up in little bursts of rabbit holes. I’ll get hooked on a question, follow it into neighboring subjects, and come back later when something pulls me in again.</p>
+            <p>I like taking an idea from one place and putting it next to something from somewhere else to see if they make each other better. A connection can turn into something useful, or show me exactly where my thinking broke.</p>
+            <p>I’m interested in what other people think and why they see things the way they do. I like conversations where someone can change their mind or leave with a better question.</p>
+            <p>Either one counts.</p>
+          </div>
+        </section>
+
+        <section aria-labelledby="work-title">
+          <p class="sequence-number" aria-hidden="true">02</p>
+          <div>
+            <div class="section-heading-line">
+              <h2 id="work-title">How I work</h2>
+              <span class="section-charm work-charm" aria-hidden="true">
+                <svg aria-hidden="true" focusable="false" viewBox="0 0 44 32">
+                  <path class="charm-line work-diamond" aria-hidden="true" d="M22 4 36 16 22 28 8 16Z" />
+                  <line class="work-dash" aria-hidden="true" x1="22" y1="5" x2="27" y2="9.3" />
+                  <path class="charm-spark work-corner-spark" aria-hidden="true" d="M36 13 36.8 15.2 39 16 36.8 16.8 36 19 35.2 16.8 33 16 35.2 15.2Z" />
+                </svg>
+              </span>
+            </div>
+            <p>Most marketing advice starts with a tactic. I usually want to back up a step.</p>
+            <p>Who is this for? What are they trying to understand? What evidence do we have, and what would make the answer more useful?</p>
+            <p>Those questions shape how I work on websites and search. They also shape how I think about content that may appear in AI-generated answers.</p>
+            <p>AI is part of my process. I use it to research, compare sources, test ideas, and pressure-check writing. Two models can agree and still be wrong. I still read the work, check the links, and verify the claims. The final judgment stays with the person whose name is on the work.</p>
+            <p>LinkedIn has the dates and job titles, because someone ought to keep them in order.</p>
+            <p class="preview-link-label"><a href="https://www.linkedin.com/in/jasonlyvers/">View my experience on LinkedIn</a></p>
+          </div>
+        </section>
+
+        <section aria-labelledby="selected-work-title">
+          <p class="sequence-number" aria-hidden="true">03</p>
+          <div>
+            <div class="section-heading-line">
+              <h2 id="selected-work-title">Selected work</h2>
+              <span class="section-charm selected-charm" aria-hidden="true">
+                <svg aria-hidden="true" focusable="false" viewBox="0 0 44 32">
+                  <line class="charm-line" aria-hidden="true" x1="10" y1="20" x2="22" y2="13" />
+                  <line class="charm-line" aria-hidden="true" x1="22" y1="13" x2="35" y2="22" />
+                  <circle class="charm-node" aria-hidden="true" cx="10" cy="20" r="1.4" />
+                  <circle class="charm-node" aria-hidden="true" cx="22" cy="13" r="1.25" />
+                  <circle class="charm-node" aria-hidden="true" cx="35" cy="22" r="1.5" />
+                  <path class="charm-spark selected-glint" aria-hidden="true" d="M10 17 10.8 19.2 13 20 10.8 20.8 10 23 9.2 20.8 7 20 9.2 19.2Z" />
+                </svg>
+              </span>
+            </div>
+            <p>The projects here will be specific about what I contributed, who else was involved, and what the evidence supports. Good work is usually shared work, and every public result needs a source I can stand behind.</p>
+            <p class="section-action"><a href={projectsHref}>Explore selected projects</a></p>
+          </div>
+        </section>
+
+        <section aria-labelledby="connect-title">
+          <p class="sequence-number" aria-hidden="true">04</p>
+          <div>
+            <div class="section-heading-line">
+              <h2 id="connect-title">Connect</h2>
+              <span class="section-charm connect-charm" aria-hidden="true">
+                <svg aria-hidden="true" focusable="false" viewBox="0 0 44 32">
+                  <line class="charm-line connect-thread" aria-hidden="true" x1="5" y1="16" x2="39" y2="16" />
+                  <ellipse class="connect-glow" aria-hidden="true" cx="22" cy="16" rx="7" ry="4" />
+                  <circle class="connect-point connect-point-left" aria-hidden="true" cx="8" cy="16" r="3.2" />
+                  <circle class="connect-point connect-point-right" aria-hidden="true" cx="36" cy="16" r="3.2" />
+                </svg>
+              </span>
+            </div>
+            <p>I like good questions, useful disagreements, unexpected common ground, and work worth thinking through.</p>
+            <p>Send me an email if something here makes you want to compare notes or talk about a project. You can also find me on LinkedIn.</p>
+            <p>No pitch required.</p>
+            <div class="preview-actions" aria-label="Contact links">
+              <a class="preview-link-label" href="mailto:jasonalyvers@gmail.com">Email Jason</a>
+              <a class="preview-link-label" href="https://www.linkedin.com/in/jasonlyvers/">Find me on LinkedIn</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="about-footer">
+    <p>Built from the open-source <a href="https://github.com/kpab/astro-darkness">Darkness Astro theme</a> by kpab.</p>
+  </footer>
 </BaseLayout>
+
+<style>
+  .about-preview,
+  .about-footer {
+    width: min(100% - 2rem, 1120px);
+    margin-inline: auto;
+  }
+
+  .about-preview {
+    min-height: calc(100svh - 108px);
+    padding: clamp(8.5rem, 15vh, 10rem) 0 clamp(4rem, 8vw, 6rem);
+    color: var(--color-text);
+  }
+
+  .about-intro {
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: minmax(300px, 352px) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(3rem, 7vw, 6rem);
+  }
+
+  h1,
+  h2 {
+    margin: 0;
+    color: var(--color-text);
+    font-family: 'Newsreader', Georgia, serif;
+    font-weight: 300;
+    text-wrap: balance;
+  }
+
+  h1 {
+    font-size: clamp(3rem, 6.4vw, 4.8rem);
+    letter-spacing: -0.045em;
+    line-height: 0.98;
+  }
+
+  .about-name {
+    position: relative;
+    color: #d6b477;
+  }
+
+  .about-title-star {
+    position: absolute;
+    pointer-events: none;
+    user-select: none;
+    offset-position: auto;
+    offset-anchor: left top;
+    offset-rotate: 0deg;
+    offset-distance: 0%;
+  }
+
+  .about-title-star {
+    width: 0.18em;
+    height: 0.18em;
+    right: 0.03em;
+    top: -0.25em;
+    overflow: visible;
+    fill: #d6b477;
+    filter: drop-shadow(0 0 3px rgba(214, 180, 119, 0.35));
+    opacity: 0.72;
+    offset-path: path('M0 0 C4 -3 8 -3 8 0 C8 3 4 3 0 0 C-4 -3 -8 -3 -8 0 C-8 3 -4 3 0 0 Z');
+    animation: about-wander 18s linear infinite,
+      about-title-shimmer 19s ease-in-out infinite;
+    animation-delay: -4s, -7s;
+  }
+
+  .intro-copy {
+    max-width: 60ch;
+  }
+
+  .intro-copy p {
+    margin: 1rem 0 0;
+    color: var(--color-text-dim);
+    font-size: 0.9rem;
+    line-height: 1.72;
+  }
+
+  .intro-copy .intro-lead {
+    max-width: 52ch;
+    margin: 1.35rem 0 0;
+    color: #ded2c1;
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: clamp(1.08rem, 1.6vw, 1.3rem);
+    line-height: 1.55;
+  }
+
+  .portrait-placement {
+    margin: 0;
+  }
+
+  .portrait-placement img {
+    width: 100%;
+    max-width: 352px;
+    height: auto;
+    display: block;
+  }
+
+  .about-sequence {
+    margin-top: clamp(3.5rem, 7vw, 5.75rem);
+    border-top: 1px solid rgba(205, 170, 112, 0.2);
+  }
+
+  .about-sequence section {
+    min-height: 180px;
+    padding: clamp(1.75rem, 4vw, 3rem) 0;
+    display: grid;
+    grid-template-columns: minmax(46px, 0.18fr) minmax(0, 1fr);
+    gap: clamp(1rem, 4vw, 3rem);
+    border-bottom: 1px solid rgba(205, 170, 112, 0.16);
+  }
+
+  .sequence-number {
+    margin: 0;
+    color: #8f785c;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+  }
+
+  @keyframes about-wander {
+    from { offset-distance: 0%; }
+    to { offset-distance: 100%; }
+  }
+
+  @keyframes about-title-shimmer {
+    0%, 34%, 78%, 100% { opacity: 0.64; }
+    56% { opacity: 0.84; }
+  }
+
+  h2 {
+    font-size: clamp(2rem, 4.2vw, 3.4rem);
+    letter-spacing: -0.035em;
+    line-height: 1;
+  }
+
+  .section-heading-line {
+    width: fit-content;
+    max-width: 100%;
+    position: relative;
+  }
+
+  .section-charm {
+    width: 50px;
+    height: 36px;
+    position: absolute;
+    left: calc(100% + 0.9rem);
+    top: 50%;
+    color: #d6b477;
+    pointer-events: none;
+    transform: translateY(-50%);
+    user-select: none;
+  }
+
+  .section-charm,
+  .section-charm * {
+    pointer-events: none;
+  }
+
+  .section-charm svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: visible;
+  }
+
+  .charm-line {
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 0.9;
+    opacity: 0.3;
+  }
+
+  .charm-node {
+    fill: currentColor;
+    opacity: 0.5;
+  }
+
+  .charm-spark,
+  .connect-point,
+  .work-dash {
+    filter: drop-shadow(0 0 8px rgba(214, 180, 119, 0.46));
+  }
+
+  .charm-spark {
+    fill: currentColor;
+    opacity: 0.56;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+
+  .think-orbit {
+    stroke-width: 1.05;
+    stroke-dasharray: 2 1.4;
+    opacity: 0.34;
+  }
+
+  .think-star {
+    offset-path: path('M0 0 C4 -7 13 -9 17 -2 C20 4 14 9 6 7 C2 6 -1 3 0 0 Z');
+    offset-rotate: 0deg;
+    animation: think-charm-motion 11s linear infinite;
+    animation-delay: -2.2s;
+  }
+
+  .work-diamond { opacity: 0.32; }
+
+  .work-dash {
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-width: 1.8;
+    opacity: 0.58;
+    transform-box: fill-box;
+    transform-origin: center;
+    offset-path: path('M0 0 C5 2 10 6 13 9 C10 13 5 17 0 18 C-5 17 -10 13 -13 9 C-10 5 -5 1 0 0 Z');
+    offset-rotate: auto 0deg;
+    animation: work-dash-motion 13s linear infinite;
+    animation-delay: -6.1s;
+  }
+
+  .work-corner-spark {
+    animation: work-corner-shimmer 13s ease-in-out infinite;
+    animation-delay: -6.1s;
+  }
+
+  .selected-charm .charm-line { opacity: 0.28; }
+  .selected-charm .charm-node { opacity: 0.56; }
+
+  .selected-glint {
+    offset-path: path('M0 0 C4 -4 8 -7 12 -7 C14 -7 14 -5 12 -4 C8 0 4 3 0 0 C-1 -1 -1 -1 0 0 Z');
+    offset-rotate: 0deg;
+    animation: selected-charm-motion 10s linear infinite;
+    animation-delay: -7.3s;
+  }
+
+  .connect-thread { opacity: 0.3; }
+
+  .connect-glow {
+    fill: rgba(214, 180, 119, 0.22);
+    filter: blur(4px);
+    opacity: 0.22;
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: connect-shared-glow 12s ease-in-out infinite;
+    animation-delay: -3.8s;
+  }
+
+  .connect-point {
+    fill: currentColor;
+    opacity: 0.56;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+
+  .connect-point-left {
+    animation: connect-left-motion 12s ease-in-out infinite;
+    animation-delay: -3.8s;
+  }
+
+  .connect-point-right {
+    animation: connect-right-motion 12s ease-in-out infinite;
+    animation-delay: -3.8s;
+  }
+
+  @keyframes think-charm-motion {
+    0%, 100% { opacity: 0.54; offset-distance: 0%; }
+    25% { opacity: 0.7; offset-distance: 25%; }
+    50% { opacity: 0.85; offset-distance: 50%; }
+    75% { opacity: 0.64; offset-distance: 75%; }
+  }
+
+  @keyframes work-dash-motion {
+    0%, 100% { opacity: 0.54; offset-distance: 0%; }
+    25% { opacity: 0.82; offset-distance: 25%; }
+    50% { opacity: 0.68; offset-distance: 50%; }
+    75% { opacity: 0.78; offset-distance: 75%; }
+  }
+
+  @keyframes work-corner-shimmer {
+    0%, 52%, 100% { opacity: 0.42; }
+    18% { opacity: 0.58; }
+    27% { opacity: 0.84; }
+    40% { opacity: 0.54; }
+  }
+
+  @keyframes selected-charm-motion {
+    0%, 100% { opacity: 0.54; offset-distance: 0%; }
+    25% { opacity: 0.72; offset-distance: 25%; }
+    50% { opacity: 0.85; offset-distance: 50%; }
+    75% { opacity: 0.66; offset-distance: 75%; }
+  }
+
+  @keyframes connect-left-motion {
+    0%, 100% { opacity: 0.54; transform: translateX(0); }
+    50% { opacity: 0.85; transform: translateX(14px); }
+  }
+
+  @keyframes connect-right-motion {
+    0%, 100% { opacity: 0.54; transform: translateX(0); }
+    50% { opacity: 0.85; transform: translateX(-14px); }
+  }
+
+  @keyframes connect-shared-glow {
+    0%, 100% { opacity: 0.14; transform: scale(0.64); }
+    50% { opacity: 0.58; transform: scale(1.08); }
+  }
+
+  .about-sequence section > div > p {
+    max-width: 64ch;
+    margin: 1rem 0 0;
+    color: var(--color-text-dim);
+    font-size: 0.92rem;
+    line-height: 1.75;
+  }
+
+  .preview-link-label {
+    color: #ccb184 !important;
+    font-size: 0.78rem !important;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+
+  .preview-link-label a,
+  a.preview-link-label {
+    color: inherit;
+    text-underline-offset: 0.24rem;
+  }
+
+  .preview-actions {
+    margin-top: 1.35rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem 2.5rem;
+  }
+
+  .preview-actions .preview-link-label {
+    margin: 0;
+    display: inline-block;
+  }
+
+  .section-action a {
+    color: #ccb184;
+    font-weight: 600;
+    text-underline-offset: 0.24rem;
+  }
+
+  .about-footer {
+    padding: 2rem 0 2.5rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+    border-top: 1px solid rgba(205, 170, 112, 0.15);
+    color: #a9a093;
+    font-size: 0.72rem;
+    line-height: 1.65;
+  }
+
+  .about-footer p {
+    max-width: 52ch;
+    margin: 0;
+  }
+
+  .about-footer a {
+    color: #ccb184;
+    text-underline-offset: 0.2rem;
+  }
+
+  @media (max-width: 720px) {
+    .about-preview,
+    .about-footer {
+      width: min(100% - 1.5rem, 1120px);
+    }
+
+    .about-preview {
+      min-height: auto;
+      padding-top: 7.3rem;
+      padding-bottom: 4rem;
+    }
+
+    .about-intro {
+      grid-template-columns: 1fr;
+      align-items: start;
+      gap: 2rem;
+    }
+
+    h1 { font-size: clamp(3rem, 14vw, 4rem); }
+
+    .about-title-star {
+      width: 0.15em;
+      height: 0.15em;
+      top: -0.22em;
+    }
+
+    .portrait-placement {
+      width: 100%;
+    }
+
+    .portrait-placement img {
+      width: 100%;
+      max-width: 380px;
+      height: auto;
+    }
+
+    .about-sequence { margin-top: 3.2rem; }
+
+    .about-sequence section {
+      min-height: 0;
+      grid-template-columns: 34px minmax(0, 1fr);
+      gap: 0.75rem;
+    }
+
+    h2 { font-size: clamp(1.8rem, 8vw, 2.35rem); }
+
+    .section-charm {
+      width: 36px;
+      height: 26px;
+      left: calc(100% + 0.65rem);
+    }
+
+    .charm-spark,
+    .connect-point,
+    .work-dash {
+      filter: drop-shadow(0 0 6px rgba(214, 180, 119, 0.42));
+    }
+
+    .think-star {
+      offset-path: path('M0 0 C3 -5 8 -6 11 -1 C13 3 9 6 4 5 C1 4 -1 2 0 0 Z');
+      animation-name: think-charm-motion;
+    }
+
+    .work-dash {
+      offset-path: path('M0 0 C3 2 7 4 9 6 C7 9 3 11 0 12 C-3 11 -7 9 -9 6 C-7 3 -3 1 0 0 Z');
+      animation-name: work-dash-motion;
+    }
+
+    .selected-glint {
+      offset-path: path('M0 0 C3 -3 6 -5 9 -5 C10 -5 10 -4 9 -3 C6 0 3 2 0 0 C-1 -1 -1 -1 0 0 Z');
+      animation-name: selected-charm-motion;
+    }
+
+    .connect-point-left { animation-name: connect-left-motion-mobile; }
+    .connect-point-right { animation-name: connect-right-motion-mobile; }
+
+    .about-footer {
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+  }
+
+  @keyframes connect-left-motion-mobile {
+    0%, 100% { opacity: 0.54; transform: translateX(0); }
+    50% { opacity: 0.85; transform: translateX(10px); }
+  }
+
+  @keyframes connect-right-motion-mobile {
+    0%, 100% { opacity: 0.54; transform: translateX(0); }
+    50% { opacity: 0.85; transform: translateX(-10px); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .about-title-star,
+    .think-star,
+    .work-dash,
+    .work-corner-spark,
+    .selected-glint,
+    .connect-point,
+    .connect-glow {
+      animation: none;
+      transform: none;
+      offset-path: none;
+      offset-distance: 0%;
+    }
+
+    .about-title-star { opacity: 0.58; }
+    .section-charm { opacity: 0.64; }
+    .charm-spark,
+    .connect-point,
+    .work-dash { opacity: 0.56; }
+    .connect-glow { opacity: 0.2; }
+  }
+</style>
