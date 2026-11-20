@@ -9,7 +9,7 @@ The theme's MIT license and original attribution are preserved in [`LICENSE`](..
 - **Astro 7** builds the pages into a fast, static website.
 - **TypeScript** helps catch technical mistakes before publishing.
 - **Three.js** remains available for the preserved Darkness particle background, while the new editorial pages use lighter CSS-only atmosphere.
-- **Markdown and MDX** make it possible to write articles and project entries as simple text files.
+- **Markdown and MDX** make it possible to write Notes as simple text files. The current code also supports legacy project entries until the approved Notes migration is implemented.
 - **Node.js 22.12 or newer** and **npm** install and run the development tools inside Codex Cloud. Nothing needs to be installed on the owner's Mac.
 
 The exact dependency versions are recorded in `package-lock.json`. Codex uses that file so the cloud environment installs the same tested versions each time.
@@ -150,13 +150,29 @@ Do not load every synopsis by default. Use the smallest amount of history needed
 
 Before implementing a Notion direction, confirm that it has been promoted into the relevant GitHub document or that Jason has explicitly authorized that specific implementation.
 
+## Approved Notes architecture and implementation status
+
+The owner approved the following public-safe direction on November 17, 2026. This documentation records the target architecture; it does not claim that the website has already been migrated.
+
+- Retire Projects as a separate content type and public destination.
+- Use Notes as the editorial umbrella for short observations, researched explorations, professional work, and experiments.
+- Keep the flexible **Field Note**, **Deep Note**, and **Experiment** formats defined in the Editorial Guide.
+- Present professional work through relevant Notes, not through a separate portfolio or “case study” section.
+- Keep Reading and About as separate experiences.
+- Preserve the collection-first homepage direction.
+- Keep `SITE_INDEXING_ENABLED = false` until a separate launch approval.
+
+The current implementation from PR #13 still contains a Projects navigation item, `/projects/` route, `projects` content collection and homepage loading, and an About link to Projects. Removing those four surfaces is **awaiting a future reviewed implementation pull request**. That future work must preserve approved history and content boundaries, decide any migration or redirect behavior deliberately, and update affected documentation alongside the code.
+
+Magnolia Cremations is the likely first professional Deep Note or Experiment. Its title, exact format, copy, design, and publication are still open owner decisions. Do not invent or publish any of them while implementing the architecture.
+
 ## Where the website files are stored
 
 | Location | What it contains |
 | --- | --- |
-| `src/pages/` | The main Home, About, Notes (technical `/blog/` route), and Projects pages. |
+| `src/pages/` | The main Home, About, Notes (technical `/blog/` route), and current legacy Projects pages. The Projects route awaits future removal or migration. |
 | `src/content/blog/` | Approved future Notes written in Markdown; currently empty. |
-| `src/content/projects/` | Approved future project entries written in Markdown; currently empty. |
+| `src/content/projects/` | Current empty legacy Projects collection; its removal or migration awaits the future implementation PR. Do not add new project entries. |
 | `src/components/` | Reusable pieces such as navigation, cards, the hero area, and the animated background. |
 | `src/layouts/` | Shared page structures for normal pages and blog articles. |
 | `src/styles/global.css` | The site's colors, typography, spacing, and shared visual rules. |
@@ -306,4 +322,5 @@ An intuitive reaction is valid creative feedback. Codex should translate it into
 - Astro and TypeScript report zero errors, warnings, or hints.
 - The production build generates the Home, About, Notes index, and Projects pages successfully.
 - Notes, Projects, and About use clearly provisional empty states. The original Darkness sample articles, projects, and biography are not generated, and the pre-launch build does not publish a sitemap.
+- The two bullets above record the implementation merged through PR #13. The later approved Notes architecture retires Projects, but its navigation, route, collection, homepage loading, and About-link changes are not implemented yet.
 - Deferred launch-readiness work is tracked in `docs/TECHNICAL_AUDIT_ROADMAP.md` and must resume when the website is roughly 80 to 90% complete.

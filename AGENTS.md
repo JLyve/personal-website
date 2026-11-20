@@ -56,8 +56,9 @@ Don't recommend a merge with a required decision missing or conflicting, failed 
 - Calm editorial structure with restrained, discoverable enchantments: subtle alchemical geometry, tiny interactive details, and optional whimsical surprises.
 - Do not create a Harry Potter imitation, space-themed interface, fake magical stock photography, or busy decorative collage.
 - Keep the website text-first. Images are optional, not mandatory for Notes or homepage cards.
-- Public navigation concept: Notes, Projects, Reading, About. Owner identity should be present but understated.
-- The homepage should contain a curated mix of the strongest Notes, projects, and ideas rather than an automatic latest-post feed.
+- Approved future public architecture: Notes is the editorial umbrella for short observations, researched explorations, professional work, and experiments. Reading and About remain separate experiences. Projects is not a separate future content type or public destination.
+- The current implementation still contains Projects in navigation, the `/projects/` route, the `projects` content collection and homepage loading, and the About link. Their removal is awaiting a separate reviewed implementation pull request; do not describe the code as already migrated.
+- Preserve the collection-first homepage. Curate the strongest Notes, Reading selections, and other approved collection material rather than an automatic latest-post feed. Professional work may appear through relevant Notes; do not create a replacement portfolio or “case study” section without a new approved decision.
 - Do not use “Blog” or “Writings” as public section labels. Use “Notes.” Technical Astro content paths may remain named `blog` until an approved migration.
 - Never fabricate personal stories, quotes, outcomes, research, testimonials, professional credentials, or finished Note content.
 - Placeholder copy must be clearly labeled and must not be deployed as owner-authored publication.
@@ -68,6 +69,7 @@ Don't recommend a merge with a required decision missing or conflicting, failed 
 - Keep raw transcripts and sources separate from edited drafts.
 - Avoid committing private transcripts or Notion content to this public repository.
 - Notes use adaptable formats: Field Note, Deep Note, and Experiment.
+- Professional work uses the same Notes formats and editorial standards as other subjects. Magnolia Cremations is a likely first professional Deep Note or Experiment, but its title, exact format, copy, design, and publication are not approved.
 - The author's spoken voice, nuance, humor, and uncertainty must survive editing.
 - For individual Notes, use an accurate title, description, author, publication date, genuine update date when relevant, topics, format, optional hero imagery, and applicable `BlogPosting` markup.
 - Distinguish personal beliefs and interpretations from established evidence.

@@ -1,6 +1,6 @@
 # Personal Website -- Creative & Strategy Brief
 
-Status: approved production starting baseline for the search-hidden site. The design and copy may continue to evolve. Updated 2026-11-17.
+Status: approved production starting baseline for the search-hidden site, plus an approved future Notes architecture that is not yet implemented. The design and copy may continue to evolve. Updated 2026-11-17.
 
 ## Production starting baseline (approved 2026-11-17)
 
@@ -20,13 +20,29 @@ The approved production baseline includes:
 
 Approval establishes a production starting point, not a permanent creative lock. The site name, homepage wording, About copy, portrait treatment, and motion may be refined in later reviewed pull requests.
 
-The following boundaries remain in force:
+The following publication safeguards remain in force:
 
 - Example collection content is review fixture content only and must not enter the normal production build.
-- Empty Notes and Projects states may remain until real approved content is available.
 - `SITE_INDEXING_ENABLED` must remain `false`.
-- Search indexing and launch approval, a custom domain, new pages, real project evidence, and future content remain separate decisions.
+- Search indexing and launch approval, a custom domain, new pages, professional evidence, and future content remain separate decisions.
 - Private Notion material must not enter the public repository, and this approval does not authorize or imply a Notion update.
+
+PR #13 also shipped empty Notes and Projects states and treated Projects as a public destination. That remains accurate historical context for the production starting baseline. The later approved direction below supersedes Projects as the future architecture; it does not rewrite PR #13 as though Projects never existed.
+
+## Notes architecture (approved 2026-11-17; awaiting implementation)
+
+This is an approved creative and information-architecture decision. The website code has not been changed yet.
+
+- Retire Projects as a separate content type and public destination.
+- Use Notes as the editorial umbrella for short observations, researched explorations, professional work, and experiments.
+- Keep the flexible **Field Note**, **Deep Note**, and **Experiment** formats.
+- Let professional credibility emerge through relevant Notes rather than a separate portfolio or “case study” presentation.
+- Keep Reading and About as separate experiences.
+- Preserve the collection-first homepage direction. Professional Notes may participate in its intentional curation alongside other approved collection material.
+- Magnolia Cremations is the likely first professional Deep Note or Experiment. Its title, exact format, copy, design, and publication are not approved.
+- Keep `SITE_INDEXING_ENABLED = false`.
+
+The current implementation still includes Projects in primary navigation, a `/projects/` page, a `projects` content collection and homepage loader, and the About page's Projects link. Removing those surfaces is **awaiting a future reviewed implementation pull request**. This documentation-only decision does not authorize replacement About copy, a replacement link destination, redirects, a Note title, a page design, or publication.
 
 ## Purpose and positioning
 
@@ -40,20 +56,20 @@ A personal collection of ideas, experiments, and things worth thinking about. A 
 
 ### Jobs to Be Done (visitor hypotheses, not validated personas)
 
-- **Professional evaluator:** “Help me assess this person's thinking, abilities and fit.” Access projects, methodology, About and credible evidence.
+- **Professional evaluator:** “Help me assess this person's thinking, abilities and fit.” Access relevant professional Notes, methodology, About and credible evidence.
 - **Curious reader:** “Help me understand or rethink something.” Find a clear Note, related ideas, and a useful next read.
-- **Fellow explorer:** “Surprise me with an interesting connection.” Discover whimsical moments, cross-topic threads and projects.
+- **Fellow explorer:** “Surprise me with an interesting connection.” Discover whimsical moments and cross-topic threads across Notes and Reading.
 
 Every article should serve visitors arriving directly from search as well as homepage visitors. Avoid blocking core navigation behind surprises.
 
 ## Architecture
 
-Primary navigation proposed: **Notes · Projects · Reading · About**, plus discreet identity/logo and accessible contact route. Notes are the publication label; “blog” may remain an internal technical content collection. Marketing, Books, Philosophy, Creativity, Life, Experiments are cross-cutting topics/tags, not all top-level navigation pages. Flexible taxonomy should accommodate new themes.
+Approved future architecture has no separate Projects destination. **Notes**, **Reading**, and **About** remain distinct experiences, with discreet identity/logo and an accessible contact route. Notes are the publication label and editorial umbrella; “blog” may remain an internal technical content collection until an approved migration. Marketing, Books, Philosophy, Creativity, Life, Experiments, and professional work may be cross-cutting topics or material within Notes rather than separate top-level destinations. Exact taxonomy remains open.
 
 ### Homepage hierarchy (proposed)
 
 1. Restrained hero: intriguing idea, short explanation, clear route into content; identity present but understated.
-2. **Selected Curiosities:** deliberately curated best Note/project/idea mix, not an automatic recent feed; cards may be image-free.
+2. **Selected Curiosities:** deliberately curated best Note/Reading/idea mix, including professional Notes when appropriate, not an automatic recent feed; cards may be image-free.
 3. Explore the collection via a small number of topic routes.
 4. Understated About/credibility introduction with a way to view meaningful professional work and connect.
 5. Natural ending; no forced full-screen photographic footer.
@@ -75,6 +91,8 @@ Content priority: reader clarity first, editorial curation second, magical rewar
 ## Homepage design direction for the first Codex preview (agreed 2026-10-30)
 
 The dated subsections below preserve the review instructions and approval boundaries that applied while PR #13 was being developed. Statements that the current PR #13 result was not approved for merge or production were superseded by the production starting-baseline approval on 2026-11-17. The restrictions on example content, search indexing, private material, and separate future decisions remain active.
+
+References below to Projects, the Projects route, and “Explore selected projects” are preserved as PR #13 history. They do not override the later approved Notes architecture above, and their implementation remains unchanged until a future reviewed code PR.
 
 ### Revised opening and collection direction (authorized for preview 2026-11-11)
 
@@ -222,10 +240,10 @@ This is a preview-only refinement in PR #13. Final design approval, merge, and p
 ### Visual hierarchy and layout
 
 - **Mobile-first:** design/test at 360px, 390px, and 430px, then adapt gracefully to tablet and desktop. Avoid overflowing headlines, cramped touch targets, and unexpected horizontal scrolling.
-- Desktop: understated identity plus a conventional top navigation for **Notes · Projects · Reading · About**. Do not duplicate these routes with a competing vertical topic navigation in the hero.
-- Mobile: a clearly labeled, keyboard-operable **Menu** with the same routes; generous, readable tap targets (aim for at least 44×44 CSS px). Keep navigation discoverable without creating a mobile navigation maze.
+- Desktop: understated identity plus conventional top navigation reflecting the approved architecture: no separate Projects destination, while Notes, Reading, and About remain distinct experiences. Do not duplicate these routes with a competing vertical topic navigation in the hero.
+- Mobile: a clearly labeled, keyboard-operable **Menu** reflecting the same architecture; generous, readable tap targets (aim for at least 44×44 CSS px). Keep navigation discoverable without creating a mobile navigation maze.
 - Hero: ample breathing room, a legible introductory promise, and one clear route into content. The CTA **must not collide with** the handwritten marginal note. Keep the note below the CTA in normal document flow on mobile, with meaningful vertical spacing. Minimize wasted hero height so Selected Curiosities appears soon.
-- Below hero: deliberately curated typography-led **Selected Curiosities** cards, a few useful topics/interest routes, credible projects/experiments, and an understated About introduction. Cards should look complete without photos.
+- Below hero: deliberately curated typography-led **Selected Curiosities** cards, a few useful topics/interest routes, credible Notes including professional work and experiments when approved, and an understated About introduction. Cards should look complete without photos.
 - Maintain strong scannability and legible article summaries; use editorial structure rather than filler decorations. Every section must serve the professional evaluator, curious reader, or fellow explorer JTBD.
 
 ### Typography direction
@@ -273,7 +291,7 @@ Astro's static pages should be crawlable and fast. Verify unique titles/descript
 
 ## Open decisions (do not guess)
 
-Possible future refinements to the site name and logo treatment, homepage wording, About copy, portrait treatment, and motion; exact palette and font-loading/performance decisions; content inventory; final layouts beyond the current Home and About baseline; taxonomy; custom domain; new pages; real project evidence; future content; and search-indexing launch approval. The current production baseline may be revised through later reviewed pull requests; do not treat approval of PR #13 as approval of these deferred decisions.
+Possible future refinements to the site name and logo treatment, homepage wording, About copy, portrait treatment, and motion; exact palette and font-loading/performance decisions; content inventory; final layouts beyond the current Home and About baseline; taxonomy; custom domain; new pages; professional evidence; future content; and search-indexing launch approval. Magnolia's title, exact Note format, copy, design, and publication also remain open. The current production baseline may be revised through later reviewed pull requests; do not treat approval of PR #13 or the Notes-architecture decision as approval of these deferred decisions.
 
 ## Links
 
