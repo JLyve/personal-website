@@ -20,6 +20,8 @@ const { Content } = await render(entry);
   description={entry.data.description}
   pubDate={entry.data.pubDate}
   updatedDate={entry.data.updatedDate}
+  author={entry.data.author!}
+  format={entry.data.format!}
   tags={entry.data.tags}
 >
   <Content />
