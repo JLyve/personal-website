@@ -24,6 +24,9 @@ That was the real goal. The blog was where the work would live, but publishing a
 Almost two years later, Magnolia has a growing library of articles and nearly four times as many clicks from Google Search. We also have a content process that keeps changing as I learn more.
 
 I built that process while doing the work. Mostly, I figured it out as I went.
+
+## When a wrong answer matters
+
 Magnolia helps people with cremation, death certificates, veterans benefits, Medicaid questions, Social Security questions, and other subjects that can affect a family's money, time, and legal responsibilities.
 
 A wrong answer could create a real problem for someone who already has enough problems.
@@ -39,6 +42,9 @@ Magnolia's owners weren't going to write the articles. That was on me. I had to 
 Researching and writing some of these articles entirely by hand could take weeks. The tools I use now let me do that work in days.
 
 But faster only helps if the information stays trustworthy.
+
+## I keep finding things to fix
+
 I can open an article I worked on six months ago and immediately start finding things I want to change.
 
 The section headings aren't as clear as they should be. The formatting looks off. A statement needs a citation. One section needs more information, while another needs less.
@@ -70,6 +76,9 @@ Sometimes the problem wasn't the writing at all. The reader needed a definition,
 So I started thinking beyond individual articles. I built a glossary for death-care terms that most people don't hear every day. I started adding useful questions and answers to articles and pages throughout the site.
 
 That became the pattern. I would learn something, look at what we were doing, find the gap, and add a step to fix it.
+
+## Who knows the answer?
+
 If I'm writing about something specific to Kentucky or Indiana, I may put together a list of questions for Aaron. He knows things that I don't and that no AI tool does.
 
 Sometimes Aaron opens ChatGPT, answers my questions out loud, and sends me the transcript. That gives me his wording and his actual experience.
@@ -89,6 +98,9 @@ AI helps me do the research. It doesn't get to decide what's true.
 Aaron can still end up in a national article. Sometimes Claude reaches a question during the research that it can't answer well. When that happens, it may suggest asking Aaron for his professional view.
 
 I don't force every article through the exact same steps. The process changes based on the question, the risk of getting it wrong, and who is best qualified to answer it.
+
+## The draft meets a skeptical editor
+
 Sometimes I write the first draft myself. Sometimes Claude writes it using the detailed instructions I've built for Magnolia.
 
 Those instructions cover company facts, terminology rules, and how the article should be structured. They also explain how to write in a voice that sounds like Aaron.
@@ -116,6 +128,9 @@ Most of all, how does the article feel?
 Once I'm happy with the research, writing, structure, and how the whole thing reads, I send the draft to Aaron. He checks it for accuracy and gives the final approval.
 
 Only then does it go on the live website.
+
+## Two readers, one article
+
 Some readers want to know everything. They want the law, the exceptions, the definitions, the process, the related questions, and the sources.
 
 They don't want to visit four websites to piece together one complete answer.
@@ -137,6 +152,9 @@ The articles also have a table of contents with links to each section. Paragraph
 The information can have depth without making someone carry all of it at once.
 
 That structure also makes the page easier for search engines and AI tools to understand and quote correctly. The same choices that help a person who needs a fast answer can also help the technology find that answer.
+
+## Most people call them ashes
+
 The funeral industry has its own language. Most families don't use that language every day.
 
 "Cremains" is a good example. It's an industry term for cremated remains. Most people just call them ashes, so that's usually the word we use.
@@ -154,6 +172,9 @@ What I can do is explain them in normal language.
 An article can cite a law without reading like a legal dissertation. It can also be thorough and accurate without making a grieving person feel like they need an attorney sitting next to them to understand it.
 
 Keep the important complexity. Remove the unnecessary difficulty.
+
+## What the search numbers can tell me
+
 I can see the change in Google Search Console. That's Google's tool for showing [how often a website appears in search results and how often people click it](https://support.google.com/webmasters/answer/10268906).
 
 From January through July 2025, Magnolia received 2,939 clicks from Google Search. During the same seven months in 2026, it received 11,107.
@@ -179,6 +200,9 @@ Believing that and proving it are two different things.
 The search data can't tell me exactly why every family chose Magnolia. I'm not going to draw a straight line from a click chart to revenue and pretend that settles the question.
 
 What I can say is that a lot more people are finding Magnolia online. The content system I built has played a major part in that.
+
+## Giving myself some credit
+
 I'm a big believer in teams. For most of my career, several people have had a hand in the final result. I like working that way.
 
 But it also made it easy for me to downplay my own part.
@@ -202,6 +226,9 @@ Then I publish it, watch how it performs, and come back later to improve it.
 For the first time in my career, I can look at real growth and say, "I had a big hand in that."
 
 I'm proud of it.
+
+## Why I still read every draft
+
 AI was much less reliable when I started this work. The writing wasn't as good, and I had to question almost every part of the research.
 
 I didn't know much about using Claude, either. I had mostly used ChatGPT to analyze spreadsheets, review reports, and bounce ideas around.
@@ -227,6 +254,7 @@ That's probably my sweet spot. I like combining the technology with the psycholo
 I want to know what information a person needs. I also want to know how that information is going to make them feel.
 
 I want the article to work for Google and the AI tools people use to search. I also want it to sound like one person trying to help another.
+
 Search visibility is how that person finds the page.
 
 Everything after that is for them.

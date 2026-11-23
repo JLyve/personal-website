@@ -23,6 +23,7 @@ const { Content } = await render(entry);
   author={entry.data.author!}
   format={entry.data.format!}
   tags={entry.data.tags}
+  magnoliaPreview={entry.id === 'making-difficult-information-easier-to-use'}
 >
   <Content />
 </BlogPostLayout>

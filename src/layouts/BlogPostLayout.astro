@@ -1,6 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import Navigation from '../components/Navigation.astro';
+import '../styles/magnolia-deep-note-preview.css';
 
 interface Props {
   title: string;
@@ -10,10 +11,11 @@ interface Props {
   author: string;
   format: 'Field Note' | 'Deep Note' | 'Experiment';
   tags?: string[] | undefined;
+  magnoliaPreview?: boolean;
 }
 
 const base = import.meta.env.BASE_URL;
-const { title, description, pubDate, updatedDate, author, format, tags } = Astro.props;
+const { title, description, pubDate, updatedDate, author, format, tags, magnoliaPreview } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
 const formattedPubDate = pubDate.toLocaleDateString('en-US', {
@@ -51,7 +53,7 @@ const structuredData = {
   <Navigation />
   <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 
-  <article class="blog-post">
+  <article class:list={['blog-post', { 'magnolia-deep-note-preview': magnoliaPreview }]}>
     <div class="container">
       <header class="post-header">
         <a href={`${base}blog/`} class="back-link">← Back to Notes</a>

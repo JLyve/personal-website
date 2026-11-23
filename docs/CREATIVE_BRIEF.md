@@ -39,7 +39,7 @@ This is an approved creative and information-architecture decision. The website 
 - Let professional credibility emerge through relevant Notes rather than a separate portfolio or “case study” presentation.
 - Keep Reading and About as separate experiences.
 - Preserve the collection-first homepage direction. Professional Notes may participate in its intentional curation alongside other approved collection material.
-- Magnolia Cremations is the likely first professional Deep Note or Experiment. Its title, exact format, copy, design, and publication are not approved.
+- Magnolia Cremations is under review as a professional Deep Note in PR #15. Its production title, format, copy, design, and publication remain open decisions.
 - Keep `SITE_INDEXING_ENABLED = false`.
 
 The current implementation still includes Projects in primary navigation, a `/projects/` page, a `projects` content collection and homepage loader, and the About page's Projects link. Removing those surfaces is **awaiting a future reviewed implementation pull request**. This documentation-only decision does not authorize replacement About copy, a replacement link destination, redirects, a Note title, a page design, or publication.
@@ -278,6 +278,14 @@ Notes index is text-first, approachable, filterable by useful topics, with curat
 - **Experiment:** supports question/method/observations/lessons, optional screenshots and results.
 
 Same recognizable typography and layout rhythm across all three; no mandatory images or article lengths.
+
+### Magnolia Deep Note reading preview (November 23, 2026)
+
+Jason approved a revised reading preview in PR #15. Use antique gold (`#d6b477`) for the Newsreader title and section headings, with a comfortable reading column and enough space to see where each subject changes.
+
+Give the title a wandering four-point star and each section its own small gold ornament. Draw on the homepage and About motifs, with varied, gentle CSS motion in the surrounding whitespace. Keep the lettering still, allow headings to wrap naturally, and retain static ornaments for reduced-motion readers. The ornaments are decorative and have no keyboard or screen-reader presence.
+
+This treatment is for visual review of the Magnolia Note. Its use on other Notes and any production publication require separate decisions.
 
 ## Editorial selection & measurement
 
