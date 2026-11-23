@@ -1,4 +1,4 @@
-.blog-post.magnolia-deep-note-preview {
+article.blog-post.magnolia-deep-note-preview {
   --note-gold: #d6b477;
   --four-point-star: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 1l2.5 8.5L23 12l-8.5 2.5L12 23l-2.5-8.5L1 12l8.5-2.5Z'/%3E%3C/svg%3E");
   --ornament-top: -1.5rem;
