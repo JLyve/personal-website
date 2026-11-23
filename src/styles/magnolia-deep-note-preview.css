@@ -1,8 +1,5 @@
 article.blog-post.magnolia-deep-note-preview {
   --note-gold: #d6b477;
-  --four-point-star: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 1l2.5 8.5L23 12l-8.5 2.5L12 23l-2.5-8.5L1 12l8.5-2.5Z'/%3E%3C/svg%3E");
-  --ornament-top: -1.5rem;
-  --ornament-left: 0.2rem;
   font-family: var(--font-body);
 
   .back-link {
@@ -27,7 +24,6 @@ article.blog-post.magnolia-deep-note-preview {
   }
 
   :is(.post-title, .post-content :is(h2, h3, h4, h5, h6)) {
-    position: relative;
     color: var(--note-gold);
     font-family: var(--font-heading);
   }
@@ -43,151 +39,50 @@ article.blog-post.magnolia-deep-note-preview {
     line-height: 1.2;
   }
 
-  /* Empty masks add no announced content. Their anchors sit outside the text box. */
-  :is(.post-title, .post-content :is(h2, h3, h4, h5, h6))::before,
-  .post-content h2:nth-of-type(1)::after {
-    position: absolute;
-    inset-block-start: var(--ornament-top);
-    inset-inline-start: var(--ornament-left);
-    inline-size: var(--ornament-size, 1.15rem);
-    aspect-ratio: 1;
-    background-color: var(--note-gold);
-    mask: var(--ornament-image, var(--four-point-star)) center / contain no-repeat;
-    opacity: var(--ornament-opacity, 0.68);
-    pointer-events: none;
-    content: '';
+  .post-content h2 {
+    margin: clamp(3.9rem, 8vw, 5.25rem) 0 clamp(0.95rem, 3vw, 1.3rem);
   }
 
   .post-title {
-    --ornament-size: 0.95rem;
-    --ornament-opacity: 0.83;
-    --ornament-animation: note-ornament-travel;
-    --ornament-path: path('M0 0 C3 -4 7 -3 7 0 C7 3 2 4 0 0 C-2 -4 -5 -3 -5 0 C-5 3 -2 3 0 0 Z');
-    --ornament-easing: linear;
-    --ornament-duration: 23s;
-    --ornament-delay: -6s;
-  }
+    position: relative;
 
-  .post-content h2 {
-    margin: clamp(3.9rem, 8vw, 5.25rem) 0 clamp(0.95rem, 3vw, 1.3rem);
-
-    /* The ornaments follow the nine Markdown sections in reading order. */
-    &:nth-of-type(1)::before {
-      --ornament-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20 8a9 9 0 1 0 .5 7' fill='none' stroke='black' stroke-width='1.25' stroke-linecap='round'/%3E%3C/svg%3E");
-      --ornament-animation: none;
-    }
-
-    &:nth-of-type(1)::after {
-      --ornament-size: 0.36rem;
-      --ornament-opacity: 0.9;
-      --ornament-animation: note-ornament-travel;
-      --ornament-path: path('M0 0 a7 7 0 1 1 0 14 a7 7 0 1 1 0 -14');
-      --ornament-easing: linear;
-      --ornament-duration: 21s;
-      --ornament-delay: -4s;
-      margin-block-start: 0.02rem;
-      margin-inline-start: 0.4rem;
-    }
-
-    &:nth-of-type(2) {
-      --ornament-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m9 3 4 6-4 6-4-6z m7 9 3 4-3 4-3-4z' fill='none' stroke='black' stroke-width='1.25'/%3E%3C/svg%3E");
-      --ornament-duration: 19s;
-      --ornament-delay: -11s;
-    }
-
-    &:nth-of-type(3) {
-      --ornament-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m4 17 7-11 9 7' fill='none' stroke='black' stroke-width='.9'/%3E%3Ccircle cx='4' cy='17' r='1.5'/%3E%3Ccircle cx='11' cy='6' r='2'/%3E%3Ccircle cx='20' cy='13' r='1.5'/%3E%3C/svg%3E");
-      --ornament-animation: note-ornament-glimmer;
-      --ornament-duration: 27s;
-      --ornament-delay: -4s;
-    }
-
-    &:nth-of-type(4) {
-      --ornament-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4 12a8 8 0 0 1 8-8m8 8a8 8 0 0 1-8 8m0-12 3 4-3 4-3-4z' fill='none' stroke='black' stroke-width='1.3' stroke-linecap='round'/%3E%3C/svg%3E");
-      --ornament-animation: note-ornament-turn;
-      --ornament-duration: 31s;
-      --ornament-delay: -9s;
-    }
-
-    &:nth-of-type(5) {
-      --ornament-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m8 3 1.7 5.3L15 10l-5.3 1.7L8 17l-1.7-5.3L1 10l5.3-1.7z m10 9 1.2 3.8L23 17l-3.8 1.2L18 22l-1.2-3.8L13 17l3.8-1.2z'/%3E%3C/svg%3E");
-      --ornament-animation: note-ornament-travel;
-      --ornament-path: path('M0 0 C3 -2 5 0 4 2 C3 4 -3 3 -3 1 C-3 0 -1 1 0 0 Z');
-      --ornament-easing: linear;
-      --ornament-duration: 17s;
-      --ornament-delay: -3s;
-    }
-
-    &:nth-of-type(6) {
-      --ornament-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M3 15c3-7 8-9 13-7M7 18c3-6 7-7 12-5' fill='none' stroke='black' stroke-width='1.25' stroke-linecap='round'/%3E%3Ccircle cx='20' cy='6' r='1.5'/%3E%3C/svg%3E");
-      --ornament-duration: 26s;
-      --ornament-delay: -16s;
-    }
-
-    &:nth-of-type(7) {
-      --ornament-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 15a8 8 0 0 1 12-9m3 4a8 8 0 0 1-11 9m3-10v6m-3-3h6' fill='none' stroke='black' stroke-width='1.2' stroke-linecap='round'/%3E%3Ccircle cx='19' cy='5' r='1.25'/%3E%3C/svg%3E");
-      --ornament-animation: note-ornament-turn;
-      --ornament-duration: 35s;
-      --ornament-delay: -20s;
-    }
-
-    &:nth-of-type(8) {
-      --ornament-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m12 3 7 9-7 9-7-9z' fill='none' stroke='black' stroke-width='1.2'/%3E%3Ccircle cx='12' cy='12' r='1.65'/%3E%3C/svg%3E");
-      --ornament-animation: note-ornament-glimmer;
-      --ornament-duration: 22s;
-      --ornament-delay: -8s;
-    }
-
-    &:nth-of-type(9) {
-      --ornament-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m10 4 1.8 6.2L18 12l-6.2 1.8L10 20l-1.8-6.2L2 12l6.2-1.8Z'/%3E%3Ccircle cx='20' cy='5' r='1.25'/%3E%3Ccircle cx='19' cy='19' r='.9'/%3E%3C/svg%3E");
-      --ornament-animation: note-ornament-travel;
-      --ornament-path: path('M0 0 C3 0 4 -3 2 -4 C0 -5 -3 -1 -2 0 C-1 1 -1 0 0 0 Z');
-      --ornament-easing: linear;
-      --ornament-duration: 29s;
-      --ornament-delay: -13s;
+    /* The empty mask adds no announced content or focus target. */
+    &::before {
+      position: absolute;
+      inset-block-start: -1.5rem;
+      inset-inline-start: 0.2rem;
+      inline-size: 0.95rem;
+      aspect-ratio: 1;
+      background-color: var(--note-gold);
+      mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 1l2.5 8.5L23 12l-8.5 2.5L12 23l-2.5-8.5L1 12l8.5-2.5Z'/%3E%3C/svg%3E") center / contain no-repeat;
+      opacity: 0.83;
+      pointer-events: none;
+      content: '';
     }
   }
 
   @media (min-width: 56rem) {
-    --ornament-top: 0.15em;
-    --ornament-left: -2.5rem;
     padding-block-start: clamp(7.5rem, 10vw, 8.3rem);
 
     .post-format {
       margin-bottom: 1rem;
     }
 
-    .post-title {
-      --ornament-top: 0.28em;
+    .post-title::before {
+      inset-block-start: 0.28em;
+      inset-inline-start: -2.5rem;
     }
   }
 
   @media (prefers-reduced-motion: no-preference) {
-    :is(.post-title, .post-content :is(h2, h3, h4, h5, h6))::before,
-    .post-content h2:nth-of-type(1)::after {
-      offset-path: var(--ornament-path, none);
+    .post-title::before {
+      offset-path: path('M0 0 C3 -4 7 -3 7 0 C7 3 2 4 0 0 C-2 -4 -5 -3 -5 0 C-5 3 -2 3 0 0 Z');
       offset-rotate: 0deg;
-      animation: var(--ornament-animation, note-ornament-drift) var(--ornament-duration, 24s)
-        var(--ornament-easing, ease-in-out) var(--ornament-delay, 0s) infinite;
+      animation: magnolia-title-star-wander 23s linear -6s infinite;
     }
   }
 }
 
-@keyframes note-ornament-travel {
+@keyframes magnolia-title-star-wander {
   to { offset-distance: 100%; }
-}
-
-@keyframes note-ornament-drift {
-  45% { transform: translate(2px, -2px); }
-  75% { transform: translate(-1px, 1px); }
-}
-
-@keyframes note-ornament-turn {
-  45% { transform: rotate(16deg); }
-  75% { transform: rotate(-7deg); }
-}
-
-@keyframes note-ornament-glimmer {
-  45% { opacity: 0.86; transform: translateY(-2px); }
-  75% { opacity: 0.57; }
 }

@@ -283,9 +283,9 @@ Same recognizable typography and layout rhythm across all three; no mandatory im
 
 Jason approved a revised reading preview in PR #15. Use antique gold (`#d6b477`) for the Newsreader title and section headings, with a comfortable reading column and enough space to see where each subject changes.
 
-Give the title a wandering four-point star and each section its own small gold ornament. Draw on the homepage and About motifs, with varied, gentle CSS motion in the surrounding whitespace. Keep the lettering still, allow headings to wrap naturally, and retain static ornaments for reduced-motion readers. The ornaments are decorative and have no keyboard or screen-reader presence.
+Jason’s latest feedback supersedes the earlier direction to ornament each section heading. Keep the nine H2s as antique-gold text alone, with their existing spacing and natural wrapping. For this comparison preview, keep the title’s small wandering four-point star. It stays outside the lettering and out of keyboard navigation and the screen-reader experience. The star is static for reduced-motion readers.
 
-This treatment is for visual review of the Magnolia Note. Its use on other Notes and any production publication require separate decisions.
+The broader warm-light and sparse-sparkle atmosphere remains an unapproved future exploration. This treatment is for visual review of the Magnolia Note. Its use on other Notes and any production publication require separate decisions. [Jason’s feedback on PR #15](https://github.com/JLyve/personal-website/pull/15#issuecomment-7113122067)
 
 ## Editorial selection & measurement
 
