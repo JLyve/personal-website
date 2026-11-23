@@ -1,0 +1,88 @@
+article.blog-post.magnolia-deep-note-preview {
+  --note-gold: #d6b477;
+  font-family: var(--font-body);
+
+  .back-link {
+    margin-bottom: clamp(2.15rem, 5vw, 3.5rem);
+  }
+
+  .post-header {
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
+  }
+
+  .post-format {
+    margin-bottom: 2.15rem;
+  }
+
+  .post-content {
+    max-width: 70ch;
+    padding-top: clamp(2rem, 5vw, 3.25rem);
+  }
+
+  .post-content p {
+    margin-bottom: clamp(1.05rem, 3.5vw, 1.4rem);
+  }
+
+  :is(.post-title, .post-content :is(h2, h3, h4, h5, h6)) {
+    color: var(--note-gold);
+    font-family: var(--font-heading);
+  }
+
+  .post-content :is(h2, h3, h4, h5, h6) {
+    scroll-margin-top: calc(var(--nav-height) + 2rem);
+  }
+
+  .post-content :is(h4, h5, h6) {
+    margin: 2.4rem 0 1rem;
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  .post-content h2 {
+    margin: clamp(3.9rem, 8vw, 5.25rem) 0 clamp(0.95rem, 3vw, 1.3rem);
+  }
+
+  .post-title {
+    position: relative;
+
+    /* The empty mask adds no announced content or focus target. */
+    &::before {
+      position: absolute;
+      inset-block-start: -1.5rem;
+      inset-inline-start: 0.2rem;
+      inline-size: 0.95rem;
+      aspect-ratio: 1;
+      background-color: var(--note-gold);
+      mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 1l2.5 8.5L23 12l-8.5 2.5L12 23l-2.5-8.5L1 12l8.5-2.5Z'/%3E%3C/svg%3E") center / contain no-repeat;
+      opacity: 0.83;
+      pointer-events: none;
+      content: '';
+    }
+  }
+
+  @media (min-width: 56rem) {
+    padding-block-start: clamp(7.5rem, 10vw, 8.3rem);
+
+    .post-format {
+      margin-bottom: 1rem;
+    }
+
+    .post-title::before {
+      inset-block-start: 0.28em;
+      inset-inline-start: -2.5rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .post-title::before {
+      offset-path: path('M0 0 C3 -4 7 -3 7 0 C7 3 2 4 0 0 C-2 -4 -5 -3 -5 0 C-5 3 -2 3 0 0 Z');
+      offset-rotate: 0deg;
+      animation: magnolia-title-star-wander 23s linear -6s infinite;
+    }
+  }
+}
+
+@keyframes magnolia-title-star-wander {
+  to { offset-distance: 100%; }
+}

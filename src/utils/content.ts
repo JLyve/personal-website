@@ -6,7 +6,6 @@ const hasMarkdownFiles = (directory: URL) =>
   readdirSync(directory, { recursive: true }).some((file) => /\.mdx?$/.test(String(file)));
 
 export function getPublishedNotes() {
-  if (!hasMarkdownFiles(new URL('../content/blog', import.meta.url))) return [];
   return getCollection('blog', ({ data }) => data.status === 'published');
 }
 

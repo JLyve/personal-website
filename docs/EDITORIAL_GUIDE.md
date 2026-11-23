@@ -45,7 +45,11 @@ Professional work follows the same formats and standards:
 
 Do not relabel professional Notes as portfolio entries or “case studies” by default. Be precise about contribution, collaborators, evidence, uncertainty, and supported results. The format follows the material rather than its professional or personal subject.
 
-Magnolia Cremations is the likely first professional Deep Note or Experiment. Its title, exact format, copy, design, and publication are not approved. This guide does not supply or imply those decisions.
+### Magnolia Deep Note reading preview (November 23, 2026)
+
+PR #15 uses the Deep Note format for the Magnolia draft under review. The revised preview keeps Jason’s opening story and all existing prose, links, and claims. One H1 introduces the Note, and nine short H2s mark changes in subject. The headings use the language and rhythms of the draft, and Markdown paragraph breaks preserve its conversational pacing.
+
+The article, metadata, and exact heading wording remain provisional pending Jason’s review. The section count is specific to this draft. See the matching [reading preview in the Creative Brief](CREATIVE_BRIEF.md#magnolia-deep-note-reading-preview-november-23-2026).
 
 ## Voice-first process
 
